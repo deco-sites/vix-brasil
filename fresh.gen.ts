@@ -3,14 +3,16 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $_app from "./routes/_app.tsx";
-
+import * as $functions_headerFunctions from "./islands/functions/headerFunctions.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_app.tsx": $_app,
   },
-  islands: {},
+  islands: {
+    "./islands/functions/headerFunctions.tsx": $functions_headerFunctions,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 

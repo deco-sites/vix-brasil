@@ -75,6 +75,8 @@ function VariantSelector({ product }: Props) {
     return null;
   }
 
+  console.log(possibilities);
+
   return (
     <ul
       class="flex flex-col gap-4"

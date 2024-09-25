@@ -28,7 +28,7 @@ export default function TabbedProductShelf(
     ? Math.min(Math.max(tabIndex, 0), tabs.length)
     : 0;
 
-  const { products } = tabs[ti];
+  const { products } = tabs?.[ti];
 
   const viewItemListEvent = useSendEvent({
     on: "view",

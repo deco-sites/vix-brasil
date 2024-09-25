@@ -10,6 +10,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import ShareButton from "../shareButton/index.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -26,17 +27,17 @@ function ProductInfo({ page }: Props) {
   const { productID, offers, isVariantOf } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
+  const refId =
+    product.additionalProperty?.find((item) => item.name === "RefId") ??
+      isVariantOf?.additionalProperty.find((item) => item.name === "RefId");
 
   const {
     price = 0,
     listPrice,
     seller = "1",
     availability,
+    installments,
   } = useOffer(offers);
-
-  const percent = listPrice && price
-    ? Math.round(((listPrice - price) / listPrice) * 100)
-    : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -72,30 +73,41 @@ function ProductInfo({ page }: Props) {
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
-      {/* Price tag */}
-      <span
-        class={clx(
-          "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-          percent < 1 && "opacity-0",
-          "w-fit",
-        )}
-      >
-        {percent} % off
-      </span>
-
       {/* Product Name */}
-      <span class={clx("text-3xl font-semibold", "pt-4")}>
-        {title}
-      </span>
+      <div class="flex items-start pb-[10px] mb-5 border-b border-[#bea669]">
+        <p
+          class={clx(
+            "text-2xl font-source-sans leading-[34px] tracking-[0.07em] text-black uppercase  relative w-full",
+          )}
+        >
+          {title}
+          <br />
+          <span
+            class={clx(
+              "text-[10px] leading-[14px] text-black tracking-normal capitalize",
+            )}
+          >
+            Referência: {refId?.value}
+          </span>
+        </p>
+        <div>
+          <WishlistButton item={item} />
+          <ShareButton />
+        </div>
+      </div>
 
       {/* Prices */}
       <div class="flex gap-3 pt-1">
-        <span class="text-3xl font-semibold text-base-400">
-          {formatPrice(price, offers?.priceCurrency)}
-        </span>
-        <span class="line-through text-sm font-medium text-gray-400">
-          {formatPrice(listPrice, offers?.priceCurrency)}
-        </span>
+        <p class="font-source-sans tracking-[0.07em] text-black leading-6 text-base font-semibold">
+          <span class="line-through text-xs text-gray-400 text-[#979797] font-normal">
+            {formatPrice(listPrice, offers?.priceCurrency)}
+          </span>
+          <br />
+          {formatPrice(price, offers?.priceCurrency)}{" "}
+          <span class="text-xs text-gray-400 text-[#979797] font-normal ml-2">
+            {installments}
+          </span>
+        </p>
       </div>
 
       {/* Sku Selector */}
@@ -117,7 +129,6 @@ function ProductInfo({ page }: Props) {
                 class="btn btn-primary no-animation"
                 disabled={false}
               />
-              <WishlistButton item={item} />
             </>
           )
           : <OutOfStock productID={productID} />}

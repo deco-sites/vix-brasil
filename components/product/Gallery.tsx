@@ -1,18 +1,19 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import ProductImageZoom from "./ProductImageZoom.tsx";
-import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
+import { ImageZoom } from "../media/ImageZoom.tsx";
+import { useScript } from "deco/hooks/useScript.ts";
+import ProductImageZoom from "./function.js";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
 }
 
-const WIDTH = 820;
-const HEIGHT = 615;
+const WIDTH = 508;
+const HEIGHT = 768;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 /**
@@ -23,7 +24,6 @@ const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
  */
 export default function GallerySlider(props: Props) {
   const id = useId();
-  const zoomId = `${id}-zoom`;
 
   if (!props.page) {
     throw new Error("Missing Product Details Page Info");
@@ -54,10 +54,9 @@ export default function GallerySlider(props: Props) {
                   index={index}
                   class="carousel-item w-full"
                 >
-                  <Image
-                    class="w-full"
-                    sizes="(max-width: 640px) 100vw, 40vw"
-                    style={{ aspectRatio: ASPECT_RATIO }}
+                  <ImageZoom
+                    classes="w-full h-full"
+                    aspect={ASPECT_RATIO}
                     src={img.url!}
                     alt={img.alternateName}
                     width={WIDTH}
@@ -70,7 +69,8 @@ export default function GallerySlider(props: Props) {
               ))}
             </Slider>
 
-            <Slider.PrevButton
+            {
+              /* <Slider.PrevButton
               class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
               disabled
             >
@@ -82,13 +82,16 @@ export default function GallerySlider(props: Props) {
               disabled={images.length < 2}
             >
               <Icon id="chevron-right" />
-            </Slider.NextButton>
+            </Slider.NextButton> */
+            }
 
-            <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+            {
+              /* <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
                 <Icon id="pan_zoom" />
               </label>
-            </div>
+            </div> */
+            }
           </div>
         </div>
 
@@ -124,11 +127,18 @@ export default function GallerySlider(props: Props) {
 
         <Slider.JS rootId={id} />
       </div>
-      <ProductImageZoom
+      {
+        /* <ProductImageZoom
         id={zoomId}
         images={images}
         width={700}
         height={Math.trunc(700 * HEIGHT / WIDTH)}
+      /> */
+      }
+
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(ProductImageZoom) }}
       />
     </>
   );

@@ -1,27 +1,25 @@
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { LoadingFallbackProps } from "deco/mod.ts";
-import Alert from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
 import Menu from "../../components/header/Menu.tsx";
-import NavItem from "../../components/header/NavItem.tsx";
+import NavItem, { NavItemProps } from "../../components/header/NavItem.tsx";
 import Searchbar, {
   type SearchbarProps,
 } from "../../components/search/Searchbar/Form.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Modal from "../../components/ui/Modal.tsx";
 import {
-  HEADER_HEIGHT_DESKTOP,
-  HEADER_HEIGHT_MOBILE,
   NAVBAR_HEIGHT_MOBILE,
   SEARCHBAR_DRAWER_ID,
   SEARCHBAR_POPUP_ID,
   SIDEMENU_CONTAINER_ID,
   SIDEMENU_DRAWER_ID,
 } from "../../constants.ts";
+import { useScript } from "deco/hooks/useScript.ts";
+import SignIn from "../../components/header/SignIn.tsx";
+import HeaderFunctions from "../../islands/functions/headerFunctions.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -31,13 +29,11 @@ export interface Logo {
 }
 
 export interface SectionProps {
-  alerts?: HTMLWidget[];
-
   /**
    * @title Navigation items
    * @description Navigation items used both on mobile and desktop menus
    */
-  navItems?: SiteNavigationElement[] | null;
+  navItems?: NavItemProps[] | null;
 
   /**
    * @title Searchbar
@@ -56,29 +52,15 @@ export interface SectionProps {
 
 type Props = Omit<SectionProps, "alert">;
 
-const Desktop = (
-  { navItems, logo, searchbar, loading }: Props,
-) => (
+const Desktop = ({ navItems, logo, searchbar, loading }: Props) => (
   <>
-    <Modal id={SEARCHBAR_POPUP_ID}>
-      <div
-        class="absolute top-0 bg-base-100 container"
-        style={{ marginTop: HEADER_HEIGHT_MOBILE }}
-      >
-        {loading === "lazy"
-          ? (
-            <div class="flex justify-center items-center">
-              <span class="loading loading-spinner" />
-            </div>
-          )
-          : <Searchbar {...searchbar} />}
-      </div>
-    </Modal>
-
-    <div class="flex flex-col gap-4 pt-5 container border-b border-gray-300">
-      <div class="grid grid-cols-3 place-items-center">
-        <div class="place-self-start">
-          <a href="/" aria-label="Store logo">
+    <div class="flex flex-col gap-4 max-w-full px-6">
+      <div class="grid grid-cols-header place-items-center ">
+        <div
+          id="vix-brasil-logo"
+          class="self-center place-self-start ease-in duration-200 group-hover/header:invert-0 group-hover/header:brightness-100 m"
+        >
+          <a href="/" aria-label="Vix Brasil">
             <Image
               src={logo.src}
               alt={logo.alt}
@@ -88,37 +70,43 @@ const Desktop = (
           </a>
         </div>
 
-        <label
-          for={SEARCHBAR_POPUP_ID}
-          class="input input-bordered flex items-center gap-2 w-full"
-          aria-label="search icon button"
-        >
-          <Icon id="search" />
-          <span class="text-base-400 truncate">
-            Search products, brands...
-          </span>
-        </label>
-
-        <div class="flex gap-4 place-self-end">
-          <Bag />
+        <div class="flex justify-center items-center w-full">
+          <ul id="vix-brasil-navigation" class="flex">
+            {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
+          </ul>
+          <div>{/* ship to */}</div>
         </div>
-      </div>
-
-      <div class="flex justify-between items-center">
-        <ul class="flex">
-          {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
-        </ul>
-        <div>
-          {/* ship to */}
+        <div
+          id="vix-brasil__header-icons"
+          class="w-full justify-end self-center flex gap-8 place-self-end items-center group-hover/header:text-black duration-200"
+        >
+          <div>
+            {loading === "lazy"
+              ? (
+                <div class="flex justify-center items-center">
+                  <span class="loading loading-spinner" />
+                </div>
+              )
+              : <Searchbar {...searchbar} />}
+          </div>
+          <label
+            id="vix-brasil__search-bar--open"
+            for={SEARCHBAR_POPUP_ID}
+            class="flex items-center cursor-pointer group-hover/header:text-black duration-200 z-10"
+            aria-label="search icon button"
+          >
+            <Icon id="search" size={18} />
+          </label>
+          <SignIn variant="desktop" />
+          <Icon id="favorite" size={20} />
+          <Bag />
         </div>
       </div>
     </div>
   </>
 );
 
-const Mobile = (
-  { logo, searchbar, navItems, loading }: Props,
-) => (
+const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
   <>
     <Drawer
       id={SEARCHBAR_DRAWER_ID}
@@ -200,39 +188,43 @@ const Mobile = (
 );
 
 function Header({
-  alerts = [],
   logo = {
     src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
-    width: 100,
-    height: 16,
-    alt: "Logo",
+      "https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.128/img/header/icon-logo-color___89754752d03a11168a5440e6da2b721b.svg",
+    width: 257,
+    height: 57,
+    alt: "Logo Vix Brasil",
   },
   ...props
 }: Props) {
   const device = useDevice();
-
   return (
-    <header
-      style={{
-        height: device === "desktop"
-          ? HEADER_HEIGHT_DESKTOP
-          : HEADER_HEIGHT_MOBILE,
-      }}
-    >
-      <div class="bg-base-100 fixed w-full z-40">
-        {alerts.length > 0 && <Alert alerts={alerts} />}
+    <header // style={{
+     //   height: device === "desktop"
+    //     ? HEADER_HEIGHT_DESKTOP
+    //     : HEADER_HEIGHT_MOBILE,
+    // }}
+    class="z-50">
+      <div
+        class={`group/header backdrop-blur-xs w-full z-40 hover:bg-base-100 hover:backdrop-blur-none ease-in duration-200`}
+        id="vix-brasil-header"
+      >
+        {/* {alerts.length > 0 && <Alert alerts={alerts} />} */}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />
           : <Mobile logo={logo} {...props} />}
       </div>
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(HeaderFunctions) }}
+      />
     </header>
   );
 }
 
 export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
   // deno-lint-ignore no-explicit-any
-  <Header {...props as any} loading="lazy" />
+  <Header {...(props as any)} loading="lazy" />
 );
 
 export default Header;

@@ -1,11 +1,11 @@
 import Icon from "../../components/ui/Icon.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import { NavItemProps } from "./NavItem.tsx";
 
 export interface Props {
-  navItems?: SiteNavigationElement[];
+  navItems?: NavItemProps[];
 }
 
-function MenuItem({ item }: { item: SiteNavigationElement }) {
+function MenuItem({ item }: { item: NavItemProps }) {
   return (
     <div class="collapse collapse-plus">
       <input type="checkbox" />
@@ -73,7 +73,7 @@ function Menu({ navItems = [] }: Props) {
             class="flex items-center gap-4 px-4 py-2"
             href="https://www.deco.cx"
           >
-            <Icon id="account_circle" />
+            <Icon id="account_icon" />
             <span class="text-sm">Minha conta</span>
           </a>
         </li>

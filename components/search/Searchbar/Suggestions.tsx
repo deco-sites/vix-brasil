@@ -49,14 +49,17 @@ function Suggestions(
   { suggestion }: ComponentProps<typeof loader, typeof action>,
 ) {
   const { products = [], searches = [] } = suggestion ?? {};
-  const hasProducts = Boolean(products.length);
+  const hasProducts = Boolean(products?.length);
   const hasTerms = Boolean(searches.length);
 
   return (
     <div
-      class={clx(`overflow-y-scroll`, !hasProducts && !hasTerms && "hidden")}
+      class={clx(
+        `overflow-y-scroll`,
+        !hasProducts && !hasTerms && "opacity-0 invisible",
+      )}
     >
-      <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-[150px_1fr]">
+      <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-[150px_1fr] fixed bg-white top-full left-0 w-full opacity-0 invisible group-hover/header:opacity-100 group-hover/header:visible duration-200">
         <div class="flex flex-col gap-6">
           <span
             class="font-medium text-xl"
@@ -91,7 +94,7 @@ function Suggestions(
             Produtos sugeridos
           </span>
           <Slider class="carousel">
-            {products.map((product, index) => (
+            {products?.map((product, index) => (
               <Slider.Item
                 index={index}
                 class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"

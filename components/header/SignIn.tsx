@@ -30,15 +30,12 @@ function SignIn({ variant }: { variant: "mobile" | "desktop" }) {
   return (
     <div id={id}>
       <a
-        class={clx(
-          "btn btn-sm font-thin btn-ghost no-animation",
-          variant === "mobile" && "btn-square",
-        )}
+        id="vix-brasil__login-icon"
+        class=" group-hover/header:text-black duration-200"
         href="/login"
         aria-label="Login"
       >
-        <Icon id="account_circle" />
-        {variant === "desktop" && <span>Sign in</span>}
+        <Icon id="account_icon" width={18} height={20} />
       </a>
       <a
         class={clx(
@@ -49,7 +46,7 @@ function SignIn({ variant }: { variant: "mobile" | "desktop" }) {
         href="/account"
         aria-label="Account"
       >
-        <Icon id="account_circle" />
+        <Icon id="account_icon" />
         {variant === "desktop" && <span>My account</span>}
       </a>
       <script

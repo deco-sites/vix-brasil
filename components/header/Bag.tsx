@@ -38,7 +38,7 @@ function Bag() {
         />
 
         <span class="btn btn-square btn-sm btn-ghost no-animation">
-          <Icon id="shopping_bag" />
+          <Icon id="shopping_bag" width={20} height={19} />
         </span>
       </label>
       <script

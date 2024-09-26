@@ -32,17 +32,21 @@ export const ImageZoom = (
           <link as="image" rel="preload" href={src} />
         </Head>
       )}
-      <img
-        id="imageZoom--image"
-        type="image"
-        width={width}
-        height={height}
-        loading={loading}
-        style={aspect && { aspectRatio: aspect }}
-        src={src}
-        alt={alt}
-        class={`${classes}`}
-      />
+
+      <div
+        class={`imageZoom--wrapper max-w-[${width}px] w-full max-h-[${height}px] h-full overflow-hidden`}
+      >
+        <img
+          type="image"
+          width={width}
+          height={height}
+          loading={loading}
+          style={aspect && { aspectRatio: aspect }}
+          src={src}
+          alt={alt}
+          class={`imageZoom--image ${classes} object-cover cursor-crosshair`}
+        />
+      </div>
     </>
   );
 };

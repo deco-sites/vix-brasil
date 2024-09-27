@@ -194,7 +194,7 @@ function Header({
     //     ? HEADER_HEIGHT_DESKTOP
     //     : HEADER_HEIGHT_MOBILE,
     // }}
-    class="z-50">
+    class="z-50 fixed w-full">
       <div
         class={`group/header backdrop-blur-xs w-full z-40 hover:bg-base-100 hover:backdrop-blur-none ease-in duration-200`}
         id="vix-brasil-header"

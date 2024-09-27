@@ -11,6 +11,7 @@ import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ShareButton from "../shareButton/index.tsx";
+import ProductDescriptions from "./ProductDescriptions.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -30,6 +31,12 @@ function ProductInfo({ page }: Props) {
   const refId =
     product.additionalProperty?.find((item) => item.name === "RefId") ??
       isVariantOf?.additionalProperty.find((item) => item.name === "RefId");
+
+  const composition =
+    product.additionalProperty?.find((item) => item.name === "Composição") ??
+      isVariantOf?.additionalProperty.find((item) =>
+        item.name === "Composição"
+      );
 
   const {
     price = 0,
@@ -126,7 +133,7 @@ function ProductInfo({ page }: Props) {
                 item={item}
                 seller={seller}
                 product={product}
-                class="btn btn-primary no-animation"
+                class="tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em] bg-black hover:bg-[#bea669] duration-200"
                 disabled={false}
               />
             </>
@@ -141,20 +148,11 @@ function ProductInfo({ page }: Props) {
         />
       </div>
 
-      {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Description</summary>
-              <div
-                class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </details>
-          )}
-        </span>
-      </div>
+      {/* Descrição */}
+      <ProductDescriptions info={description} title={"Descrição do produto"} />
+
+      {/* Composição */}
+      <ProductDescriptions info={composition?.value} title={"Composição"} />
     </div>
   );
 }

@@ -9,7 +9,6 @@ export default function HeaderFunctions() {
   const conditionalHeader = {
     init() {
       if (window.location.pathname === "/") {
-        header?.classList.add("fixed");
         header?.classList.add("bg-blur");
         navigation?.classList.add("text-white");
         icons?.classList.add("text-white");
@@ -93,6 +92,8 @@ export default function HeaderFunctions() {
     },
   };
   conditionalHeader.init();
-  scrollHeader.init();
   showSearchBar.init();
+  if (window.location.pathname === "/") {
+    scrollHeader.init();
+  }
 }

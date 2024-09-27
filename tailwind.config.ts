@@ -26,9 +26,14 @@ export default {
         "astralaga": ["Astralaga", "sans-serif"],
       },
       animation: {
+        dropdown: "dropdown 2ms linear",
         sliding: "sliding 30s linear infinite",
       },
       keyframes: {
+        dropdown: {
+          "0%": { maxHeight: "0px" },
+          "100%": { maxHeight: "300px" },
+        },
         sliding: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },

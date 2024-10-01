@@ -12,6 +12,7 @@ import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ShareButton from "../shareButton/index.tsx";
 import ProductDescriptions from "./ProductDescriptions.tsx";
+// import { useScript } from "deco/hooks/useScript.ts";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -25,7 +26,7 @@ function ProductInfo({ page }: Props) {
   }
 
   const { breadcrumbList, product } = page;
-  const { productID, offers, isVariantOf } = product;
+  const { productID, offers, isVariantOf, isAccessoryOrSparePartFor } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
   const refId =
@@ -78,6 +79,12 @@ function ProductInfo({ page }: Props) {
       variant?.name?.toLowerCase() !== "default title",
   ) ?? false;
 
+  const productTop = product.isAccessoryOrSparePartFor?.[0] ?? product;
+  const productBottom = product.isAccessoryOrSparePartFor?.[1] ?? product;
+
+  // const Teste = (page: any) => {
+  //   console.log(page);
+  // };
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Product Name */}
@@ -97,7 +104,7 @@ function ProductInfo({ page }: Props) {
             Referência: {refId?.value}
           </span>
         </p>
-        <div>
+        <div class="mt-2">
           <WishlistButton item={item} />
           <ShareButton />
         </div>
@@ -106,10 +113,14 @@ function ProductInfo({ page }: Props) {
       {/* Prices */}
       <div class="flex gap-3 pt-1">
         <p class="font-source-sans tracking-[0.07em] text-black leading-6 text-base font-semibold">
-          <span class="line-through text-xs text-gray-400 text-[#979797] font-normal">
-            {formatPrice(listPrice, offers?.priceCurrency)}
-          </span>
-          <br />
+          {listPrice !== price && (
+            <>
+              <span class="line-through text-xs text-gray-400 text-[#979797] font-normal">
+                {formatPrice(listPrice, offers?.priceCurrency)}
+              </span>
+              <br />
+            </>
+          )}
           {formatPrice(price, offers?.priceCurrency)}{" "}
           <span class="text-xs text-gray-400 text-[#979797] font-normal ml-2">
             {installments}
@@ -118,11 +129,18 @@ function ProductInfo({ page }: Props) {
       </div>
 
       {/* Sku Selector */}
-      {hasValidVariants && (
-        <div className="mt-4 sm:mt-8">
-          <ProductSelector product={product} />
-        </div>
-      )}
+      {hasValidVariants && isAccessoryOrSparePartFor
+        ? (
+          <div className="mt-4 sm:mt-8">
+            <ProductSelector product={productTop} />
+            <ProductSelector product={productBottom} />
+          </div>
+        )
+        : (
+          <div className="mt-4 sm:mt-8">
+            <ProductSelector product={product} />
+          </div>
+        )}
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
@@ -153,6 +171,21 @@ function ProductInfo({ page }: Props) {
 
       {/* Composição */}
       <ProductDescriptions info={composition?.value} title={"Composição"} />
+
+      {
+        /* <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(Teste, productTop) }}
+      />
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(Teste, productBottom) }}
+      />
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(Teste, product) }}
+      /> */
+      }
     </div>
   );
 }

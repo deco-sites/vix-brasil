@@ -1,7 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Bag from "../../components/header/Bag.tsx";
-import Menu from "../../components/header/Menu.tsx";
+import Menu, { MobileMenuItem } from "../../components/header/Menu.tsx";
 import NavItem, { NavItemProps } from "../../components/header/NavItem.tsx";
 import Searchbar, {
   type SearchbarProps,
@@ -31,6 +31,7 @@ export interface SectionProps {
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: NavItemProps[] | null;
+  mobileItems?: MobileMenuItem[] | undefined;
   /**
    * @title Searchbar
    * @description Searchbar configuration
@@ -97,12 +98,16 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => (
     </div>
   </>
 );
-const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
+const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
   <>
     <Drawer
       id={SEARCHBAR_DRAWER_ID}
       aside={
-        <Drawer.Aside title="Search" drawer={SEARCHBAR_DRAWER_ID}>
+        <Drawer.Aside
+          class="bg-white"
+          title="Search"
+          drawer={SEARCHBAR_DRAWER_ID}
+        >
           <div class="w-screen overflow-y-auto">
             {loading === "lazy"
               ? (
@@ -118,7 +123,13 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
     <Drawer
       id={SIDEMENU_DRAWER_ID}
       aside={
-        <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
+        <Drawer.Aside
+          class="bg-white"
+          titleClass="font-source-sans text-[#030303] text-sm font-semibold uppercase"
+          headerClass="bg-[#f7f4ed] p-1.5"
+          title="Menu"
+          drawer={SIDEMENU_DRAWER_ID}
+        >
           {loading === "lazy"
             ? (
               <div
@@ -129,17 +140,17 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
                 <span class="loading loading-spinner" />
               </div>
             )
-            : <Menu navItems={navItems ?? []} />}
+            : <Menu mobileItems={mobileItems} />}
         </Drawer.Aside>
       }
     />
 
     <div
-      class="grid place-items-center w-screen px-5 gap-4"
+      class="grid place-items-center w-screen px-1 gap-4"
       style={{
         height: NAVBAR_HEIGHT_MOBILE,
         gridTemplateColumns:
-          "min-content auto min-content min-content min-content",
+          "min-content min-content 1fr min-content min-content",
       }}
     >
       <label
@@ -147,7 +158,13 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
         class="btn btn-square btn-sm btn-ghost"
         aria-label="open menu"
       >
-        <Icon id="menu" />
+        <Icon id="menu" size={22} />
+      </label>
+      <label
+        for={SEARCHBAR_DRAWER_ID}
+        aria-label="search icon button"
+      >
+        <Icon id="search" size={18} />
       </label>
 
       {logo && (
@@ -160,19 +177,14 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
           <Image
             src={logo.src}
             alt={logo.alt}
-            width={logo.width || 100}
-            height={logo.height || 13}
+            width={170}
+            height={53}
           />
         </a>
       )}
 
-      <label
-        for={SEARCHBAR_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
-        aria-label="search icon button"
-      >
-        <Icon id="search" />
-      </label>
+      <SignIn variant="mobile" />
+
       <Bag />
     </div>
   </>

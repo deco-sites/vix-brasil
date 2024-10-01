@@ -7,7 +7,7 @@ export default function ProductDescriptions(
   { info, title }: ProductDescriptionsProps,
 ) {
   return (
-    <div class="">
+    <div>
       <span class="text-sm">
         {info && (
           <details class="group/product-infos border-[#d8caa5] border-b">

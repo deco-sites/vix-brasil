@@ -24,7 +24,7 @@
   },
   "navItems": [
     {
-      "@type": "NavQuickElement",
+      "@type": "NavItemProps",
       "url": "#",
       "name": "Shop",
       "children": [
@@ -318,6 +318,271 @@
               "url": "https://www.vixpaulahermanny.com/"
             }
           ]
+        }
+      ]
+    }
+  ],
+  "mobileItems": [
+    {
+      "item": [
+        {
+          "title": "Novidades",
+          "url": "",
+          "target": "_self",
+          "bold": true
+        },
+        {
+          "title": "Verão 25",
+          "url": "",
+          "target": "_self",
+          "bold": true
+        },
+        {
+          "title": "Praia",
+          "url": "",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Biquínis",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Maiô",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Saída de Praia",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Canga",
+              "url": "",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Roupas",
+          "url": "",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Vestido",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Top",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Blusas",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Camisas",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Casacos",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Calças",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Macacões",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Saia",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Short",
+              "url": "",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Acessórios",
+          "url": "",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Bolsa",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Chapéu",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Sandálias",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Brincos/colares",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Cintos",
+              "url": "",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Destaques",
+          "url": "",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Tricot",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Laise",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Linho",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "All Black",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "White",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Best Sellers",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Beads",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Care",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Bianca Brandolini",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Signature",
+              "url": "",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Modelagens",
+          "url": "",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Cheeky",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "BR",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "HOT PANTS",
+              "url": "",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Sale",
+          "url": "",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Biquíni",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Maiô",
+              "url": "",
+              "target": "_self"
+            },
+            {
+              "title": "Roupas",
+              "url": "",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "title": "Personal Shopper",
+          "url": "",
+          "target": "_self",
+          "bold": true
+        },
+        {
+          "title": "Sobre a vix",
+          "url": "",
+          "target": "_self"
+        },
+        {
+          "title": "Lojas",
+          "url": "",
+          "target": "_self"
+        },
+        {
+          "title": "Paula Hermanny",
+          "url": "",
+          "target": "_self"
+        },
+        {
+          "title": "Internacional",
+          "url": "",
+          "target": "_self"
+        },
+        {
+          "title": "Fale conosco",
+          "url": "",
+          "target": "_self"
         }
       ]
     }

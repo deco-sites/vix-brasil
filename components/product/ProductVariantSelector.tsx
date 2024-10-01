@@ -88,6 +88,10 @@ function VariantSelector({ product }: Props) {
               ?.map((item) => {
                 const relativeLink = relative(item.link);
                 const checked = relativeLink === relativeUrl;
+
+                if (item.size === "KIT") {
+                  return null;
+                }
                 return (
                   <li
                     class={`relative overflow-hidden ${

@@ -20,6 +20,7 @@ export type AvailableIcons =
   | "error"
   | "up-sm-arrow"
   | "down-sm-arrow"
+  | "sm-arrow"
   | "trash";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {

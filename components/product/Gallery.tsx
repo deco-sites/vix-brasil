@@ -6,6 +6,7 @@ import { useId } from "../../sdk/useId.ts";
 import { ImageZoom } from "../media/ImageZoom.tsx";
 import ProductImageZoom from "./function.js";
 import { useScript } from "deco/hooks/useScript.ts";
+import { useDevice } from "@deco/deco/hooks";
 
 export interface Props {
   /** @title Integration */
@@ -38,14 +39,15 @@ export default function GallerySlider(props: Props) {
     name?.includes(img.alternateName || "")
   );
   const imagesFiltered = filtered.length > 0 ? filtered : groupImages;
-  const images = imagesFiltered.filter((item) =>
-    item.alternateName !== "IMAGEM1"
-  );
+  const images = imagesFiltered.filter((item) => item.name !== "IMAGEM1");
+
+  const device = useDevice();
+
   return (
     <>
       <div
         id={id}
-        class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-10 mr-14"
+        class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-10 xl:mr-14 mb-3 xl:mb-0"
       >
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
@@ -66,6 +68,8 @@ export default function GallerySlider(props: Props) {
                       height={HEIGHT}
                       preload={index === 0}
                       loading={index === 0 ? "eager" : "lazy"}
+                      num={index + 1}
+                      qtt={images.length}
                     />
                   </Slider.Item>
                 );
@@ -75,85 +79,88 @@ export default function GallerySlider(props: Props) {
         </div>
 
         {/* Dots */}
-        <div class="col-start-1 col-span-1 min-w-36">
-          <div
-            className={`dots-container--prev flex justify-center p-2.5`}
-            role="button"
-            tabIndex={0}
-          >
-            <svg
-              width="14"
-              height="8"
-              viewBox="0 0 14 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+        {device === "desktop" && (
+          <div class="col-start-1 col-span-1 min-w-36">
+            <div
+              className={`dots-container--prev flex justify-center p-2.5`}
+              role="button"
+              tabIndex={0}
             >
-              <path
-                d="M13 7L7 1L1 7"
-                stroke="#BEA669"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <ul
-            class={clx(
-              "dots-container",
-              "max-h-[720px]",
-              "carousel carousel-center",
-              "sm:carousel-vertical",
-              "gap-2",
-              "max-w-full",
-              "overflow-x-auto",
-              "sm:overflow-y-auto",
-            )}
-          >
-            {images.map((img, index) => {
-              return (
-                <li class="carousel-item max-w-40 max-h-64 w-full h-full">
-                  <Slider.Dot
-                    index={index}
-                    class="border-[2px] border-transparent"
-                  >
-                    <Image
-                      style={{ aspectRatio: "155 / 235" }}
-                      class="object-cover w-full h-full"
-                      width={155}
-                      height={235}
-                      src={img.url!}
-                      alt={img.alternateName}
-                    />
-                  </Slider.Dot>
-                </li>
-              );
-            })}
-          </ul>
-          <div
-            className={`dots-container--next flex justify-center p-2.5`}
-            role="button"
-            tabIndex={0}
-          >
-            <svg
-              width="14"
-              height="8"
-              viewBox="0 0 14 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              <svg
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 7L7 1L1 7"
+                  stroke="#BEA669"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <ul
+              class={clx(
+                "dots-container",
+                "max-h-[720px]",
+                "carousel carousel-center",
+                "sm:carousel-vertical",
+                "gap-2",
+                "max-w-full",
+                "overflow-x-auto",
+                "sm:overflow-y-auto",
+              )}
             >
-              <path
-                d="M1 1L7 7L13 1"
-                stroke="#BEA669"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              {images.map((img, index) => {
+                return (
+                  <li class="carousel-item max-w-40 max-h-64 w-full h-full">
+                    <Slider.Dot
+                      index={index}
+                      class="border-[2px] border-transparent"
+                    >
+                      <Image
+                        style={{ aspectRatio: "155 / 235" }}
+                        class="object-cover w-full h-full"
+                        width={155}
+                        height={235}
+                        src={img.url!}
+                        alt={img.alternateName}
+                      />
+                    </Slider.Dot>
+                  </li>
+                );
+              })}
+            </ul>
+            <div
+              className={`dots-container--next flex justify-center p-2.5`}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L7 7L13 1"
+                  stroke="#BEA669"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
+        )}
 
         <Slider.JS rootId={id} />
       </div>
+
       <script
         type="module"
         dangerouslySetInnerHTML={{ __html: useScript(ProductImageZoom) }}

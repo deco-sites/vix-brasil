@@ -6,6 +6,8 @@ export interface ImageProps {
   alt?: string;
   width: string | number;
   height: string | number;
+  num: string | number;
+  qtt: string | number;
   /** @hide true */
   classes?: string;
   aspect?: string;
@@ -19,6 +21,8 @@ export const ImageZoom = (
     alt,
     width,
     height,
+    num,
+    qtt,
     aspect,
     preload = false,
     loading = "lazy",
@@ -34,7 +38,7 @@ export const ImageZoom = (
       )}
 
       <div
-        class={`imageZoom--wrapper max-w-[${width}px] w-full max-h-[${height}px] h-full overflow-hidden`}
+        class={`imageZoom--wrapper max-w-[${width}px] w-full max-h-[${height}px] h-full overflow-hidden relative`}
       >
         <img
           type="image"
@@ -46,6 +50,10 @@ export const ImageZoom = (
           alt={alt}
           class={`imageZoom--image ${classes} object-cover cursor-crosshair`}
         />
+
+        <span class="absolute font-source-sans right-0 bottom-0 w-10 h-5 text-white pt-0.5 text-sm text-center bg-bronze-opacity xl:hidden">
+          {num}/{qtt}
+        </span>
       </div>
     </>
   );

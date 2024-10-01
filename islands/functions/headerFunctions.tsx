@@ -19,7 +19,9 @@ export default function HeaderFunctions() {
       }
       if (window.location.pathname !== "/") {
         header?.classList.add("bg-base-100");
-        header?.classList.add("h-[84px]");
+        header?.classList.add(
+          window.innerWidth >= 1200 ? "h-[84px]" : "h-auto",
+        );
         navigation?.classList.add("text-black");
         icons?.classList.add("text-black");
         login?.classList.add("text-black");

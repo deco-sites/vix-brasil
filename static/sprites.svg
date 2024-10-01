@@ -39,4 +39,5 @@
                 strokeLinecap="round"
                 strokeLinejoin="round"
               /></symbol>
+	<symbol id="sm-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.071 11.313" fill="#000"><path xmlns="http://www.w3.org/2000/svg" d="M5.242,2.415,1,6.657-.415,5.243,3.827,1h0L5.242-.414h0L6.656,1h0L10.9,5.243,9.484,6.657Z" transform="translate(6.657 0.415) rotate(90)"/></symbol>
 </svg>

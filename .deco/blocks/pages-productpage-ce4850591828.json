@@ -28,13 +28,7 @@
       "section": {
         "__resolveType": "site/sections/Product/ProductDetails.tsx",
         "page": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-          "similars": true,
-          "slug": {
-            "__resolveType": "website/functions/requestToParam.ts",
-            "param": "slug"
-          },
-          "indexingSkus": true
+          "__resolveType": "PDP Loader"
         }
       }
     },

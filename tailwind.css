@@ -116,6 +116,10 @@
   gap: 10px;
 }
 
+.subMenu_bold:last-child {
+  margin-bottom: 26px;
+}
+
 #imageZoom--image {
   width: 508px;
   height: 768px;

@@ -2,6 +2,7 @@ import { type ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import Section from "../../components/ui/Section.tsx";
+import Newsletter from "../Newsletter/Newsletter.tsx";
 
 /** @titleBy title */
 interface Item {
@@ -38,20 +39,60 @@ function Footer({
   logo,
   trademark,
 }: Props) {
+  const newsProps = {
+    empty: {
+      title:
+        "<b>10%</b> OFF na primeira compra em coleção Assine nossa newsletter",
+      description: "",
+    },
+
+    label: "INSCREVA-SE",
+    status: undefined,
+  };
   return (
-    <footer
-      class="px-5 sm:px-0 mt-5 sm:mt-10"
-      style={{ backgroundColor: "#EFF0F0" }}
-    >
-      <div class="container flex flex-col gap-5 sm:gap-10 py-10">
-        <ul class="grid grid-flow-row sm:grid-flow-col gap-6 ">
+    <footer class="px-5 sm:px-0 mt-5 sm:mt-10">
+      <div class="flex flex-col justify-between items-start sm:items-center">
+        <div class="flex items-center justify-center w-full">
+          <hr class="w-full text-[#030304]" />
+          <p class="text-[#030304] font-bold mx-6 text-2xl w-max whitespace-nowrap">
+            Perfis oficiais
+          </p>
+          <hr class="w-full text-[#030304]" />
+        </div>
+
+        <ul class="flex gap-4 justify-center my-8">
+          {social.map(({ image, href, alt }) => (
+            <li>
+              <a href={href}>
+                <Image
+                  src={image}
+                  alt={alt}
+                  loading="lazy"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="flex flex-col gap-5 sm:gap-10 py-13 px-10">
+        <ul class="flex items-start justify-between gap-6">
           {links.map(({ title, href, children }) => (
             <li class="flex flex-col gap-4">
-              <a class="text-base font-semibold" href={href}>{title}</a>
-              <ul class="flex flex-col gap-2">
+              <a
+                class="font-source-sans text-[#bea669] text-base font-normal uppercase tracking-[0.07em]"
+                href={href}
+              >
+                {title}
+              </a>
+              <ul class="flex flex-col gap-4">
                 {children.map(({ title, href }) => (
-                  <li>
-                    <a class="text-sm font-medium text-base-400" href={href}>
+                  <li class="h-auto flex">
+                    <a
+                      class="font-source-sans text-[#030304] hover:text-[#bea669] text-xs font-normal tracking-[0.07em] duration-200"
+                      href={href}
+                    >
                       {title}
                     </a>
                   </li>
@@ -59,38 +100,10 @@ function Footer({
               </ul>
             </li>
           ))}
+          <li>
+            <Newsletter {...newsProps} />
+          </li>
         </ul>
-
-        <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
-          <ul class="flex gap-4">
-            {social.map(({ image, href, alt }) => (
-              <li>
-                <a href={href}>
-                  <Image
-                    src={image}
-                    alt={alt}
-                    loading="lazy"
-                    width={24}
-                    height={24}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ul class="flex flex-wrap gap-2">
-            {paymentMethods.map(({ image, alt }) => (
-              <li class="h-8 w-10 border border-base-100 rounded flex justify-center items-center">
-                <Image
-                  src={image}
-                  alt={alt}
-                  width={20}
-                  height={20}
-                  loading="lazy"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
 
         <hr class="w-full text-base-400" />
 
@@ -101,6 +114,20 @@ function Footer({
                 <a class="text-xs font-medium" href={href}>
                   {title}
                 </a>
+              </li>
+            ))}
+          </ul>
+
+          <ul class="flex flex-wrap gap-2">
+            {paymentMethods.map(({ image, alt }) => (
+              <li class="h-8 w-10 border border-base-100 rounded flex justify-center items-center">
+                <Image
+                  src={image}
+                  alt={alt}
+                  width={20}
+                  height={20}
+                  loading="lazy"
+                />
               </li>
             ))}
           </ul>

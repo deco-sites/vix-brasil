@@ -372,7 +372,25 @@
             {
               "title": "Vestido",
               "url": "",
-              "target": "_self"
+              "target": "_self",
+              "children": [
+                {
+                  "title": "Mini",
+                  "url": ""
+                },
+                {
+                  "title": "Curto",
+                  "url": ""
+                },
+                {
+                  "title": "Midi",
+                  "url": ""
+                },
+                {
+                  "title": "Longo",
+                  "url": ""
+                }
+              ]
             },
             {
               "title": "Top",

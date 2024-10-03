@@ -33,7 +33,7 @@ function SubMenuItem(subItem: MobileMenuItems) {
         aside={
           <Drawer.Aside
             class="bg-white h-full w-full"
-            titleClass="font-source-sans text-[#030303] text-sm font-semibold uppercase"
+            titleClass="font-source-sans text-[#030303] text-sm font-medium uppercase"
             headerClass="bg-[#f7f4ed] p-1.5"
             title="Voltar"
             drawer={`${subItem.title}--drawer`}
@@ -44,14 +44,54 @@ function SubMenuItem(subItem: MobileMenuItems) {
               </p>
               <ul>
                 {subItem.children?.map((node) => (
-                  <li class="p-2">
-                    <a
-                      href={node.url}
-                      class="font-source-sans text-left text-sm tracking-[0.98px] uppercase font-light"
-                    >
-                      {node.title}
-                    </a>
-                  </li>
+                  node.children
+                    ? (
+                      <li class="p-2">
+                        <details class="dropdown group/submenu-mobile">
+                          <summary class="list-none flex items-center gap-2 font-source-sans text-left text-sm tracking-[0.98px] uppercase font-light">
+                            {node.title}
+
+                            <span>
+                              <Icon
+                                id="sm-arrow"
+                                size={10}
+                                class="group-open/submenu-mobile:rotate-[-90deg] rotate-90 duration-200"
+                              />
+                            </span>
+                          </summary>
+                          <ul class="menu dropdown-content z-10 !relative">
+                            {node.children.map((item) => (
+                              <li class="p-2">
+                                <a
+                                  href={item.url}
+                                  class="font-source-sans text-left text-sm tracking-[0.98px] uppercase font-light p-0 text-[#a18c60]"
+                                >
+                                  {item.title}
+                                </a>
+                              </li>
+                            ))}
+                            <li class="p-2">
+                              <a
+                                href={node.url}
+                                class="font-source-sans text-left text-sm tracking-[0.98px] uppercase font-light p-0 text-[#a18c60]"
+                              >
+                                Ver tudo
+                              </a>
+                            </li>
+                          </ul>
+                        </details>
+                      </li>
+                    )
+                    : (
+                      <li class="p-2">
+                        <a
+                          href={node.url}
+                          class="font-source-sans text-left text-sm tracking-[0.98px] uppercase font-light"
+                        >
+                          {node.title}
+                        </a>
+                      </li>
+                    )
                 ))}
                 <li class="p-2">
                   <a
@@ -70,9 +110,9 @@ function SubMenuItem(subItem: MobileMenuItems) {
         <div>
           <label
             for={`${subItem.title}--drawer`}
-            class={`flex justify-between items-center mb-2 font-source-sans text-left text-sm font-semibold tracking-[0.98px] uppercase ${
+            class={`flex justify-between items-center mb-2 font-source-sans text-left text-sm font-medium tracking-[0.98px] uppercase ${
               subItem.bold
-                ? "subMenu_bold font-semibold text-[#bea669]"
+                ? "subMenu_bold font-medium text-[#bea669]"
                 : "font-medium"
             }`}
             aria-label="open submenu"
@@ -104,8 +144,8 @@ function MenuItem({ item }: MobileMenuItem) {
                 {node.children ? <SubMenuItem {...node} /> : (
                   <a
                     href={node.url}
-                    class={`block mb-2 font-source-sans text-left text-sm font-semibold tracking-[0.98px] uppercase ${
-                      node.bold ? "font-semibold text-[#bea669]" : "font-medium"
+                    class={`block mb-2 font-source-sans text-left text-sm font-medium tracking-[0.98px] uppercase ${
+                      node.bold ? "font-medium text-[#bea669]" : "font-medium"
                     }`}
                   >
                     {node.title}

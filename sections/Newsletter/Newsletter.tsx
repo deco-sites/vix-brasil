@@ -1,3 +1,4 @@
+import { useDevice } from "@deco/deco/hooks";
 import { AppContext } from "../../apps/site.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { useComponent } from "../Component.tsx";
@@ -37,6 +38,7 @@ function Newsletter({
   label = "INSCREVA-SE",
   status,
 }: SectionProps<typeof loader, typeof action>) {
+  const device = useDevice();
   // if (status === "success" || status === "failed") {
   //   return (
   //     <div class="p-14 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
@@ -50,14 +52,29 @@ function Newsletter({
   //   );
   // }
   return (
-    <section class="max-w-[350px]">
+    <section class="sm:max-w-[350px] py-4 sm:py-0 mb-6 sm:mb-0 px-6 sm:px-0  bg-[#f7f4ed] sm:bg-white">
       <div class="place-items-center">
-        <p class="font-source-sans text-lg text-[#030304] mb-3 leading-[1]">
-          <b>10%</b> OFF na primeira compra em coleção <br />
-          <span class="text-sm">
-            Assine nossa newsletter
-          </span>
-        </p>
+        {device === "desktop"
+          ? (
+            <p class="font-source-sans text-lg text-[#030304] mb-3 leading-[1]">
+              <b>10%</b> OFF na primeira compra em coleção <br />
+              <span class="text-sm">
+                Assine nossa newsletter
+              </span>
+            </p>
+          )
+          : (
+            <p class="font-source-sans text-lg text-[#030304] mb-3 leading-[1]">
+              <span class="justify-center flex w-full">Newsletter</span>
+              <span class="text-sm">
+                Receba nossas novidades e{" "}
+                <b class="font-semibold">
+                  ganhe 10% de desconto na primeira compra. Não cumulativo com
+                  outras ações.
+                </b>
+              </span>
+            </p>
+          )}
 
         {status === "success"
           ? (
@@ -70,7 +87,7 @@ function Newsletter({
               hx-target="closest section"
               hx-swap="outerHTML"
               hx-post={useComponent(import.meta.url)}
-              class="flex flex-col gap-2 w-full"
+              class="flex flex-col gap-8 w-full sm:gap-2"
             >
               <input
                 name="name"

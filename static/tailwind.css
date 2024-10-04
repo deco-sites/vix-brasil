@@ -3993,6 +3993,16 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+
 .mb-\[26px\] {
   margin-bottom: 26px;
 }
@@ -4025,6 +4035,11 @@ details.collapse summary::-webkit-details-marker {
 
 .mr-5 {
   margin-right: 1.25rem;
+}
+
+
+.mr-auto {
+  margin-right: auto;
 }
 
 
@@ -4168,8 +4183,8 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
-.h-8 {
-  height: 2rem;
+.h-7 {
+  height: 1.75rem;
 }
 
 
@@ -5206,6 +5221,12 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.border-\[\#e8e8e8\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(232 232 232 / var(--tw-border-opacity));
+}
+
+
 .border-\[\#eee\] {
   --tw-border-opacity: 1;
   border-color: rgb(238 238 238 / var(--tw-border-opacity));
@@ -6026,6 +6047,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.tracking-\[1\.12px\] {
+  letter-spacing: 1.12px;
+}
+
+
 .tracking-normal {
   letter-spacing: 0em;
 }
@@ -6087,6 +6113,12 @@ details.collapse summary::-webkit-details-marker {
 .text-\[\#bea669\] {
   --tw-text-opacity: 1;
   color: rgb(190 166 105 / var(--tw-text-opacity));
+}
+
+
+.text-\[\#e8e8e8\] {
+  --tw-text-opacity: 1;
+  color: rgb(232 232 232 / var(--tw-text-opacity));
 }
 
 
@@ -6258,6 +6290,12 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+
 .invert {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -6323,6 +6361,11 @@ details.collapse summary::-webkit-details-marker {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+
+.duration-700 {
+  transition-duration: 700ms;
 }
 
 
@@ -6896,6 +6939,12 @@ details.collapse summary::-webkit-details-marker {
   padding: 0.75rem;
 }
 
+.after\:text-base::after {
+  content: var(--tw-content);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .after\:text-lg::after {
   content: var(--tw-content);
   font-size: 1.125rem;
@@ -6934,6 +6983,10 @@ details.collapse summary::-webkit-details-marker {
 
 .first\:pl-5:first-child {
   padding-left: 1.25rem;
+}
+
+.last\:border-none:last-child {
+  border-style: none;
 }
 
 .last\:pr-5:last-child {
@@ -7077,6 +7130,10 @@ details.collapse summary::-webkit-details-marker {
   opacity: 1;
 }
 
+.group\/footer-mobile[open] .group-open\/footer-mobile\:max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .group\/submenu-mobile[open] .group-open\/submenu-mobile\:rotate-\[-90deg\] {
   --tw-rotate: -90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -7098,6 +7155,11 @@ details.collapse summary::-webkit-details-marker {
 
 .group[open] .group-open\:font-semibold {
   font-weight: 600;
+}
+
+.group\/footer-mobile[open] .group-open\/footer-mobile\:after\:content-\[\'-\'\]::after {
+  --tw-content: '-';
+  content: var(--tw-content);
 }
 
 .group\/product-infos[open] .group-open\/product-infos\:after\:content-\[\'-\'\]::after {
@@ -7227,6 +7289,10 @@ details.collapse summary::-webkit-details-marker {
     margin-right: auto;
   }
 
+  .sm\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .sm\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -7274,6 +7340,10 @@ details.collapse summary::-webkit-details-marker {
 
   .sm\:max-w-96 {
     max-width: 24rem;
+  }
+
+  .sm\:max-w-\[350px\] {
+    max-width: 350px;
   }
 
   .sm\:max-w-\[440px\] {
@@ -7372,6 +7442,11 @@ details.collapse summary::-webkit-details-marker {
     overflow-y: auto;
   }
 
+  .sm\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
   .sm\:p-0 {
     padding: 0px;
   }
@@ -7384,6 +7459,11 @@ details.collapse summary::-webkit-details-marker {
   .sm\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .sm\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .sm\:py-5 {
@@ -7609,8 +7689,16 @@ details.collapse summary::-webkit-details-marker {
     margin-right: 3.5rem;
   }
 
+  .xl\:mr-5 {
+    margin-right: 1.25rem;
+  }
+
   .xl\:hidden {
     display: none;
+  }
+
+  .xl\:justify-between {
+    justify-content: space-between;
   }
 
   .xl\:px-14 {

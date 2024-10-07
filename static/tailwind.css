@@ -3952,14 +3952,31 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 
+.my-\[100px\] {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
 .-mt-12 {
   margin-top: -3rem;
+}
+
+
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 
@@ -4188,6 +4205,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.h-9 {
+  height: 2.25rem;
+}
+
+
 .h-\[10px\] {
   height: 10px;
 }
@@ -4381,6 +4403,11 @@ details.collapse summary::-webkit-details-marker {
 
 .w-8 {
   width: 2rem;
+}
+
+
+.w-9 {
+  width: 2.25rem;
 }
 
 
@@ -4731,6 +4758,11 @@ details.collapse summary::-webkit-details-marker {
 
 .cursor-crosshair {
   cursor: crosshair;
+}
+
+
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 
 
@@ -5782,6 +5814,12 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -6232,6 +6270,11 @@ details.collapse summary::-webkit-details-marker {
 
 .opacity-20 {
   opacity: 0.2;
+}
+
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 
@@ -7064,6 +7107,11 @@ details.collapse summary::-webkit-details-marker {
   color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
 }
 
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:opacity-80:hover {
   opacity: 0.8;
 }
@@ -7479,9 +7527,8 @@ details.collapse summary::-webkit-details-marker {
     padding-top: 2.5rem;
   }
 
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  .sm\:pt-5 {
+    padding-top: 1.25rem;
   }
 
   .sm\:text-\[20px\] {

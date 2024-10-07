@@ -12,7 +12,7 @@ import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ShareButton from "../shareButton/index.tsx";
 import ProductDescriptions from "./ProductDescriptions.tsx";
-// import { useScript } from "deco/hooks/useScript.ts";
+import KitLook from "../../islands/KitLook.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -82,9 +82,6 @@ function ProductInfo({ page }: Props) {
   const productTop = product.isAccessoryOrSparePartFor?.[0] ?? product;
   const productBottom = product.isAccessoryOrSparePartFor?.[1] ?? product;
 
-  // const Teste = (page: any) => {
-  //   console.log(page);
-  // };
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Product Name */}
@@ -110,54 +107,58 @@ function ProductInfo({ page }: Props) {
         </div>
       </div>
 
-      {/* Prices */}
-      <div class="flex gap-3 pt-1">
-        <p class="font-source-sans tracking-[0.07em] text-black leading-6 text-base font-semibold">
-          {listPrice !== price && (
-            <>
-              <span class="line-through text-xs text-gray-400 text-[#979797] font-normal">
-                {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>
-              <br />
-            </>
-          )}
-          {formatPrice(price, offers?.priceCurrency)}{" "}
-          <span class="text-xs text-gray-400 text-[#979797] font-normal ml-2">
-            {installments}
-          </span>
-        </p>
-      </div>
-
       {/* Sku Selector */}
       {hasValidVariants && isAccessoryOrSparePartFor
         ? (
-          <div className="mt-4 sm:mt-8">
-            <ProductSelector product={productTop} />
-            <ProductSelector product={productBottom} />
+          <div>
+            <KitLook
+              productIdTop={productTop.sku}
+              productIdBottom={productBottom.sku}
+            />
           </div>
         )
         : (
-          <div className="mt-4 sm:mt-8">
-            <ProductSelector product={product} />
-          </div>
-        )}
+          <>
+            {/* Prices */}
+            <div class="flex gap-3 pt-1">
+              <p class="font-source-sans tracking-[0.07em] text-black leading-6 text-base font-semibold">
+                {listPrice !== price && (
+                  <>
+                    <span class="line-through text-xs text-gray-400 text-[#979797] font-normal">
+                      {formatPrice(listPrice, offers?.priceCurrency)}
+                    </span>
+                    <br />
+                  </>
+                )}
+                {formatPrice(price, offers?.priceCurrency)}{" "}
+                <span class="text-xs text-gray-400 text-[#979797] font-normal ml-2">
+                  {installments}
+                </span>
+              </p>
+            </div>
 
-      {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartButton
-                item={item}
-                seller={seller}
-                product={product}
-                class="tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em] bg-black hover:bg-[#bea669] duration-200"
-                disabled={false}
-              />
-            </>
-          )
-          : <OutOfStock productID={productID} />}
-      </div>
+            <div className="mt-4 sm:mt-8">
+              <ProductSelector product={product} />
+            </div>
+
+            {/* Add to Cart and Favorites button */}
+            <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+              {availability === "https://schema.org/InStock"
+                ? (
+                  <>
+                    <AddToCartButton
+                      item={item}
+                      seller={seller}
+                      product={product}
+                      class="tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em] bg-black hover:bg-[#bea669] duration-200"
+                      disabled={false}
+                    />
+                  </>
+                )
+                : <OutOfStock productID={productID} />}
+            </div>
+          </>
+        )}
 
       {/* Shipping Simulation */}
       <div class="mt-8">
@@ -170,22 +171,10 @@ function ProductInfo({ page }: Props) {
       <ProductDescriptions info={description} title={"Descrição do produto"} />
 
       {/* Composição */}
-      <ProductDescriptions info={composition?.value} title={"Composição"} />
-
-      {
-        /* <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(Teste, productTop) }}
+      <ProductDescriptions
+        info={composition?.value}
+        title={"Composição"}
       />
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(Teste, productBottom) }}
-      />
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(Teste, product) }}
-      /> */
-      }
     </div>
   );
 }

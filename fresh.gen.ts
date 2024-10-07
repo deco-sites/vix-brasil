@@ -3,6 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $_app from "./routes/_app.tsx";
+import * as $KitLook from "./islands/KitLook.tsx";
 import * as $functions_headerFunctions from "./islands/functions/headerFunctions.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -11,6 +12,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
   },
   islands: {
+    "./islands/KitLook.tsx": $KitLook,
     "./islands/functions/headerFunctions.tsx": $functions_headerFunctions,
   },
   baseUrl: import.meta.url,

@@ -45,8 +45,9 @@ function AddKitToCart() {
     return (
       <p class="font-source-sans text-black text-sm tracking-[0.07em] text-center my-4">
         Selecionado:{" "}
-        <span class="font-semibold text-[#bea669]">{state.kitItems.length > 1 ? "2 produtos" : "1 produto"}</span>
-        {" "}
+        <span class="font-semibold text-[#bea669]">
+          {state.kitItems.length > 1 ? "2 produtos" : "1 produto"}
+        </span>{" "}
         <b class="font-semibold">
           {formatPrice(price_1 + price_2)}
         </b>

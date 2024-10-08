@@ -25,7 +25,7 @@ function NextButton(props: JSX.IntrinsicElements["button"]) {
   return (
     <button
       disabled
-      data-slide="next"
+      data-slide={`next--${props.id}`}
       aria-label="Next item"
       {...props}
     />
@@ -35,7 +35,7 @@ function PrevButton(props: JSX.IntrinsicElements["button"]) {
   return (
     <button
       disabled
-      data-slide="prev"
+      data-slide={`prev--${props.id}`}
       aria-label="Previous item"
       {...props}
     />
@@ -78,8 +78,12 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
     const root = document.getElementById(rootId);
     const slider = root?.querySelector<HTMLElement>("[data-slider]");
     const items = root?.querySelectorAll<HTMLElement>("[data-slider-item]");
-    const prev = root?.querySelector<HTMLElement>('[data-slide="prev"]');
-    const next = root?.querySelector<HTMLElement>('[data-slide="next"]');
+    const prev = root?.querySelector<HTMLElement>(
+      `[data-slide="prev--${rootId}"]`,
+    );
+    const next = root?.querySelector<HTMLElement>(
+      `[data-slide="next--${rootId}"]`,
+    );
     const dots = root?.querySelectorAll<HTMLElement>("[data-dot]");
     if (!root || !slider || !items || items.length === 0) {
       console.warn(

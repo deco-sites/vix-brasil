@@ -1,6 +1,6 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import ProductSlider from "../../components/product/ProductSlider.tsx";
+import ProductSlider from "../../components/product/shelf/ProductSlider.tsx";
 import Section, {
   Props as SectionHeaderProps,
 } from "../../components/ui/Section.tsx";

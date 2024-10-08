@@ -33,22 +33,26 @@ export default defineApp(async (_req, ctx) => {
           rel="stylesheet"
         />
 
-        {/* Slick */}
-        <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
-        {/* Zoom */}
+        {/* Slick CSS */}
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+        />
+
+        {/* Zoom CSS */}
         <link rel="stylesheet" type="text/css" href="css/jqzoom.css" />
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery.jqzoom-min.js"></script>
       </Head>
 
       {/* Rest of Preact tree */}
       <ctx.Component />
 
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(serviceWorkerScript) }}
-      />
+      {/* jQuery */}
       <script
         type="text/javascript"
         src="//code.jquery.com/jquery-1.11.0.min.js"
@@ -57,7 +61,21 @@ export default defineApp(async (_req, ctx) => {
         type="text/javascript"
         src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
       />
-      <script type="text/javascript" src="slick/slick.min.js" />
+
+      {/* Slick JS */}
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      />
+
+      {/* Zoom JS */}
+      <script type="text/javascript" src="js/jquery.jqzoom-min.js"></script>
+
+      {/* Service Worker */}
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(serviceWorkerScript) }}
+      />
     </>
   );
 });

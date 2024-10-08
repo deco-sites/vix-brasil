@@ -1,9 +1,9 @@
 import { Product } from "apps/commerce/types.ts";
-import { clx } from "../../sdk/clx.ts";
-import Icon from "../ui/Icon.tsx";
-import Slider from "../ui/Slider.tsx";
-import ProductCard from "./ProductCard.tsx";
-import { useId } from "../../sdk/useId.ts";
+import { clx } from "../../../sdk/clx.ts";
+import Icon from "../../ui/Icon.tsx";
+import Slider from "../../ui/Slider.tsx";
+import ProductCard from "../shelf/ProductCard.tsx";
+import { useId } from "../../../sdk/useId.ts";
 
 interface Props {
   products: Product[];
@@ -16,8 +16,8 @@ function ProductSlider({ products, itemListName }: Props) {
   return (
     <>
       <div
-        id={id}
-        class="grid grid-rows-1 max-w-[1300px] mx-auto"
+        id={`${id}--Shelf`}
+        class="grid grid-rows-1 max-w-[1500px] mx-auto relative"
         style={{
           gridTemplateColumns: "min-content 1fr min-content",
         }}
@@ -37,26 +37,34 @@ function ProductSlider({ products, itemListName }: Props) {
                   index={index}
                   product={product}
                   itemListName={itemListName}
-                  class="w-[287px] sm:w-[300px]"
+                  class="max-w-[300px] w-full"
                 />
               </Slider.Item>
             ))}
           </Slider>
         </div>
 
-        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 relative bottom-[15%]">
-          <Slider.PrevButton class="hidden sm:flex disabled:invisible btn btn-outline btn-sm btn-circle no-animation">
+        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-0 bottom-[60%]">
+          <Slider.PrevButton
+            class="hidden sm:flex disabled:invisible text-black"
+            disabled={false}
+            id={`image-shelf--${id}`}
+          >
             <Icon id="chevron-right" class="rotate-180" />
           </Slider.PrevButton>
         </div>
 
-        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 relative bottom-[15%]">
-          <Slider.NextButton class="hidden sm:flex disabled:invisible btn btn-outline btn-sm btn-circle no-animation">
+        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-0 bottom-[60%]">
+          <Slider.NextButton
+            class="hidden sm:flex disabled:invisible text-black"
+            disabled={false}
+            id={`image-shelf--${id}`}
+          >
             <Icon id="chevron-right" />
           </Slider.NextButton>
         </div>
       </div>
-      <Slider.JS rootId={id} />
+      <Slider.JS rootId={`${id}--Shelf`} infinite />
     </>
   );
 }

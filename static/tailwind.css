@@ -3718,8 +3718,8 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
-.bottom-\[15\%\] {
-  bottom: 15%;
+.bottom-\[60\%\] {
+  bottom: 60%;
 }
 
 
@@ -4306,6 +4306,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.max-h-\[453px\] {
+  max-height: 453px;
+}
+
+
 .max-h-\[55px\] {
   max-height: 55px;
 }
@@ -4361,6 +4366,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.min-h-\[453px\] {
+  min-height: 453px;
+}
+
+
 .min-h-\[660px\] {
   min-height: 660px;
 }
@@ -4413,11 +4423,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-\[10px\] {
   width: 10px;
-}
-
-
-.w-\[287px\] {
-  width: 287px;
 }
 
 
@@ -4575,6 +4580,11 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-\[139px\] {
   max-width: 139px;
+}
+
+
+.max-w-\[1500px\] {
+  max-width: 1500px;
 }
 
 
@@ -5375,21 +5385,9 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
-.bg-error {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-er,oklch(var(--er)/var(--tw-bg-opacity)));
-}
-
-
 .bg-neutral-content {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-nc,oklch(var(--nc)/var(--tw-bg-opacity)));
-}
-
-
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
 }
 
 
@@ -5407,11 +5405,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-
-.bg-opacity-15 {
-  --tw-bg-opacity: 0.15;
 }
 
 
@@ -7241,11 +7234,6 @@ details.collapse summary::-webkit-details-marker {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.group:hover .group-hover\:border-primary {
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
-}
-
 .group\/navleaf:hover .group-hover\/navleaf\:text-\[30px\] {
   font-size: 30px;
 }
@@ -7265,6 +7253,10 @@ details.collapse summary::-webkit-details-marker {
 }
 
 .group\/header:hover .group-hover\/header\:opacity-100 {
+  opacity: 1;
+}
+
+.group\/image-shelf:hover .group-hover\/image-shelf\:opacity-100 {
   opacity: 1;
 }
 
@@ -7372,10 +7364,6 @@ details.collapse summary::-webkit-details-marker {
 
   .sm\:w-1\/2 {
     width: 50%;
-  }
-
-  .sm\:w-\[300px\] {
-    width: 300px;
   }
 
   .sm\:w-\[522px\] {

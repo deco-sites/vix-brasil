@@ -1,6 +1,5 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import ProductSlider from "../../islands/ProductSlider.tsx";
 
 import Section, {
   Props as SectionHeaderProps,
@@ -8,6 +7,7 @@ import Section, {
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import { type LoadingFallbackProps } from "@deco/deco";
+import ProductSlider from "../../components/product/shelf/ProductSlider.tsx";
 /** @titleBy title */
 interface Tab {
   title: string;

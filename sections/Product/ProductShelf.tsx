@@ -6,7 +6,7 @@ import Section, {
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import { type LoadingFallbackProps } from "@deco/deco";
-import ProductSlider from "../../islands/ProductSlider.tsx";
+import ProductSlider from "../../components/product/shelf/ProductSlider.tsx";
 export interface Props extends SectionHeaderProps {
   products: Product[] | null;
 }

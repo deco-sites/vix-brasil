@@ -1,11 +1,10 @@
 import { useState } from "preact/hooks";
 import type { Product } from "apps/commerce/types.ts";
-import { removeAccents } from "../ProductCard.tsx";
 import { useOffer } from "../../../../sdk/useOffer.ts";
 import { formatPrice } from "../../../../sdk/format.ts";
-// import { useScript } from "deco/hooks/useScript.ts";
 import Icon from "../../../ui/Icon.tsx";
 import { useUI } from "../../../../sdk/useUI.ts";
+import { MINICART_DRAWER_ID } from "../../../../constants.ts";
 
 export interface AddToCartShelfProps {
   product: Product;
@@ -16,6 +15,10 @@ type ToCart = {
   seller: string;
   value: string;
   name: string;
+};
+
+export const removeAccents = (str: string) => {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
 export default function AddToCartShelf({ product }: AddToCartShelfProps) {
@@ -64,9 +67,6 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
     }
   };
 
-  // const Teste = (item) => {
-  //   console.log({ item });
-  // };
   return (
     <>
       <div class="relative">
@@ -137,21 +137,18 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
         </details>
       </div>
 
-      <div class="flex justify-center">
+      <label
+        class="flex justify-center"
+        for={MINICART_DRAWER_ID}
+        aria-label="open cart add product"
+      >
         <button
           onClick={() => handleAddToCart()}
           class={`tracking-[0.07em] font-source-sans uppercase text-[#fff] font-normal w-full max-w-[240px] mx-auto text-base cursor-pointer pt-[0.5em] pb-[0.64em]  duration-200 bg-[#cbb887] hover:opacity-80`}
         >
           {buttonTitle}
         </button>
-      </div>
-      {
-        /*
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(Teste, product) }}
-      /> */
-      }
+      </label>
     </>
   );
 }

@@ -12,7 +12,6 @@ import { useId } from "../../../sdk/useId.ts";
 import Icon from "../../ui/Icon.tsx";
 import Slider from "../../ui/Slider.tsx";
 import AddToCartShelf from "../../../islands/AddToCartShelf.tsx";
-import Teste from "../../../islands/Teste.tsx";
 
 interface Props {
   product: Product;
@@ -31,10 +30,6 @@ interface Props {
 const WIDTH = 300;
 const HEIGHT = 453;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
-
-export const removeAccents = (str: string) => {
-  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-};
 
 function ProductCard({
   product,
@@ -160,7 +155,6 @@ function ProductCard({
           </span>
         </a>
 
-        <Teste />
         <AddToCartShelf product={product} />
       </div>
 

@@ -4,7 +4,6 @@ import Icon from "../../ui/Icon.tsx";
 import Slider from "../../ui/Slider.tsx";
 import ProductCard from "../shelf/ProductCard.tsx";
 import { useId } from "../../../sdk/useId.ts";
-import Teste from "../../../islands/Teste.tsx";
 
 export interface ProductSliderProps {
   products: Product[];
@@ -23,7 +22,6 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
           gridTemplateColumns: "min-content 1fr min-content",
         }}
       >
-        <Teste />
 
         <div class="col-start-1 col-span-3 row-start-1 row-span-1">
           <Slider

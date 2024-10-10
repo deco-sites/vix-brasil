@@ -69,6 +69,7 @@ function Aside(
     titleClass: _titleClass = "",
     headerClass: _headerClass = "",
     icon = "close",
+    activeHeader = true,
   }: {
     title: string;
     drawer: string;
@@ -77,8 +78,12 @@ function Aside(
     titleClass?: string;
     headerClass?: string;
     icon?: AvailableIcons;
+    activeHeader?: boolean;
   },
 ) {
+  if (!activeHeader) {
+    return null;
+  }
   return (
     <div
       data-aside

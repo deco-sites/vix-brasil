@@ -3770,6 +3770,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.right-\[0px\] {
+  right: 0px;
+}
+
+
 .top-0 {
   top: 0px;
 }
@@ -3792,6 +3797,11 @@ details.collapse summary::-webkit-details-marker {
 
 .top-4 {
   top: 1rem;
+}
+
+
+.top-\[0px\] {
+  top: 0px;
 }
 
 
@@ -3832,6 +3842,11 @@ details.collapse summary::-webkit-details-marker {
 
 .z-\[1\] {
   z-index: 1;
+}
+
+
+.z-\[999\] {
+  z-index: 999;
 }
 
 
@@ -4202,6 +4217,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.h-4 {
+  height: 1rem;
+}
+
+
 .h-44 {
   height: 11rem;
 }
@@ -4420,6 +4440,11 @@ details.collapse summary::-webkit-details-marker {
 
 .w-3 {
   width: 0.75rem;
+}
+
+
+.w-4 {
+  width: 1rem;
 }
 
 
@@ -5276,6 +5301,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.border-none {
+  border-style: none;
+}
+
+
 .border-\[\#bea669\] {
   --tw-border-opacity: 1;
   border-color: rgb(190 166 105 / var(--tw-border-opacity));
@@ -5888,6 +5918,11 @@ details.collapse summary::-webkit-details-marker {
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+
+.text-\[0\.75rem\] {
+  font-size: 0.75rem;
 }
 
 

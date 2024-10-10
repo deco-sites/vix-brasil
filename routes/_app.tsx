@@ -44,9 +44,6 @@ export default defineApp(async (_req, ctx) => {
           type="text/css"
           href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
         />
-
-        {/* Zoom CSS */}
-        <link rel="stylesheet" type="text/css" href="css/jqzoom.css" />
       </Head>
 
       {/* Rest of Preact tree */}
@@ -67,9 +64,6 @@ export default defineApp(async (_req, ctx) => {
         type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
       />
-
-      {/* Zoom JS */}
-      <script type="text/javascript" src="js/jquery.jqzoom-min.js"></script>
 
       {/* Service Worker */}
       <script

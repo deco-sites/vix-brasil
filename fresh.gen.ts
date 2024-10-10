@@ -5,8 +5,6 @@
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartShelf from "./islands/AddToCartShelf.tsx";
 import * as $KitLook from "./islands/KitLook.tsx";
-import * as $ProductSlider from "./islands/ProductSlider.tsx";
-import * as $Teste from "./islands/Teste.tsx";
 import * as $functions_headerFunctions from "./islands/functions/headerFunctions.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -17,8 +15,6 @@ const manifest = {
   islands: {
     "./islands/AddToCartShelf.tsx": $AddToCartShelf,
     "./islands/KitLook.tsx": $KitLook,
-    "./islands/ProductSlider.tsx": $ProductSlider,
-    "./islands/Teste.tsx": $Teste,
     "./islands/functions/headerFunctions.tsx": $functions_headerFunctions,
   },
   baseUrl: import.meta.url,

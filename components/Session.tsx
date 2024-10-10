@@ -277,9 +277,13 @@ export default function Session(
       {/* Minicart Drawer */}
       <Drawer
         id={MINICART_DRAWER_ID}
-        class="drawer-end z-50"
+        class="drawer-end z-[999]"
         aside={
-          <Drawer.Aside title="My Bag" drawer={MINICART_DRAWER_ID}>
+          <Drawer.Aside
+            title="My Bag"
+            drawer={MINICART_DRAWER_ID}
+            class="h-full"
+          >
             <div
               class="h-full flex flex-col bg-base-100 items-center justify-center overflow-auto"
               style={{

@@ -1948,10 +1948,6 @@ input.tab:checked + .tab-content,
   .btn-neutral {
     --btn-color: var(--fallback-n);
   }
-
-  .btn-error {
-    --btn-color: var(--fallback-er);
-  }
 }
 @supports (color: color-mix(in oklab, black, black)) {
 
@@ -2017,10 +2013,6 @@ input.tab:checked + .tab-content,
   .btn-neutral {
     --btn-color: var(--n);
   }
-
-  .btn-error {
-    --btn-color: var(--er);
-  }
 }
 .btn-secondary {
   --tw-text-opacity: 1;
@@ -2036,11 +2028,6 @@ input.tab:checked + .tab-content,
   --tw-text-opacity: 1;
   color: var(--fallback-nc,oklch(var(--nc)/var(--tw-text-opacity)));
   outline-color: var(--fallback-n,oklch(var(--n)/1));
-}
-.btn-error {
-  --tw-text-opacity: 1;
-  color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
-  outline-color: var(--fallback-er,oklch(var(--er)/1));
 }
 .btn.glass {
   --tw-shadow: 0 0 #0000;
@@ -3738,6 +3725,16 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.left-\[-40px\] {
+  left: -40px;
+}
+
+
+.left-\[30\%\] {
+  left: 30%;
+}
+
+
 .left-\[50px\] {
   left: 50px;
 }
@@ -3753,6 +3750,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.right-3 {
+  right: 0.75rem;
+}
+
+
 .right-4 {
   right: 1rem;
 }
@@ -3760,6 +3762,11 @@ details.collapse summary::-webkit-details-marker {
 
 .right-6 {
   right: 1.5rem;
+}
+
+
+.right-\[-40px\] {
+  right: -40px;
 }
 
 
@@ -3775,6 +3782,11 @@ details.collapse summary::-webkit-details-marker {
 
 .top-1\/2 {
   top: 50%;
+}
+
+
+.top-3 {
+  top: 0.75rem;
 }
 
 
@@ -4020,6 +4032,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.mb-\[10px\] {
+  margin-bottom: 10px;
+}
+
+
 .mb-\[26px\] {
   margin-bottom: 26px;
 }
@@ -4225,6 +4242,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.h-\[30px\] {
+  height: 30px;
+}
+
+
 .h-\[34px\] {
   height: 34px;
 }
@@ -4426,8 +4448,18 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.w-\[150px\] {
+  width: 150px;
+}
+
+
 .w-\[300px\] {
   width: 300px;
+}
+
+
+.w-\[30px\] {
+  width: 30px;
 }
 
 
@@ -4590,6 +4622,11 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-\[230px\] {
   max-width: 230px;
+}
+
+
+.max-w-\[240px\] {
+  max-width: 240px;
 }
 
 
@@ -5078,6 +5115,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -5234,11 +5276,6 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
-.border-none {
-  border-style: none;
-}
-
-
 .border-\[\#bea669\] {
   --tw-border-opacity: 1;
   border-color: rgb(190 166 105 / var(--tw-border-opacity));
@@ -5325,6 +5362,12 @@ details.collapse summary::-webkit-details-marker {
 .bg-\[\#bea669\] {
   --tw-bg-opacity: 1;
   background-color: rgb(190 166 105 / var(--tw-bg-opacity));
+}
+
+
+.bg-\[\#cbb887\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 184 135 / var(--tw-bg-opacity));
 }
 
 
@@ -5569,6 +5612,12 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
@@ -5635,8 +5684,9 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
-.pb-1 {
-  padding-bottom: 0.25rem;
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -5715,6 +5765,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.pr-\[10px\] {
+  padding-right: 10px;
+}
+
+
 .pt-0 {
   padding-top: 0px;
 }
@@ -5765,6 +5820,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.pt-\[16px\] {
+  padding-top: 16px;
+}
+
+
 .text-left {
   text-align: left;
 }
@@ -5792,12 +5852,6 @@ details.collapse summary::-webkit-details-marker {
 
 .font-source-sans {
   font-family: 'Source Sans 3';
-}
-
-
-.\!text-sm {
-  font-size: 0.875rem !important;
-  line-height: 1.25rem !important;
 }
 
 
@@ -5925,11 +5979,6 @@ details.collapse summary::-webkit-details-marker {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-
-.\!font-medium {
-  font-weight: 500 !important;
 }
 
 
@@ -6159,6 +6208,12 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.text-\[\#fff\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+
 .text-accent {
   --tw-text-opacity: 1;
   color: var(--fallback-a,oklch(var(--a)/var(--tw-text-opacity)));
@@ -6222,6 +6277,11 @@ details.collapse summary::-webkit-details-marker {
 .text-success {
   --tw-text-opacity: 1;
   color: var(--fallback-su,oklch(var(--su)/var(--tw-text-opacity)));
+}
+
+
+.text-transparent {
+  color: transparent;
 }
 
 
@@ -7054,10 +7114,6 @@ details.collapse summary::-webkit-details-marker {
   border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
 }
 
-.hover\:\!bg-transparent:hover {
-  background-color: transparent !important;
-}
-
 .hover\:bg-\[\#bea669\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(190 166 105 / var(--tw-bg-opacity));
@@ -7078,16 +7134,6 @@ details.collapse summary::-webkit-details-marker {
 
 .hover\:font-normal:hover {
   font-weight: 400;
-}
-
-.hover\:\!text-error:hover {
-  --tw-text-opacity: 1 !important;
-  color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity))) !important;
-}
-
-.hover\:\!text-primary:hover {
-  --tw-text-opacity: 1 !important;
-  color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity))) !important;
 }
 
 .hover\:text-\[\#bea669\]:hover {
@@ -7140,31 +7186,9 @@ details.collapse summary::-webkit-details-marker {
   width: 2rem;
 }
 
-.disabled\:\!bg-transparent:disabled {
-  background-color: transparent !important;
-}
-
 .disabled\:bg-base-100:disabled {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
-}
-
-.disabled\:\!text-error:disabled {
-  --tw-text-opacity: 1 !important;
-  color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity))) !important;
-}
-
-.disabled\:\!text-primary:disabled {
-  --tw-text-opacity: 1 !important;
-  color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity))) !important;
-}
-
-.disabled\:\!opacity-50:disabled {
-  opacity: 0.5 !important;
-}
-
-.disabled\:\!opacity-75:disabled {
-  opacity: 0.75 !important;
 }
 
 .disabled\:opacity-100:disabled {

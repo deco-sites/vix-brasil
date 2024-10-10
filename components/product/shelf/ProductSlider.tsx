@@ -4,13 +4,14 @@ import Icon from "../../ui/Icon.tsx";
 import Slider from "../../ui/Slider.tsx";
 import ProductCard from "../shelf/ProductCard.tsx";
 import { useId } from "../../../sdk/useId.ts";
+import Teste from "../../../islands/Teste.tsx";
 
-interface Props {
+export interface ProductSliderProps {
   products: Product[];
   itemListName?: string;
 }
 
-function ProductSlider({ products, itemListName }: Props) {
+function ProductSlider({ products, itemListName }: ProductSliderProps) {
   const id = useId();
 
   return (
@@ -22,8 +23,13 @@ function ProductSlider({ products, itemListName }: Props) {
           gridTemplateColumns: "min-content 1fr min-content",
         }}
       >
+        <Teste />
+
         <div class="col-start-1 col-span-3 row-start-1 row-span-1">
-          <Slider class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full">
+          <Slider
+            class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full"
+            style={{ height: "calc(100% + 130px)" }}
+          >
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}
@@ -44,21 +50,21 @@ function ProductSlider({ products, itemListName }: Props) {
           </Slider>
         </div>
 
-        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-0 bottom-[60%]">
+        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-[-40px] bottom-[60%]">
           <Slider.PrevButton
             class="hidden sm:flex disabled:invisible text-black"
             disabled={false}
-            id={`image-shelf--${id}`}
+            id={`${id}--Shelf`}
           >
             <Icon id="chevron-right" class="rotate-180" />
           </Slider.PrevButton>
         </div>
 
-        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-0 bottom-[60%]">
+        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-[-40px] bottom-[60%]">
           <Slider.NextButton
             class="hidden sm:flex disabled:invisible text-black"
             disabled={false}
-            id={`image-shelf--${id}`}
+            id={`${id}--Shelf`}
           >
             <Icon id="chevron-right" />
           </Slider.NextButton>

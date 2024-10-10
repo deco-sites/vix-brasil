@@ -70,6 +70,7 @@ const Input = ({ item, dataDispatch, product }: InputProps) => {
 
 export default function KitItem({ productId, dataDispatch }: Props) {
   const [product, setProduct] = useState<KitProduct | null>();
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {

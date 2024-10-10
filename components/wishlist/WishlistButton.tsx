@@ -53,7 +53,7 @@ function WishlistButton({ item }: Props) {
       >
         <Icon
           id="favorite-button"
-          class="[.htmx-request_&]:hidden text-white group-hover/wishlist-button:text-[#bea669] duration-200"
+          class="[.htmx-request_&]:hidden text-transparent group-hover/wishlist-button:text-[#bea669] duration-200"
           fill="currentColor"
         />
         <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />

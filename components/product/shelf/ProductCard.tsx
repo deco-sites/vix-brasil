@@ -11,7 +11,7 @@ import WishlistButton from "../../wishlist/WishlistButton.tsx";
 import { useId } from "../../../sdk/useId.ts";
 import Icon from "../../ui/Icon.tsx";
 import Slider from "../../ui/Slider.tsx";
-import AddToCartShelf from "../../../islands/AddToCartShelf.tsx";
+import AddToCartShelf from "../../../islands/AddToCartShelf/index.tsx";
 
 interface Props {
   product: Product;

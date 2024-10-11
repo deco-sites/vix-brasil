@@ -22,7 +22,6 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
           gridTemplateColumns: "min-content 1fr min-content",
         }}
       >
-
         <div class="col-start-1 col-span-3 row-start-1 row-span-1">
           <Slider
             class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full"

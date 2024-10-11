@@ -170,15 +170,19 @@ export default function Cart(
             )
             : (
               <>
-              {/* Header Minicart */}
-              <div class="relative">
-        <h1 class="py-3 flex justify-center items-center font-semibold tracking-[0.07em] text-black mb-4 font-source-sans text-base">
-          <span >Minha Sacola</span>
-        </h1>
-        <label for={MINICART_DRAWER_ID} aria-label="X" class="absolute top-4 right-4">
-          <Icon id={"close"} />
-        </label>
-      </div>
+                {/* Header Minicart */}
+                <div class="relative">
+                  <h1 class="py-3 flex justify-center items-center font-semibold tracking-[0.07em] text-black mb-4 font-source-sans text-base">
+                    <span>Minha Sacola</span>
+                  </h1>
+                  <label
+                    for={MINICART_DRAWER_ID}
+                    aria-label="X"
+                    class="absolute top-4 right-4"
+                  >
+                    <Icon id={"close"} />
+                  </label>
+                </div>
                 {/* Free Shipping Bar */}
                 <div class="px-2 py-4 w-full">
                   <FreeShippingProgressBar

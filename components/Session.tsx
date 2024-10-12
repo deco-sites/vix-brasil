@@ -280,12 +280,13 @@ export default function Session(
         class="drawer-end z-[999]"
         aside={
           <Drawer.Aside
-            title="My Bag"
+            title="Minha Sacola"
             drawer={MINICART_DRAWER_ID}
-            class="h-full"
+            class="h-full bg-white"
+            titleClass="py-3 flex justify-center items-center font-semibold tracking-[0.07em] text-black font-source-sans text-base mx-0 my-0"
           >
             <div
-              class="h-full flex flex-col bg-base-100 items-center justify-center overflow-auto"
+              class="flex flex-col bg-base-100 items-center justify-center overflow-auto"
               style={{
                 minWidth: "calc(min(100vw, 425px))",
                 maxWidth: "425px",

@@ -5,6 +5,7 @@ import { useUI } from "../../../../sdk/useUI.ts";
 import { MINICART_DRAWER_ID } from "../../../../constants.ts";
 import { useShelfContext } from "../../../../islands/AddToCartShelf/context/index.tsx";
 import ShelfInfo from "./ShelfInfo.tsx";
+import KitShelfInfo from "./KitShelfInfo.tsx";
 
 export interface AddToCartShelfProps {
   product: Product;
@@ -54,19 +55,63 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
       }, 2000);
     }
   };
+  const handleKitAddToCart = () => {
+    if (state.kitItems.length > 0) {
+      state.kitItems.map((sku) => {
+        window.STOREFRONT.CART.addToCart({
+          image: sku.image,
+          item_brand: sku.brand,
+          item_group_id: sku.group_id,
+          item_id: sku.id,
+          item_name: sku.name ?? "",
+          item_url: sku.url,
+          item_variant: sku.variant,
+          listPrice: sku.listPrice,
+          price: sku?.price,
+          quantity: sku.quantity,
+        }, {
+          allowedOutdatedData: ["paymentData"],
+          orderItems: [{
+            id: sku.id,
+            seller: sku.seller || "",
+            quantity: 1,
+          }],
+        });
+      });
 
-  console.log({ product });
+      displayCart.value = true;
+    } else {
+      setButtonTitle("Selecione um tamanho!");
+      setTimeout(() => {
+        setButtonTitle("Adicionar à sacola");
+      }, 2000);
+    }
+  };
 
   return (
     <>
-      <ShelfInfo product={product} />
+      {(product?.isAccessoryOrSparePartFor?.length ?? 0) > 0
+        ? (
+          <KitShelfInfo
+            top={product?.isAccessoryOrSparePartFor?.[0].sku ?? ""}
+            bottom={product?.isAccessoryOrSparePartFor?.[1].sku ?? ""}
+          />
+        )
+        : <ShelfInfo product={product} />}
+
       <label
         class="flex justify-center"
         for={MINICART_DRAWER_ID}
         aria-label="open cart add product"
       >
         <button
-          onClick={() => handleAddToCart()}
+          onClick={() => {
+            if ((product?.isAccessoryOrSparePartFor?.length ?? 0) > 0) {
+              handleKitAddToCart();
+            } else {
+              handleAddToCart();
+            }
+          }}
           class={`tracking-[0.07em] font-source-sans uppercase text-[#fff] font-normal w-full max-w-[240px] mx-auto text-base cursor-pointer pt-[0.5em] pb-[0.64em]  duration-200 bg-[#cbb887] hover:opacity-80`}
         >
           {buttonTitle}

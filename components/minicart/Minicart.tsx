@@ -3,9 +3,7 @@ import { MINICART_DRAWER_ID, MINICART_FORM_ID } from "../../constants.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
-import Icon from "../ui/Icon.tsx";
 import Coupon from "./Coupon.tsx";
-import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
 import CartItem, { Item } from "./Item.tsx";
 import { useScript } from "@deco/deco/hooks";
 export interface Minicart {
@@ -105,7 +103,6 @@ export default function Cart(
         locale,
         currency,
         enableCoupon = true,
-        freeShippingTarget,
         checkoutHref,
       },
     },
@@ -170,29 +167,6 @@ export default function Cart(
             )
             : (
               <>
-                {/* Header Minicart */}
-                <div class="relative">
-                  <h1 class="py-3 flex justify-center items-center font-semibold tracking-[0.07em] text-black mb-4 font-source-sans text-base">
-                    <span>Minha Sacola</span>
-                  </h1>
-                  <label
-                    for={MINICART_DRAWER_ID}
-                    aria-label="X"
-                    class="absolute top-4 right-4"
-                  >
-                    <Icon id={"close"} />
-                  </label>
-                </div>
-                {/* Free Shipping Bar */}
-                <div class="px-2 py-4 w-full">
-                  <FreeShippingProgressBar
-                    total={total}
-                    locale={locale}
-                    currency={currency}
-                    target={freeShippingTarget}
-                  />
-                </div>
-
                 {/* Cart Items */}
                 <ul
                   role="list"
@@ -211,7 +185,7 @@ export default function Cart(
                 </ul>
 
                 {/* Cart Footer */}
-                <footer class="w-full">
+                <footer class="w-full mt-[70%]">
                   {/* Subtotal */}
                   <div class="border-t border-base-200 py-2 flex flex-col">
                     {discounts > 0 && (

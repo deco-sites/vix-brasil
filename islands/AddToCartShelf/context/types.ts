@@ -18,6 +18,7 @@ type AddKitShelfToCart = {
   seller: string;
   quantity: number;
   image: string;
+  value?: string;
   brand?: string;
   group_id?: string;
   name?: string;

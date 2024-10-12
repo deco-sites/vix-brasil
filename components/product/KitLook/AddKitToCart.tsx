@@ -10,7 +10,7 @@ function AddKitToCart() {
     event?.stopPropagation();
 
     if (state.kitItems) {
-      const orderItems = state.kitItems.map((sku) => {
+      state.kitItems.map((sku) => {
         window.STOREFRONT.CART.addToCart({
           image: sku.image,
           item_brand: sku.brand,
@@ -31,8 +31,6 @@ function AddKitToCart() {
           }],
         });
       });
-
-      console.log(orderItems);
 
       displayCart.value = true;
     }

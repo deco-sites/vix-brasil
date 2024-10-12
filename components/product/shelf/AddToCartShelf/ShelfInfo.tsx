@@ -50,7 +50,12 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
           </p>
         </div>
 
-        <div class="h-auto border border-[#e8e8e8] mx-auto cursor-pointer w-[120px] mb-[10px] absolute top-3 bg-white opacity-0 duration-200 group-hover/image-shelf:opacity-100">
+        <div
+          class="h-auto border border-[#e8e8e8] mx-auto cursor-pointer w-[120px] mb-[10px] absolute top-3 bg-white opacity-0 duration-200 group-hover/image-shelf:opacity-100"
+          onMouseLeave={() => {
+            setDropdown("h-[0px]");
+          }}
+        >
           <button
             class="flex w-full items-center justify-between pr-3 gap-1 list-none font-source-sans text-sm tracking-[0.07em] text-black list"
             onClick={() => {
@@ -67,13 +72,12 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
                 alt="Product category icon"
                 class="w-[30px] h-[30px]"
               />
-            )} {state.singleItem?.value} <Icon id="down-sm-arrow" size={12} />
+            )}
+            {state.singleItem?.value}
+            <Icon id="down-sm-arrow" size={12} class="min-w-3" />
           </button>
           <ul
             class={`${dropdown} overflow-hidden duration-200`}
-            onMouseLeave={() => {
-              setDropdown("h-[0px]");
-            }}
           >
             {isVariantOf?.hasVariant.map((item) => {
               const value = item?.additionalProperty?.find((i) =>

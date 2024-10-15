@@ -14,6 +14,7 @@ export interface KitType {
 
 type AddKitToCart = {
   id: string;
+  refId: string;
   seller: string;
   quantity: number;
   image: string;

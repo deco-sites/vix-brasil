@@ -15,6 +15,7 @@ export interface ShelfType {
 
 type AddKitShelfToCart = {
   id: string;
+  refId: string;
   seller: string;
   quantity: number;
   image: string;

@@ -161,6 +161,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                         type: "SET_KIT_1",
                         payload: {
                           id: item.itemId,
+                          refId: item.referenceId[0].Value,
                           seller: item.sellers[0].sellerId,
                           quantity: 1,
                           image: item.images[0].imageUrl,
@@ -219,6 +220,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                         type: "SET_KIT_2",
                         payload: {
                           id: item.itemId,
+                          refId: item.referenceId[0].Value,
                           seller: item.sellers[0].sellerId,
                           quantity: 1,
                           image: item.images[0].imageUrl,

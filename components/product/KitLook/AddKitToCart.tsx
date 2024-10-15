@@ -6,27 +6,33 @@ function AddKitToCart() {
 
   const handleAddToCart = () => {
     if (state.kitItems) {
-      state.kitItems.map((sku) => {
-        window.STOREFRONT.CART.addToCart({
-          image: sku.image,
-          item_brand: sku.brand,
-          item_group_id: sku.group_id,
-          item_id: sku.id,
-          item_name: sku.name ?? "",
-          item_url: sku.url,
-          item_variant: sku.variant,
-          listPrice: sku.listPrice,
-          price: sku?.price,
-          quantity: sku.quantity,
-        }, {
+      window.STOREFRONT.CART.addToCart(
+        state.kitItems.map((sku) => {
+          return {
+            image: sku.image,
+            item_brand: sku.brand,
+            item_group_id: sku.group_id,
+            item_id: sku.id,
+            refId: sku.refId,
+            item_name: sku.name ?? "",
+            item_url: sku.url,
+            item_variant: sku.variant,
+            listPrice: sku.listPrice,
+            price: sku?.price,
+            quantity: sku.quantity,
+          };
+        }),
+        {
           allowedOutdatedData: ["paymentData"],
-          orderItems: [{
-            id: sku.id,
-            seller: sku.seller || "",
-            quantity: 1,
-          }],
-        });
-      });
+          orderItems: state.kitItems.map((sku) => {
+            return {
+              id: sku.id,
+              seller: sku.seller || "",
+              quantity: 1,
+            };
+          }),
+        },
+      );
     }
   };
 

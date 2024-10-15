@@ -51,7 +51,7 @@ export const ImageZoom = (
           class={`imageZoom--image ${classes} object-cover cursor-crosshair`}
         />
 
-        <span class="absolute font-source-sans right-0 bottom-0 w-10 h-5 text-white pt-0.5 text-sm text-center bg-bronze-opacity xl:hidden">
+        <span class="absolute font-source-sans right-0 bottom-0 w-10 h-5 text-white pt-0.5 text-sm text-center bg-bronze-opacity lg:hidden">
           {num}/{qtt}
         </span>
       </div>

@@ -12,6 +12,7 @@ export interface Minicart {
   /** Cart from storefront. This can be changed at your will */
   storefront: {
     items: Item[];
+    refId?: string;
     total: number;
     subtotal: number;
     discounts: number;
@@ -171,7 +172,7 @@ export default function Cart(
                 {/* Cart Items */}
                 <ul
                   role="list"
-                  class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+                  class="px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
                 >
                   {items.map((item, index) => (
                     <li>
@@ -187,49 +188,66 @@ export default function Cart(
 
                 {/* Cart Footer */}
                 <footer class="w-full">
-                  {/* Subtotal */}
-                  <div class="border-t border-base-200 py-2 flex flex-col">
-                    {discounts > 0 && (
-                      <div class="flex justify-between items-center px-4">
-                        <span class="text-sm">Discounts</span>
-                        <span class="text-sm">
-                          {formatPrice(discounts, currency, locale)}
-                        </span>
-                      </div>
+                  <div class="border-t border-base-200 p-2 flex flex-col bg-white">
+                    {enableCoupon && (
+                      <Coupon
+                        coupon={coupon}
+                        discount={formatPrice(discounts, currency, locale) ??
+                          ""}
+                      />
                     )}
-                    <div class="w-full flex justify-between px-4 text-sm">
-                      <span>Subtotal</span>
-                      <output form={MINICART_FORM_ID}>
-                        {formatPrice(subtotal, currency, locale)}
-                      </output>
-                    </div>
-                    {enableCoupon && <Coupon coupon={coupon} />}
                   </div>
 
                   {/* Total */}
                   <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
-                    <div class="flex justify-between items-center w-full">
-                      <span>Total</span>
+                    <div class="w-full flex justify-between gap-2 border-b border-[#e0e0e0] font-source-sans">
+                      <span class="font-normal text-[#4d4d4d] text-xs tracking-[0.07em]">
+                        Subtotal
+                      </span>
                       <output
                         form={MINICART_FORM_ID}
-                        class="font-medium text-xl"
+                        class="font-normal text-[#4d4d4d] text-xs tracking-[0.07em]"
+                      >
+                        {formatPrice(subtotal, currency, locale)}
+                      </output>
+                    </div>
+                    {discounts > 0 && (
+                      <div class="w-full flex justify-between items-center gap-2 border-b border-[#e0e0e0] font-source-sans">
+                        <span class="font-normal text-[#4d4d4d] text-xs tracking-[0.07em]">
+                          Descontos
+                        </span>
+                        <span class="font-source-sansfont-normal text-[#4d4d4d] text-xs tracking-[0.07em]">
+                          - {formatPrice(discounts, currency, locale)}
+                        </span>
+                      </div>
+                    )}
+                    <div class="flex justify-between items-center w-full font-source-sans">
+                      <span class="font-semibold text-black text-sm tracking-[0.07em]">
+                        Total
+                      </span>
+                      <output
+                        form={MINICART_FORM_ID}
+                        class="font-semibold text-black text-sm tracking-[0.07em]"
                       >
                         {formatPrice(total, currency, locale)}
                       </output>
                     </div>
-                    <span class="text-sm text-base-300">
-                      Fees and shipping will be calculated at checkout
-                    </span>
                   </div>
 
-                  <div class="p-4">
+                  <div class="p-4 flex items-center justify-between gap-3">
+                    <label
+                      for={MINICART_DRAWER_ID}
+                      class="flex items-center justify-center w-full text-sm font-semibold font-source-sans text-black bg-transparent h-9 hover:bg-[#bea669] duration-200 border border-black hover:border-[#bea669] hover:text-white"
+                    >
+                      Continuar comprando
+                    </label>
                     <a
-                      class="btn btn-primary w-full no-animation"
+                      class="flex items-center justify-center w-full text-base font-semibold font-source-sans text-white bg-black h-9 uppercase hover:bg-[#bea669] duration-200 border border-black hover:border-[#bea669]"
                       href={checkoutHref}
                       hx-on:click={useScript(sendBeginCheckoutEvent)}
                     >
                       <span class="[.htmx-request_&]:hidden">
-                        Begin Checkout
+                        Finalizar Compra
                       </span>
                       <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
                     </a>

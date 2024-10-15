@@ -4637,6 +4637,11 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.\!max-w-\[550px\] {
+  max-width: 550px !important;
+}
+
+
 .max-w-0 {
   max-width: 0px;
 }
@@ -5357,6 +5362,18 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.border-\[\#e0e0e0\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(224 224 224 / var(--tw-border-opacity));
+}
+
+
+.border-\[\#e3e4e6\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(227 228 230 / var(--tw-border-opacity));
+}
+
+
 .border-\[\#e8e8e8\] {
   --tw-border-opacity: 1;
   border-color: rgb(232 232 232 / var(--tw-border-opacity));
@@ -5384,6 +5401,12 @@ details.collapse summary::-webkit-details-marker {
 .border-base-300 {
   --tw-border-opacity: 1;
   border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
+}
+
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 
@@ -6227,6 +6250,12 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.text-\[\#4d4d4d\] {
+  --tw-text-opacity: 1;
+  color: rgb(77 77 77 / var(--tw-text-opacity));
+}
+
+
 .text-\[\#667781\] {
   --tw-text-opacity: 1;
   color: rgb(102 119 129 / var(--tw-text-opacity));
@@ -6290,12 +6319,6 @@ details.collapse summary::-webkit-details-marker {
 .text-base-100 {
   --tw-text-opacity: 1;
   color: var(--fallback-b1,oklch(var(--b1)/var(--tw-text-opacity)));
-}
-
-
-.text-base-300 {
-  --tw-text-opacity: 1;
-  color: var(--fallback-b3,oklch(var(--b3)/var(--tw-text-opacity)));
 }
 
 
@@ -6393,6 +6416,16 @@ details.collapse summary::-webkit-details-marker {
 }
 
 
+.opacity-30 {
+  opacity: 0.3;
+}
+
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+
 .opacity-50 {
   opacity: 0.5;
 }
@@ -6400,6 +6433,11 @@ details.collapse summary::-webkit-details-marker {
 
 .opacity-70 {
   opacity: 0.7;
+}
+
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 
@@ -6965,6 +7003,14 @@ details.collapse summary::-webkit-details-marker {
   line-height: 1.25rem;
 }
 
+.placeholder\:tracking-\[0\.07em\]::-moz-placeholder {
+  letter-spacing: 0.07em;
+}
+
+.placeholder\:tracking-\[0\.07em\]::placeholder {
+  letter-spacing: 0.07em;
+}
+
 .placeholder\:text-\[\#c6c6c6\]::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(198 198 198 / var(--tw-text-opacity));
@@ -7194,6 +7240,11 @@ details.collapse summary::-webkit-details-marker {
 
 .hover\:rounded:hover {
   border-radius: 0.25rem;
+}
+
+.hover\:border-\[\#bea669\]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(190 166 105 / var(--tw-border-opacity));
 }
 
 .hover\:border-primary:hover {
@@ -7867,10 +7918,6 @@ details.collapse summary::-webkit-details-marker {
 
   .xl\:mr-5 {
     margin-right: 1.25rem;
-  }
-
-  .xl\:hidden {
-    display: none;
   }
 
   .xl\:justify-between {

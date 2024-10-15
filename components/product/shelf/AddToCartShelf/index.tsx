@@ -22,23 +22,26 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
   const { state } = useShelfContext();
   const [buttonTitle, setButtonTitle] = useState("Adicionar à sacola");
   const { displayCart } = useUI();
-  const { offers } = product;
+  const { offers, additionalProperty } = product;
   const { listPrice, price } = useOffer(offers);
+  const refId = additionalProperty?.find((item) => item.name === "RefId");
 
   const handleAddToCart = () => {
     if (state.singleItem?.id !== "") {
-      window.STOREFRONT.CART.addToCart({
+      window.STOREFRONT.CART.addToCart([{
         image: product?.image?.[0].url ?? "",
         item_brand: product?.brand?.name ?? "",
         item_group_id: product?.productID,
         item_id: state.singleItem?.id,
+        refId: refId?.value ?? "",
+
         item_name: product.alternateName ?? "",
         item_url: product?.url,
         item_variant: state.singleItem?.name,
         listPrice: listPrice ?? 0,
         price: price ?? 0,
         quantity: 1,
-      }, {
+      }], {
         allowedOutdatedData: ["paymentData"],
         orderItems: [{
           id: state.singleItem?.id,
@@ -57,28 +60,33 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
   };
   const handleKitAddToCart = () => {
     if (state.kitItems.length > 0) {
-      state.kitItems.map((sku) => {
-        window.STOREFRONT.CART.addToCart({
-          image: sku.image,
-          item_brand: sku.brand,
-          item_group_id: sku.group_id,
-          item_id: sku.id,
-          item_name: sku.name ?? "",
-          item_url: sku.url,
-          item_variant: sku.variant,
-          listPrice: sku.listPrice,
-          price: sku?.price,
-          quantity: sku.quantity,
-        }, {
+      window.STOREFRONT.CART.addToCart(
+        state.kitItems.map((sku) => {
+          return {
+            image: sku.image,
+            item_brand: sku.brand,
+            item_group_id: sku.group_id,
+            item_id: sku.id,
+            refId: sku.refId,
+            item_name: sku.name ?? "",
+            item_url: sku.url,
+            item_variant: sku.variant,
+            listPrice: sku.listPrice,
+            price: sku?.price,
+            quantity: sku.quantity,
+          };
+        }),
+        {
           allowedOutdatedData: ["paymentData"],
-          orderItems: [{
-            id: sku.id,
-            seller: sku.seller || "",
-            quantity: 1,
-          }],
-        });
-      });
-
+          orderItems: state.kitItems.map((sku) => {
+            return {
+              id: sku.id,
+              seller: sku.seller || "",
+              quantity: 1,
+            };
+          }),
+        },
+      );
       displayCart.value = true;
     } else {
       setButtonTitle("Selecione um tamanho!");

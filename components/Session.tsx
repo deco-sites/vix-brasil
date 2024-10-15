@@ -25,7 +25,7 @@ export interface SDK {
     getCart: () => Cart | null;
     getQuantity: (itemId: string) => number | undefined;
     setQuantity: (itemId: string, quantity: number) => boolean;
-    addToCart: (item: Item, platformProps: unknown) => boolean;
+    addToCart: (item: Item[], platformProps: unknown) => boolean;
     subscribe: (
       cb: (sdk: SDK["CART"]) => void,
       opts?: boolean | AddEventListenerOptions,
@@ -103,7 +103,7 @@ const sdk = () => {
         }
         window.DECO.events.dispatch({
           name: "add_to_cart",
-          params: { items: { item } },
+          params: { items: item },
         });
         input.value = encodeURIComponent(JSON.stringify(platformProps));
         button.click();
@@ -282,12 +282,12 @@ export default function Session(
           <Drawer.Aside
             title="Minha Sacola"
             drawer={MINICART_DRAWER_ID}
-            class="h-full bg-[#f7f4ed] "
+            class="h-full bg-[#f7f4ed] !max-w-[550px] w-full"
             headerClass="before:content-[''] before:block before:w-6 before:h-6"
             titleClass="py-3 flex justify-center items-center font-semibold text-black font-source-sans text-base mx-0 my-0"
           >
             <div
-              class="flex flex-col bg-[#f7f4ed] items-center justify-center overflow-auto "
+              class="flex flex-col bg-[#f7f4ed] items-center justify-center overflow-auto w-full"
               style={{
                 minWidth: "calc(min(100vw, 425px))",
                 maxWidth: "550px",

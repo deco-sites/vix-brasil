@@ -22,6 +22,7 @@ export const cartFrom = (form: Cart, url: string): Minicart => {
 
         return {
           ...itemToAnalyticsItem({ ...item, detailUrl, coupon }, index),
+          refId: item.refId,
           image: item.imageUrl,
           listPrice: item.listPrice / 100,
         };
@@ -35,6 +36,7 @@ export const cartFrom = (form: Cart, url: string): Minicart => {
       currency,
       freeShippingTarget: 1000,
       checkoutHref: "/checkout",
+      refId: "",
     },
   };
 };

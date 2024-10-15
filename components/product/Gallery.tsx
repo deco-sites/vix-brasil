@@ -122,10 +122,10 @@ export default function GallerySlider(props: Props) {
                       class="border-[2px] border-transparent"
                     >
                       <Image
-                        style={{ aspectRatio: "155 / 235" }}
+                        style={{ aspectRatio: "133 / 171" }}
                         class="object-cover w-full h-full"
-                        width={155}
-                        height={235}
+                        width={133}
+                        height={171}
                         src={img.url!}
                         alt={img.alternateName}
                       />

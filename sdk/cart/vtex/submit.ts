@@ -31,6 +31,15 @@ const actions: CartSubmitActions<AppContext> = {
 
     return cartFrom(response, req.url);
   },
+  removeCoupon: async ({ coupon }, req, ctx) => {
+    console.log("loader:", coupon);
+    const response = await ctx.invoke(
+      "vtex/actions/cart/updateCoupons.ts",
+      { text: "teste" },
+    );
+
+    return cartFrom(response, req.url);
+  },
 };
 
 export default actions;

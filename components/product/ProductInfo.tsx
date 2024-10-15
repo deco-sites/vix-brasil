@@ -13,6 +13,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 import ShareButton from "../shareButton/index.tsx";
 import ProductDescriptions from "./ProductDescriptions.tsx";
 import KitLook from "../../islands/KitLook.tsx";
+import ProductCompositionKit from "../../islands/ProductCompositionKit.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -81,7 +82,6 @@ function ProductInfo({ page }: Props) {
 
   const productTop = product.isAccessoryOrSparePartFor?.[0] ?? product;
   const productBottom = product.isAccessoryOrSparePartFor?.[1] ?? product;
-
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Product Name */}
@@ -171,10 +171,18 @@ function ProductInfo({ page }: Props) {
       <ProductDescriptions info={description} title={"Descrição do produto"} />
 
       {/* Composição */}
-      <ProductDescriptions
-        info={composition?.value}
-        title={"Composição"}
-      />
+      {hasValidVariants && isAccessoryOrSparePartFor
+        ? (
+          <ProductCompositionKit
+            productId={productTop.sku}
+          />
+        )
+        : (
+          <ProductDescriptions
+            info={composition?.value}
+            title={"Composição"}
+          />
+        )}
     </div>
   );
 }

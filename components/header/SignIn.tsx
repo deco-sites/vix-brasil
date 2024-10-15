@@ -5,9 +5,9 @@ import { useScript } from "@deco/deco/hooks";
 const onLoad = (containerID: string) => {
   window.STOREFRONT.USER.subscribe((sdk) => {
     const container = document.getElementById(containerID) as HTMLDivElement;
-    const nodes = container.querySelectorAll<HTMLAnchorElement>("a");
-    const login = nodes.item(0);
-    const account = nodes.item(1);
+    const nodes = container?.querySelectorAll<HTMLAnchorElement>("a");
+    const login = nodes?.item(0);
+    const account = nodes?.item(1);
     const user = sdk.getUser();
     if (user?.email) {
       login.classList.add("hidden");

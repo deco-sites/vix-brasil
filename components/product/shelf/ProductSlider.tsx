@@ -47,9 +47,9 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
           </Slider>
         </div>
 
-        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-[-40px] bottom-[60%]">
+        <div class="hidden sm:flex col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-[-40px] bottom-[60%]">
           <Slider.PrevButton
-            class="hidden sm:flex disabled:invisible text-black"
+            class="disabled:invisible text-black"
             disabled={false}
             id={`${id}--Shelf`}
           >
@@ -57,9 +57,9 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
           </Slider.PrevButton>
         </div>
 
-        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-[-40px] bottom-[60%]">
+        <div class="hidden sm:flex col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-[-40px] bottom-[60%]">
           <Slider.NextButton
-            class="hidden sm:flex disabled:invisible text-black"
+            class="disabled:invisible text-black"
             disabled={false}
             id={`${id}--Shelf`}
           >

@@ -40,7 +40,7 @@
           "__resolveType": "vtex/loaders/legacy/productList.ts",
           "props": {
             "sort": "OrderByPriceDESC",
-            "collection": "580",
+            "collection": "384",
             "count": 12,
             "similars": true
           }

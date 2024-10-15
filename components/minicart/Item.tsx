@@ -33,7 +33,7 @@ function CartItem({ item, index, locale, currency }: Props) {
     <fieldset
       // deno-lint-ignore no-explicit-any
       data-item-id={(item as any).item_id}
-      class="grid grid-rows-1 gap-2"
+      class="grid grid-rows-1 gap-2 pt-6 pb-8 bg-white"
       style={{ gridTemplateColumns: "auto 1fr" }}
     >
       <Image
@@ -49,7 +49,9 @@ function CartItem({ item, index, locale, currency }: Props) {
       <div class="flex flex-col gap-2">
         {/* Name and Remove button */}
         <div class="flex justify-between items-center">
-          <legend>{name}</legend>
+          <legend class="font-medium font-source-sans text-xs tracking-[0.07em] uppercase text-black">
+            {name}
+          </legend>
           <button
             class={clx(
               isGift && "hidden",
@@ -57,7 +59,7 @@ function CartItem({ item, index, locale, currency }: Props) {
             )}
             hx-on:click={useScript(removeItemHandler)}
           >
-            <Icon id="trash" size={24} />
+            <Icon id="trash" size={12} />
           </button>
         </div>
 

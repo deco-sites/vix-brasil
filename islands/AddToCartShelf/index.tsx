@@ -6,7 +6,7 @@ import { ShelfProvider } from "./context/index.tsx";
 function Island(props: AddToCartShelfProps) {
   return (
     <ShelfProvider>
-      <AddToCartShelf {...props} />;
+      <AddToCartShelf {...props} />
     </ShelfProvider>
   );
 }

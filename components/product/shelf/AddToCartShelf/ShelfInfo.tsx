@@ -26,7 +26,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
   return (
     <div class="flex items-center justify-center w-full">
       <div class="relative">
-        <div class="flex items-center justify-center gap-1 py-[10px] group-hover/image-shelf:opacity-0">
+        <div class="flex items-center justify-center gap-1 py-[10px] lg:group-hover/image-shelf:opacity-0">
           {icon && (
             <img
               src={`https://vixbrasil.vtexassets.com/arquivos/${
@@ -51,7 +51,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
         </div>
 
         <div
-          class="h-auto border border-[#e8e8e8] mx-auto cursor-pointer w-[120px] mb-[10px] absolute top-3 bg-white opacity-0 duration-200 group-hover/image-shelf:opacity-100"
+          class="hidden lg:block h-auto border border-[#e8e8e8] mx-auto cursor-pointer w-[120px] mb-[10px] absolute top-3 bg-white opacity-0 duration-200 group-hover/image-shelf:opacity-100"
           onMouseLeave={() => {
             setDropdown("h-[0px]");
           }}

@@ -146,7 +146,7 @@ const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
     />
 
     <div
-      class="grid place-items-center w-screen px-1 gap-4"
+      class="grid place-items-center w-screen pl-3 pr-4 gap-4"
       style={{
         height: NAVBAR_HEIGHT_MOBILE,
         gridTemplateColumns:

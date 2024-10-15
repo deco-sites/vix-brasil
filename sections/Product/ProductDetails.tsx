@@ -47,7 +47,7 @@ export default function ProductDetails({ page }: Props) {
           </div>
         </div>
       </div>
-      <div class="my-[100px]">
+      <div class="lg:my-[100px] my-[50px]">
         <hr class="w-full text-[#e8e8e8]" />
       </div>
     </div>

@@ -1,14 +1,10 @@
 import { useKitContext } from "./context/index.tsx";
-import { useUI } from "../../../sdk/useUI.ts";
 import { formatPrice } from "../../../sdk/format.ts";
 
 function AddKitToCart() {
   const { state } = useKitContext();
-  const { displayCart } = useUI();
 
   const handleAddToCart = () => {
-    event?.stopPropagation();
-
     if (state.kitItems) {
       state.kitItems.map((sku) => {
         window.STOREFRONT.CART.addToCart({
@@ -31,8 +27,6 @@ function AddKitToCart() {
           }],
         });
       });
-
-      displayCart.value = true;
     }
   };
 
@@ -63,6 +57,16 @@ function AddKitToCart() {
           </p>
         )}
 
+      <button
+        onClick={() => handleAddToCart()}
+        class={`lg:hidden block z-50 fixed bottom-0 left-0 tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em]  duration-200  ${
+          state.kitItems.length === 0
+            ? "bg-[#ccc] cursor-not-allowed"
+            : "bg-black hover:bg-[#bea669]"
+        }`}
+      >
+        Adicionar à sacola
+      </button>
       <button
         onClick={() => handleAddToCart()}
         class={`tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em]  duration-200 bg-black ${

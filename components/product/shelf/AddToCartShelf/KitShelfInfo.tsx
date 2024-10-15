@@ -74,7 +74,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
   return (
     <div class="flex items-center justify-center w-full">
       <div class="relative">
-        <div class="flex items-center justify-center gap-1 py-[10px] group-hover/image-shelf:opacity-0">
+        <div class="flex items-center justify-center gap-1 py-[10px] lg:group-hover/image-shelf:opacity-0">
           {topIcon && (
             <img
               src={`https://vixbrasil.vtexassets.com/arquivos/${
@@ -119,7 +119,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
           </p>
         </div>
 
-        <div class="flex items-start gap-4 absolute top-3 w-full">
+        <div class="hidden lg:flex items-start gap-4 absolute top-3 w-full">
           <div
             class=" h-auto border border-[#e8e8e8] mx-auto cursor-pointer w-[90px] mb-[10px] bg-white opacity-0 duration-200 group-hover/image-shelf:opacity-100"
             onMouseLeave={() => {

@@ -282,14 +282,15 @@ export default function Session(
           <Drawer.Aside
             title="Minha Sacola"
             drawer={MINICART_DRAWER_ID}
-            class="h-full bg-white"
-            titleClass="py-3 flex justify-center items-center font-semibold tracking-[0.07em] text-black font-source-sans text-base mx-0 my-0"
+            class="h-full bg-[#f7f4ed] "
+            headerClass="before:content-[''] before:block before:w-6 before:h-6"
+            titleClass="py-3 flex justify-center items-center font-semibold text-black font-source-sans text-base mx-0 my-0"
           >
             <div
-              class="flex flex-col bg-base-100 items-center justify-center overflow-auto"
+              class="flex flex-col bg-[#f7f4ed] items-center justify-center overflow-auto "
               style={{
                 minWidth: "calc(min(100vw, 425px))",
-                maxWidth: "425px",
+                maxWidth: "550px",
               }}
             >
               <CartProvider cart={minicart!} />

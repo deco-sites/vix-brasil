@@ -148,6 +148,7 @@ export default function Cart(
         />
 
         <div
+          style={{ height: "calc(100vh - 72px)" }}
           class={clx(
             "flex flex-col flex-grow justify-center items-center overflow-hidden w-full",
             "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300",
@@ -185,7 +186,7 @@ export default function Cart(
                 </ul>
 
                 {/* Cart Footer */}
-                <footer class="w-full mt-[70%]">
+                <footer class="w-full">
                   {/* Subtotal */}
                   <div class="border-t border-base-200 py-2 flex flex-col">
                     {discounts > 0 && (

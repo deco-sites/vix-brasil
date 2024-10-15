@@ -17,11 +17,11 @@ function Header({ title, cta }: Props) {
   return (
     <div
       class={clx(
-        "flex justify-center items-center gap-2 mb-10",
+        "flex justify-center items-center gap-2 lg:mb-10",
         "px-5 sm:px-0",
       )}
     >
-      <span class="font-source-sans text-4xl tracking-[0.07em] text-black text-center">
+      <span class="font-source-sans lg:text-4xl text-2xl tracking-[0.07em] text-black text-center">
         {title}
       </span>
       {cta && (

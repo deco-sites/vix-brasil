@@ -95,7 +95,7 @@ export default function KitItem({ productId, dataDispatch }: Props) {
   const price = availableProduct?.sellers[0].commertialOffer.Price;
 
   return (
-    <div class="flex items-start border-b border-[#bea669] pb-5 mb-5 w-full gap-3">
+    <div class="lg:flex items-start border-b border-[#bea669] pb-5 mb-5 w-full gap-3">
       <Image
         src={availableProduct?.images?.[0]?.imageUrl ?? ""}
         alt={product?.productName}

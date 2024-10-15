@@ -12,6 +12,7 @@ import { useId } from "../../../sdk/useId.ts";
 import Icon from "../../ui/Icon.tsx";
 import Slider from "../../ui/Slider.tsx";
 import AddToCartShelf from "../../../islands/AddToCartShelf/index.tsx";
+import { useDevice } from "@deco/deco/hooks";
 
 interface Props {
   product: Product;
@@ -38,9 +39,10 @@ function ProductCard({
   index,
   class: _class,
 }: Props) {
+  const device = useDevice();
   const id = useId();
-
-  const { url, image: images, offers, isVariantOf } = product;
+  const { url, image: images, offers, isVariantOf, additionalProperty } =
+    product;
   const title = isVariantOf?.name ?? product.name;
 
   const { listPrice, price, availability } = useOffer(offers);
@@ -48,6 +50,7 @@ function ProductCard({
   const relativeUrl = relative(url);
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
+  const flag = additionalProperty?.find((item) => item.propertyID === "384");
 
   {/* Add click event to dataLayer */}
   const event = useSendEvent({
@@ -125,9 +128,9 @@ function ProductCard({
             </Slider>
           </div>
 
-          <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-0 bottom-[60%] opacity-0 group-hover/image-shelf:opacity-100 duration-200">
+          <div class="hidden sm:flex col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-0 bottom-[60%] opacity-0 group-hover/image-shelf:opacity-100 duration-200">
             <Slider.PrevButton
-              class="hidden sm:flex disabled:invisible"
+              class="disabled:invisible"
               disabled={false}
               id={`image-shelf--${id}`}
             >
@@ -135,9 +138,9 @@ function ProductCard({
             </Slider.PrevButton>
           </div>
 
-          <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-0 bottom-[60%] opacity-0 group-hover/image-shelf:opacity-100 duration-200">
+          <div class="hidden sm:flex col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-0 bottom-[60%] opacity-0 group-hover/image-shelf:opacity-100 duration-200">
             <Slider.NextButton
-              class="hidden sm:flex disabled:invisible"
+              class="disabled:invisible"
               disabled={false}
               id={`image-shelf--${id}`}
             >
@@ -145,7 +148,13 @@ function ProductCard({
             </Slider.NextButton>
           </div>
         </div>
-
+        {flag && (
+          <div class="absolute top-3 left-3">
+            <p class="font-medium tracking-[0.07em] uppercase text-[#9a8445] font-source-sans text-lg">
+              NEW IN
+            </p>
+          </div>
+        )}
         <div class="absolute top-3 right-3">
           <WishlistButton item={item} variant="icon" />
         </div>
@@ -154,8 +163,13 @@ function ProductCard({
             {title}
           </span>
         </a>
-
-        <AddToCartShelf product={product} />
+        {device === "desktop"
+          ? <AddToCartShelf product={product} />
+          : (
+            <a href={product?.url}>
+              <AddToCartShelf product={product} />
+            </a>
+          )}
       </div>
 
       <Slider.JS rootId={`image-shelf--${id}`} infinite={true} />

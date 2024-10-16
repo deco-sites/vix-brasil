@@ -21,6 +21,7 @@ const actions: Record<string, CartSubmitActions> = {
 interface CartForm {
   items: number[];
   coupon: string | null;
+  vendor: string | null;
   action: string | null;
   platformCart: unknown;
   addToCart: unknown;
@@ -31,6 +32,7 @@ export interface CartSubmitActions<AC = unknown> {
   setQuantity?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
   setCoupon?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
   removeCoupon?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
+  setVendorCode?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
 }
 
 const safeParse = (payload: string | null) => {
@@ -46,6 +48,7 @@ const cartFrom = (form: FormData) => {
   const cart: CartForm = {
     items: [],
     coupon: null,
+    vendor: null,
     platformCart: null,
     action: null,
     addToCart: null,
@@ -57,7 +60,9 @@ const cartFrom = (form: FormData) => {
     } else if (name === "action") {
       cart.action = value.toString();
     } else if (name === "remove-coupon") {
-      cart.action = null;
+      cart.coupon = value.toString();
+    } else if (name === "set-vendor") {
+      cart.vendor = value.toString();
     } else if (name === "platform-cart") {
       cart.platformCart = safeParse(decodeURIComponent(value.toString()));
     } else if (name.startsWith("item::")) {
@@ -76,7 +81,7 @@ async function action(
   req: Request,
   ctx: AppContext,
 ): Promise<Minicart> {
-  const { setQuantity, setCoupon, addToCart, removeCoupon } =
+  const { setQuantity, setCoupon, addToCart, removeCoupon, setVendorCode } =
     actions[usePlatform()];
 
   const form = cartFrom(await req.formData());
@@ -85,6 +90,8 @@ async function action(
     ? setCoupon
     : form.action === "remove-coupon"
     ? removeCoupon
+    : form.action === "set-vendor"
+    ? setVendorCode
     : form.action === "add-to-cart"
     ? addToCart
     : setQuantity;

@@ -6,7 +6,6 @@ export interface Props {
 }
 
 function Coupon({ coupon, discount }: Props) {
-  console.log(coupon);
   if (coupon) {
     return (
       <div class="flex justify-between items-center px-4">
@@ -17,24 +16,25 @@ function Coupon({ coupon, discount }: Props) {
             Desconto de {discount}
           </p>
 
-          <input
+          <label
             form={MINICART_FORM_ID}
-            name="remove-coupon"
-            type="text"
-            class="hidden"
-          />
-
-          <button
-            form={MINICART_FORM_ID}
-            class="w-10 h-10 bg-[#bea669] flex justify-center items-center capitalize tracking-[0.07em] font-semibold text-sm text-white"
-            name="action"
-            value="remove-coupon"
+            for="remove-coupon-cart"
             hx-trigger="click"
             hx-swap="innerHTML"
             hx-target="this.parentElement"
+            class="w-10 h-10 bg-[#bea669] flex justify-center items-center capitalize tracking-[0.07em] font-semibold text-sm text-white cursor-pointer"
           >
             <Icon id="trash" size={20} />
-          </button>
+
+            <input
+              form={MINICART_FORM_ID}
+              name="action"
+              value="remove-coupon"
+              type="checkbox"
+              class="hidden"
+              id="remove-coupon-cart"
+            />
+          </label>
         </div>
       </div>
     );

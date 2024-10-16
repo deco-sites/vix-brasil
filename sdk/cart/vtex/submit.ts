@@ -32,12 +32,22 @@ const actions: CartSubmitActions<AppContext> = {
     return cartFrom(response, req.url);
   },
   removeCoupon: async ({ coupon }, req, ctx) => {
-    console.log("loader:", coupon);
+    console.log(coupon)
     const response = await ctx.invoke(
       "vtex/actions/cart/updateCoupons.ts",
-      { text: "teste" },
+      { text: undefined },
     );
 
+    return cartFrom(response, req.url);
+  },
+  setVendorCode: async ({ vendor }, req, ctx) => {
+    const response = await ctx.invoke(
+      "vtex/actions/cart/updateAttachment.ts",
+      {
+        attachment: "marketingData",
+        body: { utmiPart: vendor },
+      },
+    );
     return cartFrom(response, req.url);
   },
 };

@@ -4,6 +4,7 @@ import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
 import Coupon from "./Coupon.tsx";
+import VendorCode from "./VendorCode.tsx";
 import CartItem, { Item } from "./Item.tsx";
 import { useScript } from "@deco/deco/hooks";
 export interface Minicart {
@@ -17,6 +18,7 @@ export interface Minicart {
     subtotal: number;
     discounts: number;
     coupon?: string;
+    vendor?: string;
     locale: string;
     currency: string;
     enableCoupon?: boolean;
@@ -100,6 +102,7 @@ export default function Cart(
         total,
         subtotal,
         coupon,
+        vendor,
         discounts,
         locale,
         currency,
@@ -196,6 +199,10 @@ export default function Cart(
                           ""}
                       />
                     )}
+
+                    <VendorCode
+                      vendor={vendor}
+                    />
                   </div>
 
                   {/* Total */}

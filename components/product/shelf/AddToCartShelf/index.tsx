@@ -28,7 +28,7 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
 
   const handleAddToCart = () => {
     if (state.singleItem?.id !== "") {
-      window.STOREFRONT.CART.addToCart([{
+      globalThis.window.STOREFRONT.CART.addToCart([{
         image: product?.image?.[0].url ?? "",
         item_brand: product?.brand?.name ?? "",
         item_group_id: product?.productID,
@@ -60,7 +60,7 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
   };
   const handleKitAddToCart = () => {
     if (state.kitItems.length > 0) {
-      window.STOREFRONT.CART.addToCart(
+      globalThis.window.STOREFRONT.CART.addToCart(
         state.kitItems.map((sku) => {
           return {
             image: sku.image,
@@ -122,7 +122,7 @@ export default function AddToCartShelf({ product }: AddToCartShelfProps) {
           }}
           class={`tracking-[0.07em] font-source-sans uppercase text-[#fff] font-normal w-full max-w-[240px] mx-auto text-base cursor-pointer pt-[0.5em] pb-[0.64em]  duration-200 bg-[#cbb887] hover:opacity-80`}
         >
-          {window.innerWidth > 1024 ? buttonTitle : "Comprar"}
+          {globalThis.window.innerWidth > 1024 ? buttonTitle : "Comprar"}
         </button>
       </label>
     </>

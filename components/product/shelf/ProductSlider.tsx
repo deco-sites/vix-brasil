@@ -17,7 +17,7 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
     <>
       <div
         id={`${id}--Shelf`}
-        class="grid grid-rows-1 max-w-[1500px] mx-auto relative"
+        class="grid grid-rows-1 max-w-[90vw] xl mx-auto relative"
         style={{
           gridTemplateColumns: "min-content 1fr min-content",
         }}

@@ -59,6 +59,7 @@ export default function HeaderFunctions() {
   const showSearchBar = {
     init: function () {
       const searchBar = document.getElementById("vix-brasil__search-bar");
+      const searchBlur = document.getElementById("vix-brasil__search-blur");
       const closeSearchBar = document.getElementById(
         "vix-brasil__search-bar--open",
       );
@@ -69,9 +70,18 @@ export default function HeaderFunctions() {
       closeSearchBar?.addEventListener("click", () => {
         const isCollapsed = searchBar?.classList.contains("max-w-0");
 
-        searchBar?.classList.toggle("max-w-[230px]", isCollapsed);
+        if (window.innerWidth > 1024) {
+          searchBar?.classList.toggle("lg:max-w-[230px]", isCollapsed);
+        }
+        if (window.innerWidth < 1024) {
+          searchBar?.classList.toggle("pb-3", isCollapsed);
+          searchBar?.classList.toggle("px-5", isCollapsed);
+        }
         searchBar?.classList.toggle("visible", isCollapsed);
         searchBar?.classList.toggle("opacity-100", isCollapsed);
+
+        searchBlur?.classList.toggle("block", isCollapsed);
+        searchBlur?.classList.toggle("hidden", !isCollapsed);
 
         searchBar?.classList.toggle("hidden", !isCollapsed);
         searchBar?.classList.toggle("max-w-0", !isCollapsed);

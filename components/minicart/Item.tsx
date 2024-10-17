@@ -73,7 +73,7 @@ function CartItem({ item, index, locale, currency }: Props) {
         </div>
 
         {/* Price Block */}
-        <div class="flex items-center gap-2 justify-between">
+        <div class="flex lg:items-center gap-2 justify-between lg:flex-row flex-col lg:max-w-[100%] max-w-[120px]">
           <p class="font-semibold font-source-sans text-sm text-black tracking-[0.07em]">
             {listPrice !== price && (
               <span class="line-through text-xs text-[#727273] font-normal font-source-sans tracking-normal">

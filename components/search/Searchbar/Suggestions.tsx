@@ -57,7 +57,7 @@ function Suggestions(
           >
             Sugestões
           </span>
-          <ul class="flex flex-col gap-6">
+          <ul class="flex flex-col gap-6 lg:overflow-y-auto overflow-y-scroll lg:max-h-[none] max-h-20">
             {searches.map(({ term }) => (
               <li>
                 {/* TODO @gimenes: use name and action from searchbar form */}

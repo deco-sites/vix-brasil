@@ -1,5 +1,6 @@
 import { MINICART_FORM_ID } from "../../constants.ts";
 import Icon from "../ui/Icon.tsx";
+
 export interface Props {
   coupon?: string;
   discount?: string;
@@ -8,7 +9,7 @@ export interface Props {
 function Coupon({ coupon, discount }: Props) {
   if (coupon) {
     return (
-      <div class="flex justify-between items-center px-4">
+      <div class="flex justify-between items-center">
         <span class="font-semibold text-xs tracking-[0.07em]">Cupom</span>
 
         <div class="flex items-center w-full max-w-[300px]">
@@ -23,6 +24,7 @@ function Coupon({ coupon, discount }: Props) {
             hx-swap="innerHTML"
             hx-target="this.parentElement"
             class="w-10 h-10 bg-[#bea669] flex justify-center items-center capitalize tracking-[0.07em] font-semibold text-sm text-white cursor-pointer"
+            hx-on="click: document.cookie = 'couponCode=' + null + ';path=/;'"
           >
             <Icon id="trash" size={20} />
 
@@ -40,7 +42,7 @@ function Coupon({ coupon, discount }: Props) {
     );
   }
   return (
-    <div class="flex justify-between items-center px-4">
+    <div class="flex justify-between items-center">
       <span class="font-semibold text-xs tracking-[0.07em]">Cupom</span>
 
       <div id="coupon-input" class="flex items-center w-full max-w-[300px]">
@@ -62,6 +64,7 @@ function Coupon({ coupon, discount }: Props) {
           hx-trigger="click"
           hx-swap="innerHTML"
           hx-target="#coupon-input"
+          hx-on="click: document.cookie = 'couponCode=' + this.previousElementSibling.value + ';path=/;'"
         >
           Ok
         </button>

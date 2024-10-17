@@ -38,10 +38,20 @@ async function handleVendor() {
     });
 }
 
+function handleName() {
+  setTimeout(() => {
+    const nameContainer = document.getElementById("vendor-name");
+
+    nameContainer
+      ? nameContainer.innerText = localStorage.getItem("vendorName") ?? ""
+      : null;
+  }, 500);
+}
+
 function VendorCode({ vendor }: Props) {
   if (vendor) {
     return (
-      <div class="flex justify-between items-center px-4">
+      <div class="flex justify-between items-center">
         <span class="font-semibold text-xs tracking-[0.07em]">
           Código do Vendedor
         </span>
@@ -63,6 +73,7 @@ function VendorCode({ vendor }: Props) {
             hx-swap="innerHTML"
             hx-target="this.parentElement"
             class="w-10 h-10 bg-[#bea669] flex justify-center items-center capitalize tracking-[0.07em] font-semibold text-sm text-white cursor-pointer"
+            hx-on:click={useScript(handleVendor)}
           >
             <Icon id="trash" size={20} />
 
@@ -76,11 +87,18 @@ function VendorCode({ vendor }: Props) {
             />
           </label>
         </div>
+
+        <script
+          type="module"
+          dangerouslySetInnerHTML={{
+            __html: useScript(handleName),
+          }}
+        />
       </div>
     );
   }
   return (
-    <div class="flex justify-between items-center px-4">
+    <div class="flex justify-between items-center">
       <span class="font-semibold text-xs tracking-[0.07em]">
         Código do Vendedor
       </span>

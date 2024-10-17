@@ -101,26 +101,6 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => (
 const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
   <>
     <Drawer
-      id={SEARCHBAR_DRAWER_ID}
-      aside={
-        <Drawer.Aside
-          class="bg-white"
-          title="Search"
-          drawer={SEARCHBAR_DRAWER_ID}
-        >
-          <div class="w-screen overflow-y-auto">
-            {loading === "lazy"
-              ? (
-                <div class="h-full w-full flex items-center justify-center">
-                  <span class="loading loading-spinner" />
-                </div>
-              )
-              : <Searchbar {...searchbar} />}
-          </div>
-        </Drawer.Aside>
-      }
-    />
-    <Drawer
       id={SIDEMENU_DRAWER_ID}
       aside={
         <Drawer.Aside
@@ -164,7 +144,29 @@ const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
         for={SEARCHBAR_DRAWER_ID}
         aria-label="search icon button"
       >
-        <Icon id="search" size={18} />
+        <input
+          type="checkbox"
+          id={SEARCHBAR_DRAWER_ID}
+          class="peer hidden"
+        />
+        <span
+          id="vix-brasil__search-bar--open"
+          class="peer-checked:hidden block"
+        >
+          <Icon
+            id="search"
+            size={18}
+          />
+        </span>
+        <span
+          id="vix-brasil__search-bar--close"
+          class="peer-checked:block hidden"
+        >
+          <Icon
+            id="close"
+            size={18}
+          />
+        </span>
       </label>
 
       {logo && (
@@ -186,6 +188,15 @@ const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
       <SignIn variant="mobile" />
 
       <Bag />
+    </div>
+    <div class="w-screen overflow-y-auto">
+      {loading === "lazy"
+        ? (
+          <div class="h-full w-full flex items-center justify-center">
+            <span class="loading loading-spinner" />
+          </div>
+        )
+        : <Searchbar {...searchbar} />}
     </div>
   </>
 );

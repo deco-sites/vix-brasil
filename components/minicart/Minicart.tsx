@@ -3,6 +3,8 @@ import { MINICART_DRAWER_ID, MINICART_FORM_ID } from "../../constants.ts";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
+import Icon from "../ui/Icon.tsx";
+
 import Coupon from "./Coupon.tsx";
 import VendorCode from "./VendorCode.tsx";
 import CartItem, { Item } from "./Item.tsx";
@@ -175,7 +177,7 @@ export default function Cart(
                 {/* Cart Items */}
                 <ul
                   role="list"
-                  class="px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+                  class="footer-items px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
                 >
                   {items.map((item, index) => (
                     <li>
@@ -190,20 +192,36 @@ export default function Cart(
                 </ul>
 
                 {/* Cart Footer */}
-                <footer class="w-full">
-                  <div class="border-t border-base-200 p-2 flex flex-col bg-white">
-                    {enableCoupon && (
-                      <Coupon
-                        coupon={coupon}
-                        discount={formatPrice(discounts, currency, locale) ??
-                          ""}
+                <footer class="w-full shadow-[0px_-10px_20px_0px_#00000024]">
+                  <details class="collapse group/footer-minicart border-t border-base-200 p-2 flex flex-col bg-white pt-0 rounded-none">
+                    <summary class="collapse-title p-0 !flex justify-center botder-t-[2px] border-[#f7f4ed] h-10 min-h-5">
+                      <Icon
+                        id="footer-minicart-open"
+                        width={48}
+                        height={20}
+                        class="group-open/footer-minicart:hidden block"
                       />
-                    )}
+                      <Icon
+                        id="footer-minicart-close"
+                        width={48}
+                        height={20}
+                        class="group-open/footer-minicart:block hidden"
+                      />
+                    </summary>
+                    <div class="collapse-content w-full flex flex-col gap-4 p-0 px-2">
+                      {enableCoupon && (
+                        <Coupon
+                          coupon={coupon}
+                          discount={formatPrice(discounts, currency, locale) ??
+                            ""}
+                        />
+                      )}
 
-                    <VendorCode
-                      vendor={vendor}
-                    />
-                  </div>
+                      <VendorCode
+                        vendor={vendor}
+                      />
+                    </div>
+                  </details>
 
                   {/* Total */}
                   <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
@@ -241,7 +259,7 @@ export default function Cart(
                     </div>
                   </div>
 
-                  <div class="p-4 flex items-center justify-between gap-3">
+                  <div class="p-4 flex items-center justify-between lg:gap-3 gap-1.5 lg:flex-row flex-col-reverse ">
                     <label
                       for={MINICART_DRAWER_ID}
                       class="flex items-center justify-center w-full text-sm font-semibold font-source-sans text-black bg-transparent h-9 hover:bg-[#bea669] duration-200 border border-black hover:border-[#bea669] hover:text-white"

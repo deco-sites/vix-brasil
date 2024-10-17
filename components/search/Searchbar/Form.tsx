@@ -66,14 +66,14 @@ export default function Searchbar(
   return (
     <div
       id={"vix-brasil__search-bar"}
-      class="w-full overflow-hidden max-w-0 grid gap-0 duration-200 relative left-[50px]"
+      class="w-full overflow-hidden max-w-0 grid gap-0 duration-200 relative lg:left-[50px] left-0 "
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join">
         <label
           id="vix-brasil__search-bar--close"
           type="button"
-          class="bg-transparent border-0 cursor-pointer flex items-center px-3"
+          class="bg-transparent border-0 cursor-pointer items-center px-3 lg:flex hidden"
           for={SEARCHBAR_POPUP_ID}
           aria-label="Toggle searchbar"
         >
@@ -83,7 +83,7 @@ export default function Searchbar(
           id="vix-brasil__search-bar--input"
           autoFocus
           tabIndex={0}
-          class="focus-visible:outline-none bg-transparent border-b border-white duration-200 h-10 pr-4 font-source-sans text-base text-white placeholder:font-source-sans placeholder:text-white placeholder:text-sm group-hover/header:border-black group-hover/header:text-black group-hover/header:placeholder:text-black"
+          class="focus-visible:outline-none bg-transparent border-b border-white duration-200 h-10 pr-4 font-source-sans text-base text-white placeholder:font-source-sans placeholder:text-white placeholder:text-sm group-hover/header:border-black group-hover/header:text-black group-hover/header:placeholder:text-black w-full "
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -106,6 +106,10 @@ export default function Searchbar(
           <Icon id="search" class="inline [.htmx-request_&]:hidden" size={18} />
         </button>
       </form>
+      <div
+        id="vix-brasil__search-blur"
+        class="hidden w-full bg-black opacity-50 fixed left-0 top-[100%] h-dvh"
+      />
 
       {/* Suggestions slot */}
       <div id={slot} />

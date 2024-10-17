@@ -120,6 +120,25 @@
   margin-bottom: 26px;
 }
 
+.footer-items::selection {
+  background: #bea669;
+  color: #fff;
+}
+
+.footer-items::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.footer-items::-webkit-scrollbar-thumb {
+  background-color: #bea669;
+}
+
+.footer-items::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+
 #imageZoom--image {
   width: 508px;
   height: 768px;

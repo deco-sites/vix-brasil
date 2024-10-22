@@ -89,40 +89,33 @@
         "__resolveType": "site/sections/Shelfs/ShopNowShelf.tsx",
         "items": [
           {
-            "target": "_self",
-            "link": "/",
             "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/f3987782-6f6e-455b-bcc5-f615518d46c4___554f898c3d640aeb61fbc802473f0d76.png",
-            "alt": "Endlesss Summer"
+            "alt": "Endlesss Summer",
+            "products": ["10907", "10915"]
           },
           {
-            "target": "_self",
             "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/b87e7dc2-77af-4d08-89cf-25ee87da0b1b___6b6fe10f5b364532a5366040f8ba4d56.png",
-            "link": "/",
-            "alt": "Shop Now 1"
+            "products": ["10907", "10915"]
           },
           {
-            "target": "_blank",
-            "link": "/",
             "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/b004524e-180d-4581-b2d9-f19a0a165188___2a49f65306fe5af320b046b31d91f958.png",
-            "alt": "Shop Now 2"
+            "alt": "Shop Now 2",
+            "products": ["10907", "10915"]
           },
           {
-            "target": "_blank",
-            "link": "/",
             "alt": "Shop Now 3",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/4eec953b-b5d6-4762-9b14-cb93d8bbfddf___5af4fcf9d0ca7725116d3295482f3368.png"
+            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/4eec953b-b5d6-4762-9b14-cb93d8bbfddf___5af4fcf9d0ca7725116d3295482f3368.png",
+            "products": ["10907", "10915"]
           },
           {
-            "target": "_blank",
-            "link": "/",
             "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/ebe636e3-981d-4888-9175-a120e9f45676___c044d28351179d36fbdd109c21a91192.png",
-            "alt": "Shop Now 4"
+            "alt": "Shop Now 4",
+            "products": ["10907", "10915"]
           },
           {
-            "target": "_blank",
             "alt": "Shop Now 5",
-            "link": "/",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/69068f9f-1cd7-4e45-8888-d25b607f15fb___382cfc24234a9174efcd8ea1e870ff5e.png"
+            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/69068f9f-1cd7-4e45-8888-d25b607f15fb___382cfc24234a9174efcd8ea1e870ff5e.png",
+            "products": ["10907", "10915"]
           }
         ]
       }

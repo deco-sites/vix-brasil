@@ -66,7 +66,7 @@ export default function Searchbar(
   return (
     <div
       id={"vix-brasil__search-bar"}
-      class="w-full overflow-hidden max-w-0 grid gap-0 duration-200 relative lg:left-[50px] left-0 "
+      class="w-full overflow-hidden max-w-0 grid gap-0 duration-200 relative lg:left-[50px] left-0 hidden"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join">

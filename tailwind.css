@@ -137,6 +137,14 @@
   width: 5px;
 }
 
+@media all and (max-width: 1024px) {
+  .banner-video__slider--arrow--prev {
+    left:20px; 
+  }
+  .banner-video__slider--arrow--next {
+    right:20px; 
+  }
+}
 
 
 #imageZoom--image {

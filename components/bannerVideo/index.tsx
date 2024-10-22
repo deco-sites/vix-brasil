@@ -24,6 +24,7 @@ export default function BannerVideoComponent(
                 alt={item.alt}
                 url={item.url}
                 target={item.target}
+                classes="lg:h-full h-[148.5vw] min-w-[195px] lg:min-w-0"
               />
             );
           }
@@ -35,6 +36,7 @@ export default function BannerVideoComponent(
               alt={item.alt}
               url={item.url}
               target={item.target}
+              // classes="lg:w-full !w-[300%] translate-x-[-33%] lg:translate-x-0"
             />
           );
         })}

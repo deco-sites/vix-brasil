@@ -9,8 +9,8 @@ export interface ShopNowShelfProps {
 
 export const ShopNowShelfComponent = ({ items }: ShopNowShelfProps) => {
   return (
-    <div class="px-28">
-      <div class="shop-now-shelf__slider">
+    <div class="lg:px-28 px-[15px]">
+      <div class="shop-now-shelf__slider w-full">
         {items.map((item) => {
           return (
             <div>

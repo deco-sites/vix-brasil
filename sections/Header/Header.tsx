@@ -126,6 +126,7 @@ const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
     />
 
     <div
+      id="vix-brasil__header-icons"
       class="grid place-items-center w-screen pl-3 pr-4 gap-4"
       style={{
         height: NAVBAR_HEIGHT_MOBILE,
@@ -171,10 +172,11 @@ const Mobile = ({ logo, searchbar, mobileItems, loading }: Props) => (
 
       {logo && (
         <a
+          id="vix-brasil-logo"
           href="/"
           class="flex-grow inline-flex items-center justify-center"
           style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
-          aria-label="Store logo"
+          aria-label="logo"
         >
           <Image
             src={logo.src}

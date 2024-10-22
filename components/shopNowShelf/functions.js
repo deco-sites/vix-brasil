@@ -40,6 +40,36 @@ export const ShopNowShelfFunctions = () => {
           dotsClass: 'slick-dots shop-now-shelf__dots',
           prevArrow: prev,
           nextArrow: next,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                autoplay: false,
+                arrows: true,
+                dots: true,
+                dotsClass: 'slick-dots shop-now-shelf__dots',
+                prevArrow: prev,
+                nextArrow: next,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                autoplay: false,
+                arrows: true,
+                dots: true,
+                dotsClass: 'slick-dots shop-now-shelf__dots',
+                prevArrow: prev,
+                nextArrow: next,
+              },
+            },
+          ],
         })
       })
     },
@@ -47,3 +77,4 @@ export const ShopNowShelfFunctions = () => {
 
   slickBanner.init()
 }
+

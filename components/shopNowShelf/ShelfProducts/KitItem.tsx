@@ -57,7 +57,7 @@ const Input = ({ item, dataDispatch, product }: InputProps) => {
       />
       <label
         for={item.itemId}
-        class={`w-9 h-9 flex items-center justify-center rounded-full border border-[#bea669] font-source-sans text-sm font-semibold cursor-pointer hover:opacity-80 hover:bg-[#bea669] hover:text-white ${styles} duration-300 ${
+        class={`lg:w-9 lg:h-9 min-w-7 h-7 flex items-center justify-center rounded-full border border-[#bea669] font-source-sans text-sm font-semibold cursor-pointer hover:opacity-80 hover:bg-[#bea669] hover:text-white ${styles} duration-300 ${
           item.sellers[0].commertialOffer.AvailableQuantity === 0
             ? "opacity-50 cursor-not-allowed"
             : ""
@@ -112,7 +112,7 @@ export default function KitItem({ productId, dataDispatch }: Props) {
 
   return (
     <div
-      class="lg:flex items-start border-b border-[#bea669] pb-5 mb-5 w-full gap-3"
+      class="lg:flex items-start border-b border-[#bea669] pb-5 mb-5 w-full gap-3 h-[470px]"
       data-kit-composition={`${product?.Composição}`}
     >
       <Image
@@ -145,7 +145,7 @@ export default function KitItem({ productId, dataDispatch }: Props) {
           <p class="mb-1 text-black text-xs font-semibold tracking-[0.07em]">
             Tamanho:
           </p>
-          <ul class="flex gap-2 items-center justify-start">
+          <ul class="flex lg:gap-2 gap-1 items-center justify-start">
             {product?.items.map((item) => {
               if (item.name === "KIT") {
                 return null;

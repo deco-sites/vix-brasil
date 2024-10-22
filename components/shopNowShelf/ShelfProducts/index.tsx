@@ -5,7 +5,7 @@ import Icon from "../../ui/Icon.tsx";
 import KitItem from "./KitItem.tsx";
 import AddKitToCart from "./AddKitToCart.tsx";
 
-const Teste = (
+const ProductPopUp = (
   { setActive, products, title }: {
     setActive: (value: boolean) => void;
     products: string[];
@@ -14,8 +14,8 @@ const Teste = (
 ) => {
   return (
     <div class="fixed z-50 top-0 left-0 flex items-center justify-center h-screen w-screen">
-      <div class="absolute z-10 bg-white">
-        <div class="relative flex justify-center">
+      <div class="absolute z-10 bg-white lg:w-auto w-[98vw]">
+        <div class="relative flex justify-center ">
           <button
             onClick={() => setActive(false)}
             class="absolute top-2 right-2 text-black hover:text-[#bea669] duration-200 cursor-pointer"
@@ -55,14 +55,18 @@ export default function ShelfProducts(
         onClick={() => {
           setActive(true);
         }}
-        class="p-4 after:duration-200 font-source-sans text-white font-bold relative after:content-['Shop_Now'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:flex after:justify-center after:items-center after:opacity-0 hover:after:opacity-100 after:bg-bronze-opacity"
+        class="lg:p-4 p-1 after:duration-200 font-source-sans text-white font-bold relative after:content-['Shop_Now'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:flex after:justify-center after:items-center after:opacity-0 hover:after:opacity-100 after:bg-bronze-opacity"
       >
         <img src={src} alt={alt} />
       </div>
 
       {active &&
         createPortal(
-          <Teste setActive={setActive} products={products} title={alt} />,
+          <ProductPopUp
+            setActive={setActive}
+            products={products}
+            title={alt}
+          />,
           document.body,
         )}
     </div>

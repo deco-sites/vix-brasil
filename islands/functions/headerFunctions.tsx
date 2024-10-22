@@ -11,9 +11,9 @@ export default function HeaderFunctions() {
       if (window.location.pathname === "/") {
         header?.classList.add("bg-blur");
         navigation?.classList.add("text-white");
-        icons?.classList.add("text-white");
         login?.classList.add("text-white");
         searchBar?.classList.add("text-white");
+        icons?.classList.add("text-white");
         logo?.classList.add("invert");
         logo?.classList.add("brightness-0");
       }
@@ -76,6 +76,11 @@ export default function HeaderFunctions() {
         if (window.innerWidth < 1024) {
           searchBar?.classList.toggle("pb-3", isCollapsed);
           searchBar?.classList.toggle("px-5", isCollapsed);
+
+          logo?.classList.remove("invert");
+          logo?.classList.remove("brightness-0");
+          icons?.classList.remove("text-white");
+          login?.classList.remove("text-white");
         }
         searchBar?.classList.toggle("visible", isCollapsed);
         searchBar?.classList.toggle("opacity-100", isCollapsed);
@@ -100,6 +105,13 @@ export default function HeaderFunctions() {
         searchBar?.classList.toggle("max-w-0", !isCollapsed);
         searchBar?.classList.toggle("opacity-0", !isCollapsed);
         searchBar?.classList.toggle("invisible", !isCollapsed);
+
+        if (window.innerWidth < 1024) {
+          logo?.classList.add("invert");
+          logo?.classList.add("brightness-0");
+          icons?.classList.add("text-white");
+          login?.classList.add("text-white");
+        }
       });
     },
   };

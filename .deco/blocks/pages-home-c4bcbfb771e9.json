@@ -16,15 +16,15 @@
             "type": "image",
             "target": "_self",
             "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/cad6d57e-4702-441b-8a08-5088e61304f9___d2a325f34a4780e5b987e8e415463bf7.png",
-            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/cad6d57e-4702-441b-8a08-5088e61304f9___d2a325f34a4780e5b987e8e415463bf7.png",
+            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/e6a0b037-224a-48fc-89ad-2653e6ab3a4d___51066435ec52b8cde5724e61cd90962e.png",
             "url": "/vestido-longo-lilith-detalhes-seaside-seaside-vw242094-2440/p",
             "alt": "Endless Summer Verão25"
           },
           {
             "type": "video",
             "target": "_self",
-            "src": "https://player.vimeo.com/video/1003636562?title=0&byline=0&portrait=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1&app_id=122963",
-            "mobileSrc": "https://player.vimeo.com/video/1003636562?title=0&byline=0&portrait=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1&app_id=122963",
+            "src": "1003636562",
+            "mobileSrc": "1021054954",
             "url": "/vestido-longo-lilith-detalhes-seaside-seaside-vw242094-2440/p",
             "alt": "Strike a Blue Note"
           }
@@ -77,7 +77,7 @@
         "__resolveType": "site/sections/Images/Banner.tsx",
         "type": "image",
         "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/647a45db-8557-4e07-9a60-f0ab78f3c001___b89fa1395defe00a549b0fc4b22523e7.png",
-        "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/647a45db-8557-4e07-9a60-f0ab78f3c001___b89fa1395defe00a549b0fc4b22523e7.png",
+        "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/511741de-5e36-465b-b9d2-8ea6cefac81c___bf7f4f24f4e1d89304866590ce5a693b.jpg",
         "url": "/",
         "alt": "Hide and Seek",
         "target": "_self"
@@ -126,7 +126,7 @@
         "__resolveType": "site/sections/Images/Banner.tsx",
         "type": "image",
         "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/9c1a4555-f97a-4eaf-bf85-9c7071e57206___2d0f1fc113878921c043afcef9ad6162.png",
-        "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/9c1a4555-f97a-4eaf-bf85-9c7071e57206___2d0f1fc113878921c043afcef9ad6162.png",
+        "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/bb2c38be-c363-4f93-a261-30365828bff7___6272012da165b8f955848db289d1c180.png",
         "url": "/",
         "alt": "Baixe o App",
         "target": "_self"
@@ -145,3 +145,4 @@
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   }
 }
+

@@ -1,10 +1,11 @@
 import { useDevice } from "@deco/deco/hooks";
+import { ImageWidget } from "apps/admin/widgets.ts";
 /** @titleBy alt */
 export interface ImageProps {
   /** @readOnly true */
   type: "image";
-  src: string;
-  mobileSrc: string;
+  src: ImageWidget;
+  mobileSrc: ImageWidget;
   url: string;
   alt: string;
   target: "_blank" | "_self";

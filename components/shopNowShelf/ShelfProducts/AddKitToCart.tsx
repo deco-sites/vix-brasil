@@ -62,17 +62,6 @@ function AddKitToCart() {
             Escolha um tamanho
           </p>
         )}
-
-      <button
-        onClick={() => handleAddToCart()}
-        class={`lg:hidden block z-50 fixed bottom-0 left-0 tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em]  duration-200  ${
-          state?.kitItems.length === 0
-            ? "bg-[#ccc] cursor-not-allowed"
-            : "bg-black hover:bg-[#bea669]"
-        }`}
-      >
-        Adicionar à sacola
-      </button>
       <button
         onClick={() => handleAddToCart()}
         class={`tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em]  duration-200 bg-black ${

@@ -17,14 +17,14 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
     <>
       <div
         id={`${id}--Shelf`}
-        class="grid grid-rows-1 max-w-[90vw] xl mx-auto relative"
+        class="grid grid-rows-1 max-w-[95vw] mx-auto relative"
         style={{
           gridTemplateColumns: "min-content 1fr min-content",
         }}
       >
         <div class="col-start-1 col-span-3 row-start-1 row-span-1">
           <Slider
-            class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full"
+            class="carousel carousel-center sm:carousel-end w-full"
             style={{ height: "calc(100% + 130px)" }}
           >
             {products?.map((product, index) => (
@@ -32,38 +32,46 @@ function ProductSlider({ products, itemListName }: ProductSliderProps) {
                 index={index}
                 class={clx(
                   "carousel-item",
-                  "first:pl-5 first:sm:pl-0",
-                  "last:pr-5 last:sm:pr-0",
+                  // "lg:first:pl-5 first:sm:pl-0",
+                  // "last:pr-5 last:sm:pr-0",
+                  "lg:w-1/4 w-1/2",
                 )}
               >
                 <ProductCard
                   index={index}
                   product={product}
                   itemListName={itemListName}
-                  class="max-w-[300px] w-full"
                 />
               </Slider.Item>
             ))}
           </Slider>
         </div>
 
-        <div class="hidden sm:flex col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-[-40px] bottom-[60%]">
+        <div class="flex col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-[20px] bottom-[50%] bg-white rounded-full min-w-11 h-11">
           <Slider.PrevButton
             class="disabled:invisible text-black"
             disabled={false}
             id={`${id}--Shelf`}
           >
-            <Icon id="chevron-right" class="rotate-180" />
+            <Icon
+              id="shelf-arrow"
+              size={28}
+              class="rotate-[270deg] relative top-[1px] left-[6px]"
+            />
           </Slider.PrevButton>
         </div>
 
-        <div class="hidden sm:flex col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-[-40px] bottom-[60%]">
+        <div class="flex col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute right-[20px] bottom-[50%] bg-white rounded-full min-w-11 h-11">
           <Slider.NextButton
             class="disabled:invisible text-black"
             disabled={false}
             id={`${id}--Shelf`}
           >
-            <Icon id="chevron-right" />
+            <Icon
+              id="shelf-arrow"
+              size={28}
+              class="rotate-90 relative bottom-[1px] right-[6px]"
+            />
           </Slider.NextButton>
         </div>
       </div>

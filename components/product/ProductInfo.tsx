@@ -150,6 +150,13 @@ function ProductInfo({ page }: Props) {
                       item={item}
                       seller={seller}
                       product={product}
+                      class="lg:hidden block z-50 fixed bottom-0 left-0 tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em] bg-black hover:bg-[#bea669] duration-200"
+                      disabled={false}
+                    />
+                    <AddToCartButton
+                      item={item}
+                      seller={seller}
+                      product={product}
                       class="tracking-[0.07em] font-source-sans uppercase text-[#f7f4ed] font-normal w-full pt-[0.5em] pb-[0.64em] bg-black hover:bg-[#bea669] duration-200"
                       disabled={false}
                     />

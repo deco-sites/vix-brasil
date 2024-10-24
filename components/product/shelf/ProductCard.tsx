@@ -31,6 +31,9 @@ interface Props {
 const WIDTH = 300;
 const HEIGHT = 453;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
+const WIDTH_MOBILE = 185;
+const HEIGHT_MOBILE = 280;
+const ASPECT_RATIO_MOBILE = `${WIDTH_MOBILE} / ${HEIGHT_MOBILE}`;
 
 function ProductCard({
   product,
@@ -65,7 +68,7 @@ function ProductCard({
   });
 
   return (
-    <div>
+    <div class="card card-compact group w-full lg:p-4 p-2">
       <div
         id={`image-shelf--${id}`}
         {...event}
@@ -76,7 +79,7 @@ function ProductCard({
       >
         <div>
           <div class="col-start-1 col-span-3 row-start-1 row-span-1">
-            <Slider class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full">
+            <Slider class="carousel carousel-center w-full">
               {images?.map((image, index) => {
                 if (image.name === "IMAGEM1") {
                   return null;
@@ -86,13 +89,18 @@ function ProductCard({
                     index={index}
                     class={clx(
                       "carousel-item",
+                      "w-full",
                     )}
                   >
                     <figure
                       class={clx(
-                        "relative min-h-[453px] max-h-[453px]",
+                        "relative w-full",
                       )}
-                      style={{ aspectRatio: ASPECT_RATIO }}
+                      style={{
+                        aspectRatio: device === "desktop"
+                          ? ASPECT_RATIO
+                          : ASPECT_RATIO_MOBILE,
+                      }}
                     >
                       {/* Product Images */}
                       <a
@@ -108,7 +116,11 @@ function ProductCard({
                           alt={image.alternateName}
                           width={WIDTH}
                           height={HEIGHT}
-                          style={{ aspectRatio: ASPECT_RATIO }}
+                          style={{
+                            aspectRatio: device === "desktop"
+                              ? ASPECT_RATIO
+                              : ASPECT_RATIO_MOBILE,
+                          }}
                           class={clx(
                             "object-contain",
                             "w-full",
@@ -150,7 +162,7 @@ function ProductCard({
         </div>
         {flag && (
           <div class="absolute top-3 left-3">
-            <p class="font-medium tracking-[0.07em] uppercase text-[#9a8445] font-source-sans text-lg">
+            <p class="font-medium tracking-[0.07em] uppercase text-[#9a8445] font-source-sans lg:text-lg text-base">
               NEW IN
             </p>
           </div>
@@ -158,8 +170,11 @@ function ProductCard({
         <div class="absolute top-3 right-3">
           <WishlistButton item={item} variant="icon" />
         </div>
-        <a href={relativeUrl} class="block pt-[16px] px-[10px]">
-          <span class="block w-full font-normal text-base text-center tracking-[0.07em] text-black uppercase font-source-sans text-ellipsis whitespace-nowrap overflow-hidden">
+        <a
+          href={relativeUrl}
+          class="block lg:pt-[16px] lg:px-[10px] pt-[8px] px-[5px]"
+        >
+          <span class="block w-full font-normal lg:text-base text-xs text-center tracking-[0.07em] text-black uppercase font-source-sans text-ellipsis whitespace-nowrap overflow-hidden">
             {title}
           </span>
         </a>

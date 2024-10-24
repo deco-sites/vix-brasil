@@ -35,7 +35,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
                 )
               }.png`}
               alt="Product category icon"
-              class="w-[30px] h-[30px]"
+              class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
             />
           )}
           <p>
@@ -44,7 +44,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
                 {formatPrice(listPrice, offers?.priceCurrency)}
               </span>
             )}
-            <span class="block font-source-sans tracking-[0.07em] text-sm text-black">
+            <span class="block font-source-sans tracking-[0.07em] lg:text-sm text-xs text-black">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </p>
@@ -70,7 +70,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
                   )
                 }.png`}
                 alt="Product category icon"
-                class="w-[30px] h-[30px]"
+                class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
               />
             )}
             {state.singleItem?.value}

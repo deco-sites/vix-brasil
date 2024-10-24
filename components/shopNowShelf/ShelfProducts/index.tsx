@@ -6,14 +6,19 @@ import KitItem from "./KitItem.tsx";
 import AddKitToCart from "./AddKitToCart.tsx";
 
 const ProductPopUp = (
-  { setActive, products, title }: {
+  { active, setActive, products, title }: {
+    active: boolean;
     setActive: (value: boolean) => void;
     products: string[];
     title: string;
   },
 ) => {
   return (
-    <div class="fixed z-50 top-0 left-0 flex items-center justify-center h-screen w-screen">
+    <div
+      class={`${
+        active ? "flex" : "hidden"
+      } fixed z-50 top-0 left-0  items-center justify-center h-screen w-screen`}
+    >
       <div class="absolute z-10 bg-white lg:w-auto w-[98vw]">
         <div class="relative flex justify-center ">
           <button
@@ -63,6 +68,7 @@ export default function ShelfProducts(
       {active &&
         createPortal(
           <ProductPopUp
+            active={active}
             setActive={setActive}
             products={products}
             title={alt}

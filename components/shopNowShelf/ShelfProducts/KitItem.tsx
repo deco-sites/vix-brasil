@@ -112,7 +112,7 @@ export default function KitItem({ productId, dataDispatch }: Props) {
 
   return (
     <div
-      class="lg:flex items-start border-b border-[#bea669] pb-5 mb-5 w-full gap-3 h-[470px]"
+      class="lg:flex items-start border-b border-[#bea669] pb-5 mb-5 w-full gap-3 lg:h-auto h-[470px]"
       data-kit-composition={`${product?.Composição}`}
     >
       <Image

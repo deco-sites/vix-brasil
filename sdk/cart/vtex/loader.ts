@@ -15,8 +15,6 @@ export const cartFrom = (form: Cart, url: string): Minicart => {
   const coupon = form?.marketingData?.coupon ?? undefined;
   const vendor = form?.marketingData?.utmiPart ?? undefined;
 
-  console.log(form?.marketingData);
-
   return {
     platformCart: form as unknown as Record<string, unknown>,
     storefront: {

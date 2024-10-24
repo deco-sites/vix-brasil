@@ -83,7 +83,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                 )
               }.png`}
               alt="Product category icon"
-              class="w-[30px] h-[30px]"
+              class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
             />
           )}
           <p>
@@ -92,7 +92,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                 {formatPrice(topListPrice)}
               </span>
             )}
-            <span class="block font-source-sans tracking-[0.07em] text-sm text-black">
+            <span class="block font-source-sans tracking-[0.07em] lg:text-sm text-xs text-black">
               {formatPrice(topPrice)}
             </span>
           </p>
@@ -104,7 +104,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                 )
               }.png`}
               alt="Product category icon"
-              class="w-[30px] h-[30px]"
+              class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
             />
           )}
           <p>
@@ -113,7 +113,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                 {formatPrice(bottomListPrice)}
               </span>
             )}
-            <span class="block font-source-sans tracking-[0.07em] text-sm text-black">
+            <span class="block font-source-sans tracking-[0.07em] lg:text-sm text-xs text-black">
               {formatPrice(bottomPrice)}
             </span>
           </p>
@@ -140,7 +140,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                     )
                   }.png`}
                   alt="Product category icon"
-                  class="w-[30px] h-[30px]"
+                  class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
                 />
               )}
               {state.kitItems?.[0]?.value ? state.kitItems[0].value : "Tam."}
@@ -199,7 +199,7 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                     )
                   }.png`}
                   alt="Product category icon"
-                  class="w-[30px] h-[30px]"
+                  class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
                 />
               )}
               {state.kitItems?.[1]?.value ? state.kitItems[1].value : "Tam."}

@@ -8,6 +8,7 @@ export type AvailableIcons =
   | "account_icon"
   | "close"
   | "chevron-right"
+  | "shelf-arrow"
   | "favorite"
   | "favorite-button"
   | "home_pin"

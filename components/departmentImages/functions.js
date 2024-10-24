@@ -31,7 +31,12 @@ export const DepartmentImageFunctions = () => {
     </button>`
       $(document).ready(function () {
         $('.department-images__slider').slick({
-          settings: 'unslick',
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: true,
+          prevArrow: prev,
+          nextArrow: next,
           responsive: [
             {
               breakpoint: 1024,

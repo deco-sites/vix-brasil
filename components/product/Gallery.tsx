@@ -47,7 +47,7 @@ export default function GallerySlider(props: Props) {
     <>
       <div
         id={id}
-        class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-10 xl:mr-14 mb-3 xl:mb-0"
+        class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-10 2xl:mr-14 mb-3 xl:mb-0"
       >
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">

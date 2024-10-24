@@ -62,7 +62,7 @@ function SearchProduct({
     >
       <figure
         class={clx(
-          "relative min-h-[347px]",
+          "relative min-h-[347px] rounded-none",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >

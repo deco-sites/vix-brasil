@@ -18,7 +18,7 @@ export const Video = (
   const device = useDevice();
 
   return (
-    <div style={{ height: `${device === "desktop" ? "52vh" : "148.5vw"}` }}>
+    <div style={{ height: `${device === "desktop" ? "52vw" : "148.5vw"}` }}>
       <a
         href={url}
         target={target}

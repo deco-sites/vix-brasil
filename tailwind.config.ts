@@ -17,6 +17,10 @@ export default {
       xs: "2px",
     },
     extend: {
+      screens: {
+        "xs": "475px",
+        "2xl": "1400px",
+      },
       gridTemplateColumns: {
         header: "1fr auto 1fr",
       },

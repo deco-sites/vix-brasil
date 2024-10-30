@@ -2,7 +2,7 @@ import { useDevice } from "@deco/deco/hooks";
 import { ImageWidget } from "apps/admin/widgets.ts";
 /** @titleBy alt */
 export interface ImageProps {
-  /** @readOnly true */
+  /** @hide true */
   type: "image";
   src: ImageWidget;
   mobileSrc: ImageWidget;

@@ -16,6 +16,7 @@ export default function HeaderFunctions() {
         icons?.classList.add("text-white");
         logo?.classList.add("invert");
         logo?.classList.add("brightness-0");
+        document.querySelector("header")?.classList.add("!h-[0px]");
       }
       if (window.location.pathname !== "/") {
         header?.classList.add("bg-base-100");

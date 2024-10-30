@@ -14,7 +14,7 @@ export const DepartmentImageFunctions = () => {
       >
         <path d="M0.999999 17L11 9L0.999999 0.999999" stroke="black"></path>
       </svg>
-    </button>`
+    </button>`;
       const next = `<button
       type="button"
       class="shop-now__slider--arrow shop-now__slider--arrow--next"
@@ -28,9 +28,9 @@ export const DepartmentImageFunctions = () => {
       >
         <path d="M0.999999 17L11 9L0.999999 0.999999" stroke="black"></path>
       </svg>
-    </button>`
+    </button>`;
       $(document).ready(function () {
-        $('.department-images__slider').slick({
+        $(".department-images__slider").slick({
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
@@ -72,11 +72,10 @@ export const DepartmentImageFunctions = () => {
               },
             },
           ],
-        })
-      })
+        });
+      });
     },
-  }
+  };
 
-  slickBanner.init()
-}
-
+  slickBanner.init();
+};

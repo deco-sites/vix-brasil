@@ -140,6 +140,9 @@ function ProductInfo({ page }: Props) {
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
+            <h1>Teste</h1>
+
+            <div id="sizebay-container"></div>
 
             {/* Add to Cart and Favorites button */}
             <div class="mt-4 sm:mt-10 flex flex-col gap-2">

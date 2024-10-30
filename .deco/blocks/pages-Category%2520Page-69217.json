@@ -20,25 +20,29 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Product/SearchResult.tsx",
-        "page": {
-          "__resolveType": "PLP Loader"
-        },
-        "layout": {
-          "columns": {
-            "mobile": 2,
-            "desktop": 4
-          },
-          "variant": "aside",
-          "pagination": "show-more"
-        },
-        "startingPage": 1
+        "__resolveType": "site/sections/Images/Banner.tsx",
+        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/9b7a8512-bb29-4be9-ab7b-dfc20d99f0e5/31c3f5bf-8d29-4288-975f-200c1a921e1e___9343408e0dc99cd8777799f4a247dde8.webp",
+        "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/9b7a8512-bb29-4be9-ab7b-dfc20d99f0e5/31c3f5bf-8d29-4288-975f-200c1a921e1e___9343408e0dc99cd8777799f4a247dde8.webp",
+        "url": "#",
+        "alt": "Biquinis",
+        "target": "_self"
       }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
+        "__resolveType": "site/sections/Product/SearchResult.tsx",
+        "page": {
+          "__resolveType": "vtex/loaders/legacy/productListingPage.ts",
+          "count": 12,
+          "sort": "OrderByReleaseDateDESC",
+          "filters": "dynamic",
+          "similars": true
+        },
+        "layout": {
+          "pagination": "show-more"
+        },
+        "startingPage": 1
       }
     },
     {

@@ -17,6 +17,9 @@ export default {
       xs: "2px",
     },
     extend: {
+      boxShadow: {
+        "custom-light": "0 0 5px 0 rgba(0, 0, 0, 0.07)",
+      },
       screens: {
         "xs": "475px",
         "2xl": "1400px",

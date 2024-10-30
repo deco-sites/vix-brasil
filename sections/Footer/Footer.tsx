@@ -107,7 +107,7 @@ function Desktop({
 
         <div class="grid grid-flow-row sm:grid-flow-col gap-8">
           <ul class="flex flex-wrap items-center gap-2 justify-end xl:justify-between">
-            <li class="mr-auto xl:mr-5">
+            <li class="mr-auto lg:mr-5">
               <p class="font-source-sans text-base tracking-[1.12px] whitespace-nowrap text-black">
                 Formas de Pagamento
               </p>
@@ -120,7 +120,7 @@ function Desktop({
                   width={174}
                   height={20}
                   loading="lazy"
-                  class="grayscale"
+                  class="grayscale !object-contain"
                 />
               </li>
             ))}
@@ -131,9 +131,8 @@ function Desktop({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/google-store-link___a575e3d1f808ff3484f40bb468bfc7d7.png"
                 alt="App no Google Play"
                 width={90}
-                height={26}
                 loading="lazy"
-                class="grayscale"
+                class="grayscale !object-contain"
               />
             </li>
             <li class="border border-base-100 rounded flex justify-center items-center">
@@ -141,9 +140,8 @@ function Desktop({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/app-store-link___fe7fcd1d3051cb7614f2bea5c64bdbb3.png"
                 alt="App no App Store"
                 width={90}
-                height={26}
                 loading="lazy"
-                class="grayscale"
+                class="grayscale !object-contain"
               />
             </li>
           </ul>
@@ -162,7 +160,7 @@ function Desktop({
                   width={60}
                   height={20}
                   loading="lazy"
-                  class="grayscale w-auto h-5"
+                  class="grayscale !object-contain w-auto h-5"
                 />
               </li>
               <li class="h-5 border border-base-100 rounded flex justify-center items-center">
@@ -172,7 +170,7 @@ function Desktop({
                   width={60}
                   height={20}
                   loading="lazy"
-                  class="grayscale w-auto h-5"
+                  class="grayscale !object-contain w-auto h-5"
                 />
               </li>
               <li class="h-5 border border-base-100 rounded flex justify-center items-center">
@@ -182,7 +180,7 @@ function Desktop({
                   width={60}
                   height={30}
                   loading="lazy"
-                  class="grayscale w-auto h-5"
+                  class="grayscale !object-contain w-auto h-5"
                 />
               </li>
               <li class="h-5 border border-base-100 rounded flex justify-center items-center">
@@ -190,9 +188,8 @@ function Desktop({
                   src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.148/img/footer/vtex-certified___420675ab19c0357575babc7204a479ea.png"
                   alt="VTEX PCI"
                   width={60}
-                  height={20}
                   loading="lazy"
-                  class="grayscale w-auto h-5"
+                  class="grayscale !object-contain w-auto h-5"
                 />
               </li>
             </ul>
@@ -299,9 +296,8 @@ function Mobile({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/google-store-link___a575e3d1f808ff3484f40bb468bfc7d7.png"
                 alt="App no Google Play"
                 width={90}
-                height={26}
                 loading="lazy"
-                class="grayscale"
+                class="grayscale !object-contain"
               />
             </li>
             <li class="border border-base-100 rounded flex justify-between items-center">
@@ -309,9 +305,8 @@ function Mobile({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/app-store-link___fe7fcd1d3051cb7614f2bea5c64bdbb3.png"
                 alt="App no App Store"
                 width={90}
-                height={26}
                 loading="lazy"
-                class="grayscale"
+                class="grayscale !object-contain"
               />
             </li>
           </ul>
@@ -329,7 +324,7 @@ function Mobile({
                   width={174}
                   height={20}
                   loading="lazy"
-                  class="grayscale"
+                  class="grayscale !object-contain"
                 />
               ))}
             </li>
@@ -349,7 +344,7 @@ function Mobile({
                   width={60}
                   height={20}
                   loading="lazy"
-                  class="grayscale w-auto h-7"
+                  class="grayscale !object-contain w-auto h-7"
                 />
 
                 <Image
@@ -358,7 +353,7 @@ function Mobile({
                   width={60}
                   height={20}
                   loading="lazy"
-                  class="grayscale w-auto h-7"
+                  class="grayscale !object-contain w-auto h-7"
                 />
 
                 <Image
@@ -367,16 +362,15 @@ function Mobile({
                   width={60}
                   height={30}
                   loading="lazy"
-                  class="grayscale w-auto h-7"
+                  class="grayscale !object-contain w-auto h-7"
                 />
 
                 <Image
                   src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.148/img/footer/vtex-certified___420675ab19c0357575babc7204a479ea.png"
                   alt="VTEX PCI"
                   width={60}
-                  height={20}
                   loading="lazy"
-                  class="grayscale w-auto h-7"
+                  class="grayscale !object-contain w-auto h-7"
                 />
               </li>
             </ul>

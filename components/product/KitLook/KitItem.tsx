@@ -145,6 +145,8 @@ export default function KitItem({ productId, dataDispatch }: Props) {
             })}
           </ul>
         </div>
+        <h1>Teste</h1>
+        <div id="sizebay-container"></div>
       </div>
     </div>
   );

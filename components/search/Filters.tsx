@@ -33,7 +33,13 @@ function FilterValues({ key, values }: FilterToggle) {
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
   return (
-    <ul class={clx(`flex flex-wrap gap-2`, flexDirection)}>
+    <ul
+      class={clx(
+        `dropdown-content flex gap-2`,
+        "max-h-[200px] min-w-[345px] bg-white shadow-custom-light overflow-auto",
+        flexDirection,
+      )}
+    >
       {values.map((item) => {
         const { url, selected, value } = item;
 
@@ -67,15 +73,24 @@ function FilterValues({ key, values }: FilterToggle) {
 
 function Filters({ filters }: Props) {
   return (
-    <ul class="flex flex-col gap-6 p-4 sm:p-0">
+    <ul class="flex gap-6 p-4 sm:p-0">
       {filters
         .filter(isToggle)
-        .map((filter) => (
-          <li class="flex flex-col gap-4">
-            <span>{filter.label}</span>
-            <FilterValues {...filter} />
-          </li>
-        ))}
+        .map((filter) => {
+          console.log("Filter label:", filter.label);
+          if (!["Cor", "Tamanho"].includes(filter.label)) {
+            return null;
+          }
+          return (
+            <li>
+              <details class="dropdown flex flex-col gap-4">
+                <summary>{filter.label}</summary>
+
+                <FilterValues {...filter} />
+              </details>
+            </li>
+          );
+        })}
     </ul>
   );
 }

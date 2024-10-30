@@ -123,7 +123,7 @@ export default function GallerySlider(props: Props) {
                     >
                       <Image
                         style={{ aspectRatio: "133 / 171" }}
-                        class="object-cover w-full h-full"
+                        class="object-cover w-full h-full max-w-[133px] max-h-[171px]"
                         width={133}
                         height={171}
                         src={img.url!}

@@ -19,6 +19,7 @@ import SignIn from "../../components/header/SignIn.tsx";
 import HeaderFunctions from "../../islands/functions/headerFunctions.tsx";
 import { useDevice, useScript } from "@deco/deco/hooks";
 import { type LoadingFallbackProps } from "@deco/deco";
+import { NAVBAR_HEIGHT_DESKTOP } from "../../constants.ts";
 export interface Logo {
   src: ImageWidget;
   alt: string;
@@ -214,14 +215,16 @@ function Header({
 }: Props) {
   const device = useDevice();
   return (
-    <header // style={{
-     //   height: device === "desktop"
-    //     ? HEADER_HEIGHT_DESKTOP
-    //     : HEADER_HEIGHT_MOBILE,
-    // }}
-    class="z-50 fixed w-full">
+    <header
+      style={{
+        height: device === "desktop"
+          ? NAVBAR_HEIGHT_DESKTOP
+          : NAVBAR_HEIGHT_MOBILE,
+      }}
+      class="w-full"
+    >
       <div
-        class={`group/header backdrop-blur-xs w-full z-40 hover:bg-base-100 hover:backdrop-blur-none ease-in duration-200`}
+        class={`group/header backdrop-blur-xs w-full hover:bg-base-100 hover:backdrop-blur-none ease-in duration-200 z-50 fixed`}
         id="vix-brasil-header"
       >
         {/* {alerts.length > 0 && <Alert alerts={alerts} />} */}

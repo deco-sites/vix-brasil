@@ -11,6 +11,7 @@ export default {
       white: "#fff",
       black: "#000",
       bronze: "#a18c60",
+      brown: "#bea669",
       "bronze-opacity": "rgba(161,140,96,.6)",
     },
     backdropBlur: {
@@ -23,6 +24,7 @@ export default {
       screens: {
         "xs": "475px",
         "2xl": "1400px",
+        "3xl": "1800px",
       },
       gridTemplateColumns: {
         header: "1fr auto 1fr",

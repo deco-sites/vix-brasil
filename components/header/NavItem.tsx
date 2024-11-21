@@ -80,7 +80,12 @@ function NavItem({ item }: { item: NavItemProps }) {
                           } font-source-sans duration-200`}
                           href={leaf.url}
                         >
-                          <span class="text-sm uppercase">
+                          <span
+                            class={`${
+                              leaf.name?.toLocaleLowerCase() === "ver todos" &&
+                              "font-semibold"
+                            } text-sm uppercase`}
+                          >
                             {leaf.name}{" "}
                             {leaf.children && (
                               <span class="before:content-['+'] text-[25px] relative top-1 left-1 group-hover/navleaf:before:content-['-'] group-hover/navleaf:top-[2px] group-hover/navleaf:text-[30px]">

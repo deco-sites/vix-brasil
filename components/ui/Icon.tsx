@@ -25,6 +25,9 @@ export type AvailableIcons =
   | "arrow-shelf"
   | "footer-minicart-open"
   | "footer-minicart-close"
+  | "filter-icon"
+  | "sort-icon"
+  | "empty-cart-icon"
   | "trash";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {

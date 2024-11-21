@@ -162,14 +162,19 @@ export default function Cart(
         >
           {count === 0
             ? (
-              <div class="flex flex-col gap-6">
-                <span class="font-medium text-2xl">Your bag is empty</span>
-                <label
+              <div class="flex flex-col gap-6 items-center">
+                <Icon id="shopping_bag" size={64} />
+                <span class="font-source-sans font-normal text-base ">
+                  Seu carrinho está vazio
+                </span>
+                {
+                  /* <label
                   for={MINICART_DRAWER_ID}
                   class="btn btn-outline no-animation"
                 >
                   Choose products
-                </label>
+                </label> */
+                }
               </div>
             )
             : (

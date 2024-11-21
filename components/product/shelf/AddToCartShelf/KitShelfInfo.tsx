@@ -37,8 +37,8 @@ export default function KitShelfInfo({ top, bottom }: Props) {
     fetchProduct();
   }, []);
 
-  const topIcon = product?.[0].icone_categoria[0];
-  const bottomIcon = product?.[1].icone_categoria[0];
+  const topIcon = product?.[0].icone_categoria?.[0];
+  const bottomIcon = product?.[1].icone_categoria?.[0];
 
   const availableTopProduct = product?.[0].items?.find((item) =>
     item.sellers[0].commertialOffer.AvailableQuantity !== 0
@@ -147,15 +147,19 @@ export default function KitShelfInfo({ top, bottom }: Props) {
               <Icon id="down-sm-arrow" size={12} class="min-w-3" />
             </button>
             <ul
-              class={`${dropdownTop} overflow-hidden duration-200`}
+              class={`${dropdownTop} overflow-hidden duration-200 absolute z-10`}
             >
               {product?.[0].items?.map((item) => {
                 if (item.Tamanho[0] === "KIT") {
                   return null;
                 }
+                const avaibility =
+                  item.sellers[0].commertialOffer.AvailableQuantity;
                 return (
                   <li
-                    class={`block cursor-pointer w-[120px] bg-white hover:bg-[#bea669] duration-200 p-2`}
+                    class={`block cursor-pointer w-[120px] bg-white hover:bg-[#bea669] duration-200 p-2 font-source-sans text-sm tracking-[0.07em] ${
+                      avaibility && "opacity-60"
+                    }`}
                     onClick={() => {
                       dispatch({
                         type: "SET_KIT_1",
@@ -206,15 +210,20 @@ export default function KitShelfInfo({ top, bottom }: Props) {
               <Icon id="down-sm-arrow" size={12} class="min-w-3" />
             </button>
             <ul
-              class={`${dropdownBottom} overflow-hidden duration-200`}
+              class={`${dropdownBottom} overflow-hidden duration-200 absolute z-10`}
             >
               {product?.[1].items?.map((item) => {
                 if (item.Tamanho[0] === "KIT") {
                   return null;
                 }
+
+                const avaibility =
+                  item.sellers[0].commertialOffer.AvailableQuantity;
                 return (
                   <li
-                    class={`block cursor-pointer w-[120px] bg-white hover:bg-[#bea669] duration-200 p-2`}
+                    class={`block cursor-pointer w-[120px] bg-white hover:bg-[#bea669] duration-200 p-2 font-source-sans text-sm tracking-[0.07em] ${
+                      avaibility && "opacity-60"
+                    }`}
                     onClick={() => {
                       dispatch({
                         type: "SET_KIT_2",

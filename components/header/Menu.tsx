@@ -1,6 +1,7 @@
 import Drawer from "../ui/Drawer.tsx";
 import Icon from "../ui/Icon.tsx";
 
+/** @titleBy title */
 interface MobileMenu {
   mobileItems?: MobileMenuItem[];
 }

@@ -68,7 +68,10 @@ function ProductCard({
   });
 
   return (
-    <div class="card card-compact group w-full lg:p-4 p-2">
+    <div
+      id="product_shelf"
+      class="card card-compact group w-full lg:p-4 p-2"
+    >
       <div
         id={`image-shelf--${id}`}
         {...event}
@@ -139,6 +142,32 @@ function ProductCard({
               })}
             </Slider>
           </div>
+
+          <ul
+            class={clx(
+              "w-full sm:hidden flex items-center justify-center",
+            )}
+          >
+            {images?.map((_, index) => {
+              return (
+                <li
+                  class={clx(
+                    "w-full h-1 flex",
+                    _.name === "IMAGEM1" && "hidden",
+                  )}
+                >
+                  <Slider.Dot
+                    index={index - 1}
+                    class={clx(
+                      "bg-[#f3f4f7] h-1 w-full",
+                      "disabled:bg-black transition-[background]",
+                    )}
+                  >
+                  </Slider.Dot>
+                </li>
+              );
+            })}
+          </ul>
 
           <div class="hidden sm:flex col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 absolute left-0 bottom-[60%] opacity-0 group-hover/image-shelf:opacity-100 duration-200">
             <Slider.PrevButton

@@ -77,7 +77,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
             <Icon id="down-sm-arrow" size={12} class="min-w-3" />
           </button>
           <ul
-            class={`${dropdown} overflow-hidden duration-200`}
+            class={`${dropdown} overflow-hidden duration-200 absolute z-10`}
           >
             {isVariantOf?.hasVariant.map((item) => {
               const value = item?.additionalProperty?.find((i) =>
@@ -87,6 +87,7 @@ export default function ShelfInfo({ product }: AddToCartShelfProps) {
               if (value === "KIT") {
                 return null;
               }
+
               return (
                 <li
                   class={`block cursor-pointer w-full bg-white hover:bg-[#bea669] duration-200 p-2`}

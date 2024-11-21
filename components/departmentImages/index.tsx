@@ -9,7 +9,7 @@ export type DepartmentImagesProps = {
 
 export const DepartmentImages = ({ items }: DepartmentImagesProps) => {
   return (
-    <div class="lg:mx-0 mx-[15px]">
+    <div class="lg:mx-0 mx-[15px] lg:mt-8 mt-4 lg:mb-12 mb-8">
       <div class="department-images__slider flex items-center justify-between w-full max-w-[1660px] mx-auto object-contain">
         {items?.map((item) => {
           return (

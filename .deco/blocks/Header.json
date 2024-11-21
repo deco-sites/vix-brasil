@@ -38,7 +38,7 @@
             {
               "bold": true,
               "name": "Verão 25",
-              "url": "/verao25"
+              "url": "/altoverao25"
             },
             {
               "bold": true,
@@ -81,61 +81,61 @@
           "children": [
             {
               "name": "Vestido",
-              "url": "",
+              "url": "/roupas/vestidos",
               "children": [
                 {
                   "name": "Mini",
-                  "url": ""
+                  "url": "/roupas/vestidos/mini"
                 },
                 {
                   "name": "Curto",
-                  "url": ""
+                  "url": "/roupas/vestidos/curto"
                 },
                 {
                   "name": "Midi",
-                  "url": ""
+                  "url": "/roupas/vestidos/midi"
                 },
                 {
                   "name": "Longo",
-                  "url": ""
+                  "url": "/roupas/vestidos/longo"
                 }
               ]
             },
             {
               "name": "Top",
-              "url": ""
+              "url": "/roupas/top?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Blusas",
-              "url": ""
+              "url": "/roupas/blusas?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Camisas",
-              "url": ""
+              "url": "/roupas/camisas?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Casacos",
-              "url": ""
+              "url": "/roupas/casacos?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Calças",
-              "url": ""
+              "url": "/roupas/calcas?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Macacões",
-              "url": ""
+              "url": "/roupas/macacoes?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Saia",
-              "url": ""
+              "url": "/roupas/saias?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Short",
-              "url": ""
+              "url": "/roupas/shorts?order=OrderByReleaseDateDESC"
             },
             {
               "name": "ver todos",
-              "url": ""
+              "url": "/roupas?order=OrderByReleaseDateDESC"
             }
           ]
         },
@@ -146,27 +146,50 @@
           "children": [
             {
               "name": "Bolsa",
-              "url": ""
+              "url": "/bolsas?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Chapéu",
-              "url": ""
+              "url": "/chapeus?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Sandálias",
-              "url": ""
+              "url": "/sandalias?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Brincos/colares",
-              "url": ""
+              "url": "/brincos/colares?_q=bijoux&map=ft"
             },
             {
               "name": "cintos",
-              "url": ""
+              "url": "/cintos?order=OrderByReleaseDateDESC"
             },
             {
               "name": "ver todos",
-              "url": ""
+              "url": "/acessorios?order=OrderByReleaseDateDESC"
+            }
+          ]
+        },
+        {
+          "name": "Linhas",
+          "url": "#",
+          "bold": true,
+          "children": [
+            {
+              "name": "Bianca Brandolini",
+              "url": "/biancabrandolini"
+            },
+            {
+              "name": "Care",
+              "url": "/care"
+            },
+            {
+              "name": "Ana Vilhanas",
+              "url": "/anavilhanas"
+            },
+            {
+              "name": "Signature",
+              "url": "/signature"
             }
           ]
         },
@@ -176,45 +199,32 @@
           "bold": true,
           "children": [
             {
-              "name": "Tricot",
-              "url": ""
-            },
-            {
-              "name": "Laise",
-              "url": ""
-            },
-            {
-              "name": "Linho",
-              "url": ""
-            },
-            {
               "name": "All Black",
-              "url": ""
+              "url": "/allblack"
             },
             {
               "name": "White",
-              "url": ""
+              "url": "/white"
             },
             {
               "name": "Best Sellers",
-              "url": ""
+              "url": "/bestseller"
             },
             {
               "name": "Beads",
-              "url": ""
+              "url": "/beads"
             },
             {
-              "name": "Care",
-              "url": ""
+              "name": "Laise",
+              "url": "/laise"
             },
             {
-              "name": "Bianca Brandolini",
-              "url": ""
+              "name": "Linho",
+              "url": "/linho"
             },
-
             {
-              "name": "Signature",
-              "url": ""
+              "name": "Tricot",
+              "url": "/tricot"
             }
           ]
         },
@@ -225,46 +235,19 @@
           "children": [
             {
               "name": "Cheeky",
-              "url": ""
+              "url": "/cheeky?order=OrderByReleaseDateDESC"
             },
             {
               "name": "BR",
-              "url": ""
+              "url": "/praia/biquinis/calcinhas/br?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Hot Pants",
-              "url": ""
+              "url": "/hot-pant?order=OrderByReleaseDateDESC"
             },
             {
               "name": "Ver todos",
-              "url": ""
-            }
-          ]
-        },
-        {
-          "name": "Sale",
-          "url": "#",
-          "bold": true,
-          "children": [
-            {
-              "name": "Biquini",
-              "url": ""
-            },
-            {
-              "name": "Maiô",
-              "url": ""
-            },
-            {
-              "name": "Saida de praia",
-              "url": ""
-            },
-            {
-              "name": "Roupas",
-              "url": ""
-            },
-            {
-              "name": "Ver todos",
-              "url": ""
+              "url": "/praia/biquinis/calcinhas?order=OrderByReleaseDateDESC"
             }
           ]
         }
@@ -320,6 +303,11 @@
           ]
         }
       ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "url": "/e-shoppers",
+      "name": "Personal Shopper"
     }
   ],
   "mobileItems": [
@@ -327,141 +315,168 @@
       "item": [
         {
           "title": "Novidades",
-          "url": "",
+          "url": "/novidades",
           "target": "_self",
           "bold": true
         },
         {
           "title": "Verão 25",
-          "url": "",
+          "url": "/altoverao25",
           "target": "_self",
           "bold": true
         },
         {
           "title": "Praia",
-          "url": "",
+          "url": "/praia?order=OrderByReleaseDateDESC",
           "target": "_self",
           "children": [
             {
               "title": "Biquínis",
-              "url": "",
+              "url": "/praia/biquinis?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Maiô",
-              "url": "",
+              "url": "/praia/maios?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Saída de Praia",
-              "url": "",
+              "url": "/praia/saidas-de-praia?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Canga",
-              "url": "",
+              "url": "/praia/cangas?order=OrderByReleaseDateDESC",
               "target": "_self"
             }
           ]
         },
         {
           "title": "Roupas",
-          "url": "",
+          "url": "/roupas?order=OrderByReleaseDateDESC",
           "target": "_self",
           "children": [
             {
               "title": "Vestido",
-              "url": "",
+              "url": "/roupas/vestidos",
               "target": "_self",
               "children": [
                 {
                   "title": "Mini",
-                  "url": ""
+                  "url": "/roupas/vestidos/mini"
                 },
                 {
                   "title": "Curto",
-                  "url": ""
+                  "url": "/roupas/vestidos/curto"
                 },
                 {
                   "title": "Midi",
-                  "url": ""
+                  "url": "/roupas/vestidos/midi"
                 },
                 {
                   "title": "Longo",
-                  "url": ""
+                  "url": "/roupas/vestidos/longo"
                 }
               ]
             },
             {
               "title": "Top",
-              "url": "",
+              "url": "/roupas/top?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Blusas",
-              "url": "",
+              "url": "/roupas/blusas?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Camisas",
-              "url": "",
+              "url": "/roupas/camisas?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Casacos",
-              "url": "",
+              "url": "/roupas/casacos?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Calças",
-              "url": "",
+              "url": "/roupas/calcas?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Macacões",
-              "url": "",
+              "url": "/roupas/macacoes?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Saia",
-              "url": "",
+              "url": "/roupas/saias?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Short",
-              "url": "",
+              "url": "/roupas/shorts?order=OrderByReleaseDateDESC",
               "target": "_self"
             }
           ]
         },
         {
           "title": "Acessórios",
-          "url": "",
+          "url": "/acessorios?order=OrderByReleaseDateDESC",
           "target": "_self",
           "children": [
             {
               "title": "Bolsa",
-              "url": "",
+              "url": "/bolsas?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Chapéu",
-              "url": "",
+              "url": "/chapeus?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Sandálias",
-              "url": "",
+              "url": "/sandalias?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "Brincos/colares",
-              "url": "",
+              "url": "/brincos/colares?_q=bijoux&map=ft",
               "target": "_self"
             },
             {
               "title": "Cintos",
-              "url": "",
+              "url": "/cintos?order=OrderByReleaseDateDESC",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Linhas",
+          "url": "#",
+          "target": "_self",
+          "children": [
+            {
+              "title": "Bianca Brandolini",
+              "url": "/biancabrandolini",
+              "target": "_self"
+            },
+            {
+              "title": "Care",
+              "url": "/care",
+              "target": "_self"
+            },
+            {
+              "title": "Ana Vilhanas",
+              "url": "/anavilhanas",
+              "target": "_self"
+            },
+            {
+              "title": "Signature",
+              "url": "/signature",
               "target": "_self"
             }
           ]
@@ -472,18 +487,18 @@
           "target": "_self",
           "children": [
             {
-              "title": "Tricot",
-              "url": "",
+              "title": "All Black",
+              "url": "/allblack",
               "target": "_self"
             },
             {
-              "title": "Laise",
-              "url": "",
+              "title": "White",
+              "url": "/white",
               "target": "_self"
             },
             {
-              "title": "Linho",
-              "url": "",
+              "title": "Best Sellers",
+              "url": "/bestseller",
               "target": "_self"
             },
             {
@@ -492,77 +507,45 @@
               "target": "_self"
             },
             {
-              "title": "White",
-              "url": "",
-              "target": "_self"
-            },
-            {
-              "title": "Best Sellers",
-              "url": "",
-              "target": "_self"
-            },
-            {
               "title": "Beads",
-              "url": "",
+              "url": "/beads",
               "target": "_self"
             },
             {
-              "title": "Care",
-              "url": "",
+              "title": "Laise",
+              "url": "/laise",
               "target": "_self"
             },
             {
-              "title": "Bianca Brandolini",
-              "url": "",
+              "title": "Linho",
+              "url": "/linho",
               "target": "_self"
             },
             {
-              "title": "Signature",
-              "url": "",
+              "title": "Tricot",
+              "url": "/tricot",
               "target": "_self"
             }
           ]
         },
         {
           "title": "Modelagens",
-          "url": "",
+          "url": "/praia/biquinis/calcinhas?order=OrderByReleaseDateDESC",
           "target": "_self",
           "children": [
             {
               "title": "Cheeky",
-              "url": "",
+              "url": "/cheeky?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "BR",
-              "url": "",
+              "url": "/praia/biquinis/calcinhas/br?order=OrderByReleaseDateDESC",
               "target": "_self"
             },
             {
               "title": "HOT PANTS",
-              "url": "",
-              "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "Sale",
-          "url": "",
-          "target": "_self",
-          "children": [
-            {
-              "title": "Biquíni",
-              "url": "",
-              "target": "_self"
-            },
-            {
-              "title": "Maiô",
-              "url": "",
-              "target": "_self"
-            },
-            {
-              "title": "Roupas",
-              "url": "",
+              "url": "/hot-pant?order=OrderByReleaseDateDESC",
               "target": "_self"
             }
           ]
@@ -573,33 +556,33 @@
       "item": [
         {
           "title": "Personal Shopper",
-          "url": "",
+          "url": "/e-shoppers",
           "target": "_self",
           "bold": true
         },
         {
           "title": "Sobre a vix",
-          "url": "",
+          "url": "/institucional/sobre-a-empresa-vix",
           "target": "_self"
         },
         {
           "title": "Lojas",
-          "url": "",
+          "url": "/institucional/lojas-vix",
           "target": "_self"
         },
         {
           "title": "Paula Hermanny",
-          "url": "",
+          "url": "/institucional/paula-hermany",
           "target": "_self"
         },
         {
           "title": "Internacional",
-          "url": "",
+          "url": "https://www.vixpaulahermanny.com/",
           "target": "_self"
         },
         {
           "title": "Fale conosco",
-          "url": "",
+          "url": "/atendimento/e-store",
           "target": "_self"
         }
       ]

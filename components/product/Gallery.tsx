@@ -5,18 +5,15 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { ImageZoom } from "../media/ImageZoom.tsx";
 import ProductImageZoom from "./function.js";
-import { useScript } from "deco/hooks/useScript.ts";
 import { useDevice } from "@deco/deco/hooks";
-
+import { useScript } from "@deco/deco/hooks";
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
 }
-
 const WIDTH = 508;
 const HEIGHT = 768;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
-
 /**
  * @title Product Image Slider
  * @description Creates a three columned grid on destkop, one for the dots preview, one for the image slider and the other for product info
@@ -25,13 +22,10 @@ const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
  */
 export default function GallerySlider(props: Props) {
   const id = useId();
-
   if (!props.page) {
     throw new Error("Missing Product Details Page Info");
   }
-
   const { page: { product: { name, isVariantOf, image: pImages } } } = props;
-
   // Filter images when image's alt text matches product name
   // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
   const groupImages = isVariantOf?.image ?? pImages ?? [];
@@ -40,9 +34,7 @@ export default function GallerySlider(props: Props) {
   );
   const imagesFiltered = filtered.length > 0 ? filtered : groupImages;
   const images = imagesFiltered.filter((item) => item.name !== "IMAGEM1");
-
   const device = useDevice();
-
   return (
     <>
       <div
@@ -55,10 +47,7 @@ export default function GallerySlider(props: Props) {
             <Slider class="carousel carousel-center gap-6 w-full">
               {images.map((img, index) => {
                 return (
-                  <Slider.Item
-                    index={index}
-                    class="carousel-item w-full"
-                  >
+                  <Slider.Item index={index} class="carousel-item w-full">
                     <ImageZoom
                       classes="w-full h-full"
                       aspect={ASPECT_RATIO}

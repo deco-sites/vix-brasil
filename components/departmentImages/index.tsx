@@ -1,12 +1,10 @@
-import { useScript } from "deco/hooks/useScript.ts";
 import { Image, ImageProps } from "../media/Image.tsx";
 import { DepartmentImageFunctions } from "./functions.js";
-
+import { useScript } from "@deco/deco/hooks";
 export type DepartmentImagesProps = {
   /** @title Imagens de Departamento */
   items: ImageProps[];
 };
-
 export const DepartmentImages = ({ items }: DepartmentImagesProps) => {
   return (
     <div class="lg:mx-0 mx-[15px] lg:mt-8 mt-4 lg:mb-12 mb-8">

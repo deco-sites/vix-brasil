@@ -8,6 +8,8 @@ export interface ImageProps {
   mobileSrc: ImageWidget;
   url: string;
   alt: string;
+  width?: number | string;
+  height?: number | string;
   target: "_blank" | "_self";
   /** @hide true */
   classes?: string;
@@ -23,6 +25,8 @@ export const Image = (
     target = "_self",
     classes = "",
     classesLink = "",
+    width = "auto",
+    height = "auto",
   }: ImageProps,
 ) => {
   const device = useDevice();
@@ -31,8 +35,8 @@ export const Image = (
       <img
         src={device === "desktop" ? src : mobileSrc}
         alt={alt}
-        width={"auto"}
-        height={"auto"}
+        width={width}
+        height={height}
         class={`w-full object-cover ${classes}`}
         loading="lazy"
       />

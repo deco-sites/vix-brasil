@@ -1,5 +1,5 @@
-import { useContext, useReducer } from "preact/hooks";
 import { createContext } from "preact";
+import { useContext, useReducer } from "preact/hooks";
 import {
   Action,
   ShelfProductsDataActions,

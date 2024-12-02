@@ -18,6 +18,8 @@ export const DepartmentImages = ({ items }: DepartmentImagesProps) => {
                 mobileSrc={item.mobileSrc}
                 alt={item.alt}
                 url={item.url}
+                width={580}
+                height={800}
                 target={item.target}
                 classes="hover:scale-[1.05] duration-200 lg:mx-0 mx-1.5 !object-contain"
               />

@@ -38,7 +38,13 @@ export const Video = (
             class=" relative before:w-full before:h-full before:absolute before:top-0 before:left-0 z-[1]"
             onMouseOver={handlePlayClick}
           >
-            <img src={thumbnail} alt={alt} class="w-full h-full object-cover" />
+            <img
+              src={thumbnail}
+              alt={alt}
+              class="w-full h-full object-cover"
+              width={globalThis.window.innerWidth > 1024 ? 1920 : 540}
+              height={globalThis.window.innerWidth > 1024 ? 950 : 800}
+            />
           </div>
         )
         : (

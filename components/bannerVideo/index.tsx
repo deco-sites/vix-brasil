@@ -100,14 +100,9 @@ export default function BannerVideoComponent(
 
       <Slider.JS
         rootId={container}
-        // interval={5000}
-        // scroll="auto"
+        interval={8000}
+        scroll="auto"
         infinite={true}
-      />
-
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(BannerVideoFunctions) }}
       />
     </div>
   );

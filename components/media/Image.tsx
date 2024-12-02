@@ -11,13 +11,23 @@ export interface ImageProps {
   target: "_blank" | "_self";
   /** @hide true */
   classes?: string;
+  /** @hide true */
+  classesLink?: string;
 }
 export const Image = (
-  { src, mobileSrc, url, alt, target = "_self", classes = "" }: ImageProps,
+  {
+    src,
+    mobileSrc,
+    url,
+    alt,
+    target = "_self",
+    classes = "",
+    classesLink = "",
+  }: ImageProps,
 ) => {
   const device = useDevice();
   return (
-    <a href={url} target={target}>
+    <a href={url} target={target} class={`${classesLink}`}>
       <img
         src={device === "desktop" ? src : mobileSrc}
         alt={alt}

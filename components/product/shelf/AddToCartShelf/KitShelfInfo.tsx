@@ -82,6 +82,8 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                   topIcon ?? "",
                 )
               }.png`}
+              width={"auto"}
+              height={"auto"}
               alt="Product category icon"
               class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
             />
@@ -103,6 +105,8 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                   bottomIcon ?? "",
                 )
               }.png`}
+              width={"auto"}
+              height={"auto"}
               alt="Product category icon"
               class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
             />
@@ -139,6 +143,8 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                       topIcon ?? "",
                     )
                   }.png`}
+                  width={"auto"}
+                  height={"auto"}
                   alt="Product category icon"
                   class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
                 />
@@ -202,6 +208,8 @@ export default function KitShelfInfo({ top, bottom }: Props) {
                       bottomIcon ?? "",
                     )
                   }.png`}
+                  width={"auto"}
+                  height={"auto"}
                   alt="Product category icon"
                   class="lg:w-[30px] lg:h-[30px] w-[13px] h-[13px]"
                 />

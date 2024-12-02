@@ -21,7 +21,10 @@ export const Image = (
       <img
         src={device === "desktop" ? src : mobileSrc}
         alt={alt}
+        width={"auto"}
+        height={"auto"}
         class={`w-full object-cover ${classes}`}
+        loading="lazy"
       />
     </a>
   );

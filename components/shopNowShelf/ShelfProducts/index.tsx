@@ -62,7 +62,7 @@ export default function ShelfProducts(
         }}
         class="lg:p-4 p-1 after:duration-200 font-source-sans text-white font-bold relative after:content-['Shop_Now'] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:flex after:justify-center after:items-center after:opacity-0 hover:after:opacity-100 after:bg-bronze-opacity"
       >
-        <img src={src} alt={alt} />
+        <img src={src} alt={alt} width={"auto"} height={"auto"} />
       </div>
 
       {active &&

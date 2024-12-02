@@ -1,11 +1,8 @@
 import { Image, ImageProps } from "../media/Image.tsx";
-import { BannerVideoFunctions } from "./functions.js";
-import { useScript } from "@deco/deco/hooks";
 import Video from "../../islands/Video.tsx";
 import { VideoProps } from "../media/Video.tsx";
 import Slider from "../ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
-import Icon from "../ui/Icon.tsx";
 
 export interface BannerVideoProps {
   /** @title Banner de Vídeo ou Imagem */

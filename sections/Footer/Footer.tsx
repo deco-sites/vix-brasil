@@ -131,6 +131,7 @@ function Desktop({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/google-store-link___a575e3d1f808ff3484f40bb468bfc7d7.png"
                 alt="App no Google Play"
                 width={90}
+                height={27}
                 loading="lazy"
                 class="grayscale !object-contain"
               />
@@ -140,6 +141,7 @@ function Desktop({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/app-store-link___fe7fcd1d3051cb7614f2bea5c64bdbb3.png"
                 alt="App no App Store"
                 width={90}
+                height={27}
                 loading="lazy"
                 class="grayscale !object-contain"
               />
@@ -188,6 +190,7 @@ function Desktop({
                   src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.148/img/footer/vtex-certified___420675ab19c0357575babc7204a479ea.png"
                   alt="VTEX PCI"
                   width={60}
+                  height={20}
                   loading="lazy"
                   class="grayscale !object-contain w-auto h-5"
                 />
@@ -296,6 +299,7 @@ function Mobile({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/google-store-link___a575e3d1f808ff3484f40bb468bfc7d7.png"
                 alt="App no Google Play"
                 width={90}
+                height={27}
                 loading="lazy"
                 class="grayscale !object-contain"
               />
@@ -305,6 +309,7 @@ function Mobile({
                 src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.127/img/footer/app-store-link___fe7fcd1d3051cb7614f2bea5c64bdbb3.png"
                 alt="App no App Store"
                 width={90}
+                height={27}
                 loading="lazy"
                 class="grayscale !object-contain"
               />
@@ -369,6 +374,7 @@ function Mobile({
                   src="https://vixbrasil.vtexassets.com/assets/vtex/assets-builder/vixbrasil.store/3.0.148/img/footer/vtex-certified___420675ab19c0357575babc7204a479ea.png"
                   alt="VTEX PCI"
                   width={60}
+                  height={20}
                   loading="lazy"
                   class="grayscale !object-contain w-auto h-7"
                 />

@@ -13,6 +13,17 @@ import Sort from "./Sort.tsx";
 import { useDevice, useScript, useSection } from "@deco/deco/hooks";
 import { type SectionProps } from "@deco/deco";
 import { RichText } from "apps/admin/widgets.ts";
+
+/**
+ * @titleBy matcher
+ */
+export interface SeoTextProps {
+  /** @description URL de renderização do texto */
+  matcher: string;
+
+  text?: RichText;
+  seoText?: RichText;
+}
 export interface Layout {
   /**
    * @title Pagination
@@ -27,11 +38,21 @@ export interface Props {
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
 
-  seo?: RichText;
-  seoText?: RichText;
+  seo: SeoTextProps[];
   /** @hidden */
   partial?: "hideMore" | "hideLess";
 }
+
+const DEFAULT_PROPS = {
+  seo: [
+    {
+      matcher: "/*",
+      text: "Texto SEO menor",
+      seoText: "Texto SEO footer",
+    },
+  ],
+};
+
 function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-10">
@@ -109,6 +130,41 @@ function updateRecordPerPage(page: ProductListingPage) {
     percentage.toFixed(2)
   }%" class="bg-[#bea669] h-0.5"></span>
     </div>`;
+}
+
+function SeoSmallText(props: SectionProps<ReturnType<typeof loader>>) {
+  const { texts } = props;
+
+  return (
+    <div class="max-w-[750px] mx-auto my-4">
+      <div
+        class="category-seo font-source-sans tracking-[0.07em] leading-4"
+        dangerouslySetInnerHTML={{ __html: texts?.text ?? "não foi 1" }}
+      />
+      <a
+        href="#seach-seo"
+        class="mt-2 text-black font-source-sans text-xs font-semibold tracking-[0.07em] underline flex items-center justify-center"
+      >
+        Ler mais
+      </a>
+    </div>
+  );
+}
+
+function SeoText(props: SectionProps<ReturnType<typeof loader>>) {
+  const { texts } = props;
+
+  return (
+    <div
+      class="mt-20 py-[60px] bg-[#f7f4eb] w-full flex items-center justify-center"
+      id="seach-seo"
+    >
+      <div
+        class="category-seo font-source-sans max-w-[750px] tracking-[0.07em] leading-4"
+        dangerouslySetInnerHTML={{ __html: texts?.seoText ?? "não foi 1" }}
+      />
+    </div>
+  );
 }
 
 function PageResult(
@@ -278,7 +334,9 @@ const setPageQuerystring = (page: string, id: string) => {
     history.replaceState({ prevPage }, "", url.href);
   }).observe(element);
 };
-function Result(props: SectionProps<typeof loader>) {
+function Result(
+  props: SectionProps<typeof loader>,
+) {
   const container = useId();
   const controls = useId();
   const device = useDevice();
@@ -393,32 +451,14 @@ function Result(props: SectionProps<typeof loader>) {
                   </div>
                 </div>
               )}
-              <div class="max-w-[750px] mx-auto my-4">
-                <div
-                  class="category-seo font-source-sans tracking-[0.07em] leading-4"
-                  dangerouslySetInnerHTML={{ __html: props.seo ?? "" }}
-                />
-                <a
-                  href="#seach-seo"
-                  class="mt-2 text-black font-source-sans text-xs font-semibold tracking-[0.07em] underline flex items-center justify-center"
-                >
-                  Ler mais
-                </a>
-              </div>
+
+              <SeoSmallText {...props} />
 
               <div class="w-full">
                 <PageResult {...props} />
               </div>
             </div>
-            <div
-              class="mt-20 py-[60px] bg-[#f7f4eb] w-full flex items-center justify-center"
-              id="seach-seo"
-            >
-              <div
-                class="category-seo font-source-sans max-w-[750px] tracking-[0.07em] leading-4"
-                dangerouslySetInnerHTML={{ __html: props.seoText ?? "" }}
-              />
-            </div>
+            <SeoText {...props} />
           </>
         )}
       </div>
@@ -442,9 +482,14 @@ function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
   return <Result {...props} page={page} />;
 }
 export const loader = (props: Props, req: Request) => {
+  const { seo } = { ...DEFAULT_PROPS, ...props };
+  const texts = seo.find(({ matcher }) =>
+    new URLPattern({ pathname: matcher }).test(req.url)
+  );
   return {
     ...props,
     url: req.url,
+    texts,
   };
 };
 export default SearchResult;

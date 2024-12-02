@@ -3,6 +3,15 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "website/sections/Analytics/Analytics.tsx",
+        "trackingIds": [
+          "GTM-PRD9CF2N"
+        ]
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "Header"
       }
     },

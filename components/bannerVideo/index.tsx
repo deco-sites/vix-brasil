@@ -14,7 +14,7 @@ export default function BannerVideoComponent(
   { bannerVideo }: BannerVideoProps,
   { id = useId() },
 ) {
-  const container = `${id}-banner-video`;
+  const container = `${id}-banner-video--home`;
 
   return (
     <div>

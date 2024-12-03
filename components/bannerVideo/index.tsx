@@ -37,6 +37,8 @@ export default function BannerVideoComponent(
                     alt={item.alt}
                     url={item.url}
                     target={item.target}
+                    width={1920}
+                    height={900}
                     classes="lg:h-full h-[148.5vw] min-w-[195px] lg:min-w-0"
                     classesLink="w-full"
                   />

@@ -6,7 +6,8 @@
         "__resolveType": "website/sections/Analytics/Analytics.tsx",
         "trackingIds": [
           "GTM-PRD9CF2N"
-        ]
+        ],
+        "googleAnalyticsIds": []
       }
     },
     {

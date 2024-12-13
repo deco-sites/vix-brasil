@@ -36,7 +36,9 @@
   "routes": [
     {
       "__resolveType": "vtex/loaders/proxy.ts",
-      "extraPathsToProxy": [],
+      "extraPathsToProxy": [
+        "/blackfriday"
+      ],
       "includeSiteMap": [],
       "excludePathsFromDecoSiteMap": []
     },

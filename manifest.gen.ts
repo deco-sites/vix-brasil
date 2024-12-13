@@ -9,7 +9,7 @@ import * as $$$$$$$$$$$1 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$3 from "./apps/deco/vtex.ts";
 import * as $$$$$$$$$$$4 from "./apps/site.ts";
-import * as $$$0 from "./loaders/abTestScript.ts";
+import * as $$$0 from "./loaders/ABTest.tsx";
 import * as $$$1 from "./loaders/availableIcons.ts";
 import * as $$$2 from "./loaders/icons.ts";
 import * as $$$3 from "./loaders/minicart.ts";
@@ -49,7 +49,7 @@ import * as $$$$$$30 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
   "loaders": {
-    "site/loaders/abTestScript.ts": $$$0,
+    "site/loaders/ABTest.tsx": $$$0,
     "site/loaders/availableIcons.ts": $$$1,
     "site/loaders/icons.ts": $$$2,
     "site/loaders/minicart.ts": $$$3,

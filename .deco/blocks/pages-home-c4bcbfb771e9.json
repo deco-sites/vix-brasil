@@ -3,16 +3,6 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "website/sections/Analytics/Analytics.tsx",
-        "trackingIds": [
-          "GTM-PRD9CF2N"
-        ],
-        "googleAnalyticsIds": []
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
         "__resolveType": "Header"
       }
     },
@@ -24,19 +14,19 @@
           {
             "type": "image",
             "target": "_self",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/cad6d57e-4702-441b-8a08-5088e61304f9___d2a325f34a4780e5b987e8e415463bf7.png",
-            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/e6a0b037-224a-48fc-89ad-2653e6ab3a4d___51066435ec52b8cde5724e61cd90962e.png",
-            "url": "/vestido-longo-lilith-detalhes-seaside-seaside-vw242094-2440/p",
-            "alt": "Endless Summer Verão25"
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/40b63133-bb3e-44d2-8f43-7f6aa968371c/bannerhome_desktop.png",
+            "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/75d8a8a0-ea29-4ebe-b32a-7044f751c749/bannerhome_mobile.png",
+            "url": "/novidades",
+            "alt": "Sea Wanderer"
           },
           {
             "type": "video",
             "target": "_self",
-            "src": "1003636562",
-            "mobileSrc": "1021054954",
-            "url": "/vestido-longo-lilith-detalhes-seaside-seaside-vw242094-2440/p",
-            "alt": "Strike a Blue Note",
-            "thumbnail": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/a38bfeb7-fa2f-456e-9057-bbb454c81d45/Video-thumbnail.png"
+            "src": "1036810889",
+            "mobileSrc": "1036809966",
+            "alt": "Feeling Festive",
+            "thumbnail": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/e8667516-fbd3-4fd4-9905-a1cb36ca23ec/Screenshot_2.png",
+            "url": "/natal"
           }
         ]
       }
@@ -47,36 +37,44 @@
         "__resolveType": "site/sections/Images/DepartmentImages.tsx",
         "items": [
           {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/48c19a5e-0555-4fa6-8031-2c8372c5ed65/carrossel-categoria1_roupas.png",
+            "alt": "Roupas",
             "type": "image",
             "target": "_blank",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/f1c17373-78b7-45bc-8b65-56b2455e99bd___297fc774db690b1979164bb32735355d.png",
-            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/f1c17373-78b7-45bc-8b65-56b2455e99bd___297fc774db690b1979164bb32735355d.png",
-            "url": "/",
-            "alt": "Roupas"
+            "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/48c19a5e-0555-4fa6-8031-2c8372c5ed65/carrossel-categoria1_roupas.png",
+            "url": "/roupas?order=OrderByReleaseDateDESC"
+          },
+          {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/645c89c0-6024-422b-b5f8-d448ac2fc8cd/carrossel-categoria2_swim.png",
+            "type": "image",
+            "target": "_blank",
+            "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/645c89c0-6024-422b-b5f8-d448ac2fc8cd/carrossel-categoria2_swim.png",
+            "url": "/praia/biquinis?order=OrderByReleaseDateDESC",
+            "alt": "Biquinis"
+          },
+          {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/36d543b5-e5ed-4b29-b62c-f18192d55153/carrossel-categoria3_acessorios.png",
+            "alt": "Acessórios",
+            "type": "image",
+            "target": "_blank",
+            "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/36d543b5-e5ed-4b29-b62c-f18192d55153/carrossel-categoria3_acessorios.png",
+            "url": "/acessorios?order=OrderByReleaseDateDESC"
+          },
+          {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/443e06ee-3755-4e1e-b2f1-3655836d3372/carrossel-categoria4_saidas.png",
+            "alt": "Saídas",
+            "type": "image",
+            "target": "_blank",
+            "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/443e06ee-3755-4e1e-b2f1-3655836d3372/carrossel-categoria4_saidas.png",
+            "url": "/praia/maios?order=OrderByReleaseDateDESC"
           },
           {
             "type": "image",
             "target": "_blank",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/023781f1-1cf4-4313-b87d-57848e8204cc___a0758c0b49665a8834b411c9489d9057.png",
-            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/023781f1-1cf4-4313-b87d-57848e8204cc___a0758c0b49665a8834b411c9489d9057.png",
-            "url": "/",
-            "alt": "Praia"
-          },
-          {
-            "type": "image",
-            "target": "_blank",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/27cb2035-00a9-44b4-84bd-9a247c230419___ed83c35ab4d99ae70995b2077bf740d6.png",
-            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/27cb2035-00a9-44b4-84bd-9a247c230419___ed83c35ab4d99ae70995b2077bf740d6.png",
-            "url": "/",
-            "alt": "Saídas"
-          },
-          {
-            "type": "image",
-            "target": "_blank",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/7e2ea0b7-7007-4027-99ad-26130c30ad50___a76ab0936e17e88ec2802f33af7abbff.png",
-            "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/7e2ea0b7-7007-4027-99ad-26130c30ad50___a76ab0936e17e88ec2802f33af7abbff.png",
-            "url": "/",
-            "alt": "Acessórios"
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/c69ea644-8711-48a5-b719-46ded5cab6ae/5_maios.png",
+            "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/c69ea644-8711-48a5-b719-46ded5cab6ae/5_maios.png",
+            "alt": "Maiôs",
+            "url": "/praia/maios?order=OrderByReleaseDateDESC"
           }
         ]
       }
@@ -86,10 +84,10 @@
       "section": {
         "__resolveType": "site/sections/Images/Banner.tsx",
         "type": "image",
-        "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/647a45db-8557-4e07-9a60-f0ab78f3c001___b89fa1395defe00a549b0fc4b22523e7.png",
-        "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/511741de-5e36-465b-b9d2-8ea6cefac81c___bf7f4f24f4e1d89304866590ce5a693b.jpg",
-        "url": "/",
-        "alt": "Hide and Seek",
+        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/375010e6-7826-49ab-8b15-4ca903691987/banner-miolo-desktop.png",
+        "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/ee6522f3-ad73-4b90-8e41-25f7254d4ff6/banner-miolo-mobile.png",
+        "url": "/acessorios?order=OrderByReleaseDateDESC",
+        "alt": "On the Nice List",
         "target": "_self"
       }
     },
@@ -99,50 +97,38 @@
         "__resolveType": "site/sections/Shelfs/ShopNowShelf.tsx",
         "items": [
           {
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/f3987782-6f6e-455b-bcc5-f615518d46c4___554f898c3d640aeb61fbc802473f0d76.png",
-            "alt": "Endlesss Summer",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/3387c572-4da0-4907-92ec-46280e877735/5desk-(2).jpg",
             "products": [
-              "10907",
-              "10915"
+              "11035"
+            ],
+            "alt": "Sea Wanderer"
+          },
+          {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/1b07b044-1dd5-45df-84cb-e614c9a099ee/catalogo_desk_(4).png",
+            "alt": "Shop Now 3",
+            "products": [
+              "11147"
             ]
           },
           {
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/b87e7dc2-77af-4d08-89cf-25ee87da0b1b___6b6fe10f5b364532a5366040f8ba4d56.png",
-            "products": [
-              "10907",
-              "10915"
-            ]
-          },
-          {
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/b004524e-180d-4581-b2d9-f19a0a165188___2a49f65306fe5af320b046b31d91f958.png",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/e129ac1d-1e4b-4819-a81e-5ffea665e61b/5desk-(4).jpg",
             "alt": "Shop Now 2",
             "products": [
-              "10907",
-              "10915"
+              "10971"
             ]
           },
           {
-            "alt": "Shop Now 3",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/4eec953b-b5d6-4762-9b14-cb93d8bbfddf___5af4fcf9d0ca7725116d3295482f3368.png",
-            "products": [
-              "10907",
-              "10915"
-            ]
-          },
-          {
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/ebe636e3-981d-4888-9175-a120e9f45676___c044d28351179d36fbdd109c21a91192.png",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/125a6408-6190-458f-af0f-7a167f9b90d7/5desk-(5).jpg",
             "alt": "Shop Now 4",
             "products": [
-              "10907",
-              "10915"
+              "11816"
             ]
           },
           {
-            "alt": "Shop Now 5",
-            "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/69068f9f-1cd7-4e45-8888-d25b607f15fb___382cfc24234a9174efcd8ea1e870ff5e.png",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/fdacd293-2952-47ec-b967-ab7d615938e1/catalogo_desk_(1).png",
+            "alt": "Endlesss Summer",
             "products": [
-              "10907",
-              "10915"
+              "11268"
             ]
           }
         ]
@@ -153,12 +139,18 @@
       "section": {
         "__resolveType": "site/sections/Images/Banner.tsx",
         "type": "image",
-        "src": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/9c1a4555-f97a-4eaf-bf85-9c7071e57206___2d0f1fc113878921c043afcef9ad6162.png",
-        "mobileSrc": "https://vixbrasil.vtexassets.com/assets/vtex.file-manager-graphql/images/bb2c38be-c363-4f93-a261-30365828bff7___6272012da165b8f955848db289d1c180.png",
-        "url": "/",
+        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/8fc847a6-0ddd-4de0-b8ac-23c4802eed5c/miolo-app-desktop.jpg",
+        "mobileSrc": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/vix-brasil/07aecf56-6612-4fc9-937d-5ae0098c836a/miolo-app-mobile.jpg",
+        "url": "https://apps.apple.com/br/app/v-i-x-paulahermanny-brasil/id1626880100?mt=8",
         "alt": "Baixe o App",
         "target": "_self"
       }
+    },
+    {
+      "__resolveType": "website/sections/Analytics/Analytics.tsx",
+      "trackingIds": [
+        "GTM-PRD9CF2N"
+      ]
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
